@@ -1,0 +1,108 @@
+.header__mode .header__lightmode,
+.header__mode .header__darkmode, .header__container .header__nav, .header__container .header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__container .header__nav-link {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 1.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+body {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: #3758f9;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.header__container {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+.header__container .header__logo {
+  gap: 20px;
+}
+.header__container .header__logo-image {
+  width: 36px;
+  filter: brightness(0) saturate(100%) invert(98%) sepia(17%) saturate(0%) hue-rotate(259deg) brightness(99%) contrast(105%);
+}
+.header__container .header__logo-text {
+  font-family: poppins, sans-serif;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 500;
+}
+.header__container .header__nav-list {
+  display: flex;
+  gap: 20px;
+}
+.header__container .header__nav-link {
+  -webkit-text-decoration: underline 0.2rem transparent;
+          text-decoration: underline 0.2rem transparent;
+  text-underline-offset: 0.4rem;
+  transition: -webkit-text-decoration 0.2s;
+  transition: text-decoration 0.2s;
+  transition: text-decoration 0.2s, -webkit-text-decoration 0.2s;
+}
+.header__container .header__nav-link:hover {
+  text-decoration-color: #fff;
+}
+.header__mode {
+  display: flex;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
+  padding: 5px;
+}
+.header__mode .header__lightmode,
+.header__mode .header__darkmode {
+  border-radius: 4px;
+  padding: 8px 18px;
+  gap: 6px;
+  cursor: pointer;
+  color: #637381;
+  fill: #637381;
+}
+.header__mode .header__lightmode-text,
+.header__mode .header__darkmode-text {
+  font-family: Inter, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
+.header__mode .active {
+  background-color: #f9fafb;
+  color: #3758f9;
+  fill: #3758f9;
+}/*# sourceMappingURL=style.css.map */

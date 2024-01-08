@@ -1,0 +1,68 @@
+.header
+  display: flex
+  justify-content: space-between
+  padding-top: 30px
+
+  &__container
+    display: flex
+    width: 40%
+    justify-content: space-between
+    // gap: 10rem // iuazernizrejnrezijnldjhisebrezihrbdfkgk,njeskhrbezutbfgj,nezijtnt
+
+    .header__logo
+      @extend %flex-align-center
+      gap: 20px
+
+      &-image
+        width: 36px
+        filter: brightness(0) saturate(100%) invert(98%) sepia(17%) saturate(0%) hue-rotate(259deg) brightness(99%) contrast(105%)
+
+      &-text
+        font-family: poppins, sans-serif
+        color: $color-light
+        font-size: 2.6rem
+        font-weight: 500
+
+    .header__nav
+      @extend %flex-align-center
+
+      &-list
+        display: flex
+        gap: 20px
+
+      &-link
+        @extend %text
+        text-decoration: underline 0.2rem transparent
+        text-underline-offset: 0.4rem
+        transition: text-decoration 0.2s
+
+        &:hover
+          text-decoration-color: $color-light
+
+  &__mode
+    display: flex
+    background-color: $color-light
+    border-radius: 6px
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12)
+    padding: 5px
+
+    .header__lightmode,
+    .header__darkmode
+      @extend %flex-align-center
+      border-radius: 4px
+      padding: 8px 18px
+      gap: 6px
+      cursor: pointer
+      color: #637381
+      fill: #637381
+
+      &-text
+        font-family: Inter, sans-serif
+        font-size: 1.4rem
+        font-weight: 500
+        line-height: 2.2rem
+
+    .active
+      background-color: #f9fafb
+      color: $color-main
+      fill: $color-main
