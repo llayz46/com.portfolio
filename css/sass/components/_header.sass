@@ -1,13 +1,12 @@
 .header
   display: flex
   justify-content: space-between
-  padding-top: 30px
+  padding-top: 25px
 
   &__container
     display: flex
     width: 40%
     justify-content: space-between
-    // gap: 10rem // iuazernizrejnrezijnldjhisebrezihrbdfkgk,njeskhrbezutbfgj,nezijtnt
 
     .header__logo
       @extend %flex-align-center
@@ -31,10 +30,11 @@
         gap: 20px
 
       &-link
-        @extend %text
+        @extend %text-header-link
         text-decoration: underline 0.2rem transparent
         text-underline-offset: 0.4rem
         transition: text-decoration 0.2s
+        cursor: pointer
 
         &:hover
           text-decoration-color: $color-light
@@ -53,8 +53,8 @@
       padding: 8px 18px
       gap: 6px
       cursor: pointer
-      color: #637381
-      fill: #637381
+      color: $color-text
+      fill: $color-text
 
       &-text
         font-family: Inter, sans-serif
