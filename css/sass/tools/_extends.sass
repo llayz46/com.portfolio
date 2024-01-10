@@ -2,6 +2,12 @@
   display: flex
   align-items: center
 
+%flex-justify-center
+  display: flex
+  flex-direction: column
+  margin-left: auto
+  margin-right: auto
+
 // Texte extends
 %text-header-link
   color: $color-light
@@ -12,6 +18,18 @@
   font-size: 1.8rem
   font-weight: 600
   line-height: 2.6rem
+
+%text-card-title
+  color: $color-title
+  font-size: 2rem
+  font-weight: 700
+  line-height: 2.4rem
+
+%text-card-content
+  color: $color-main
+  font-size: 1.4rem
+  font-weight: 500
+  line-height: 2.2rem
 
 %text-big-title
   color: $color-light
@@ -40,10 +58,10 @@
   background-color: $color-light
   color: $color-main
   border-radius: 0.6rem
-  font-size: 1.6rem
+  font-size: 1.8rem
   font-weight: 500
-  line-height: 2.4rem
-  padding: 1rem 2.8rem
+  line-height: 2.6rem
+  padding: 1.3rem 2.8rem
 
 %button-mid
   border: 1px solid #dfe4ea
@@ -56,5 +74,5 @@
 
   &:hover
     background-color: $color-main
-    border: none
+    border: 1px solid $color-main
     color: $color-light

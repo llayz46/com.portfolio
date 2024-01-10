@@ -1,11 +1,52 @@
 .project
-  background-color: #fff
+  background-color: $color-light
+  padding-top: 12rem
+
+  &__container-texts
+    width: 46%
+    @extend %flex-justify-center
 
   &__breadcrumb
     @extend %text-breadcrumb
+    text-align: center
+    padding-bottom: 0.8rem
 
   &__title
     @extend %text-mid-title
+    text-align: center
+    padding-bottom: 1.2rem
 
   &__description
     @extend %text-mid-content
+    text-align: center
+    margin-bottom: 100px // OIJTJNSIORHIEUGRJH DITEHIZ3EU4HIJH IERUHTIZUEUH 
+
+  &__container-cards
+    background-color: tomato // OIJTJNSIORHIEUGRJH DITEHIZ3EU4HIJH IERUHTIZUEUH
+
+  &__card
+    width: 32%
+
+    &-texts
+      @extend %flex-align-center
+      flex-direction: column
+      background-color: $color-light
+      padding: 3.4rem 9rem
+      border-radius: 0.8rem
+      width: max-content
+      box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08)
+    
+    &-tech
+      @extend %text-card-content
+      margin-bottom: 0.6rem
+
+    &-title
+      @extend %text-card-title
+      margin-bottom: 2rem
+
+    &-button
+      @extend %button-mid
+
+    &-image
+      border-radius: 1rem
+      width: 100%

@@ -1,7 +1,14 @@
-.header__mode .header__lightmode,
+.project__card-texts, .header__mode .header__lightmode,
 .header__mode .header__darkmode, .header__container .header__nav, .header__container .header__logo {
   display: flex;
   align-items: center;
+}
+
+.project__container-texts, .hero {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header__container .header__nav-link {
@@ -14,6 +21,20 @@
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 2.6rem;
+}
+
+.project__card-title {
+  color: #111928;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+.project__card-tech {
+  color: #3758f9;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.2rem;
 }
 
 .hero__title {
@@ -46,10 +67,25 @@
   background-color: #fff;
   color: #3758f9;
   border-radius: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  padding: 1.3rem 2.8rem;
+}
+
+.project__card-button {
+  border: 1px solid #dfe4ea;
+  border-radius: 0.6rem;
+  color: #637381;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.4rem;
   padding: 1rem 2.8rem;
+}
+.project__card-button:hover {
+  background-color: #3758f9;
+  border: 1px solid #3758f9;
+  color: #fff;
 }
 
 * {
@@ -72,7 +108,8 @@ button {
 }
 
 .header,
-.hero {
+.hero,
+.project__container-cards {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -158,10 +195,6 @@ html {
 
 .hero {
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
 }
 .hero__title {
   text-align: center;
@@ -206,4 +239,45 @@ html {
 
 .project {
   background-color: #fff;
+  padding-top: 12rem;
+}
+.project__container-texts {
+  width: 46%;
+}
+.project__breadcrumb {
+  text-align: center;
+  padding-bottom: 0.8rem;
+}
+.project__title {
+  text-align: center;
+  padding-bottom: 1.2rem;
+}
+.project__description {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.project__container-cards {
+  background-color: tomato;
+}
+.project__card {
+  width: 32%;
+}
+.project__card-texts {
+  flex-direction: column;
+  background-color: #fff;
+  padding: 3.4rem 9rem;
+  border-radius: 0.8rem;
+  width: -moz-max-content;
+  width: max-content;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+}
+.project__card-tech {
+  margin-bottom: 0.6rem;
+}
+.project__card-title {
+  margin-bottom: 2rem;
+}
+.project__card-image {
+  border-radius: 1rem;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
