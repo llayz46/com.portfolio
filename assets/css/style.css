@@ -1,4 +1,4 @@
-.project__card-texts, .header__mode .header__lightmode,
+.project__card-texts, .project__card, .header__mode .header__lightmode,
 .header__mode .header__darkmode, .header__container .header__nav, .header__container .header__logo {
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   font-size: 1.8rem;
 }
 
-.project__breadcrumb {
+.contact__type, .contact__container-texts .contact__breadcrumb, .project__breadcrumb {
   color: #3758f9;
   font-size: 1.8rem;
   font-weight: 600;
@@ -44,7 +44,7 @@
   line-height: 5.8rem;
 }
 
-.project__title {
+.contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -57,7 +57,7 @@
   line-height: 2.6rem;
 }
 
-.project__description {
+.contact__type-content, .contact__container-texts .contact__description, .project__description {
   color: #637381;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -109,7 +109,8 @@ button {
 
 .header,
 .hero,
-.project__container-cards {
+.project__container-cards,
+.contact__flux {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -254,21 +255,24 @@ html {
 }
 .project__description {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 6rem;
 }
 .project__container-cards {
-  background-color: tomato;
+  display: flex;
+  justify-content: space-between;
 }
 .project__card {
-  width: 32%;
+  width: 31%;
+  flex-direction: column;
 }
 .project__card-texts {
   flex-direction: column;
+  transform: translateY(-50%);
   background-color: #fff;
   padding: 3.4rem 9rem;
   border-radius: 0.8rem;
-  width: -moz-max-content;
-  width: max-content;
+  width: 88%;
+  text-align: center;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
 }
 .project__card-tech {
@@ -280,4 +284,38 @@ html {
 .project__card-image {
   border-radius: 1rem;
   width: 100%;
+}
+
+.contact {
+  background-color: #fff;
+  padding-top: 12rem;
+}
+.contact__flux {
+  display: flex;
+}
+.contact__container-texts {
+  width: 72%;
+}
+.contact__container-texts .contact__breadcrumb {
+  margin-bottom: 0.8rem;
+}
+.contact__container-texts .contact__title {
+  margin-bottom: 1.2rem;
+}
+.contact__container-texts .contact__description {
+  margin-bottom: 5rem;
+}
+.contact__icon {
+  display: flex;
+  gap: 2.4rem;
+  margin-bottom: 3.5rem;
+}
+.contact__icon-container {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(55, 88, 249, 0.05);
+}
+.contact__type {
+  color: #111928;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=style.css.map */

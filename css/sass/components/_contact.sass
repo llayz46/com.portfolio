@@ -1,0 +1,39 @@
+.contact
+  background-color: $color-light
+  padding-top: 12rem
+
+  &__flux
+    display: flex
+
+  &__container-texts
+    width: 72%
+
+    .contact__breadcrumb
+      @extend %text-breadcrumb
+      margin-bottom: 0.8rem
+
+    .contact__title
+      @extend %text-mid-title
+      margin-bottom: 1.2rem
+
+    .contact__description
+      @extend %text-mid-content
+      margin-bottom: 5rem
+
+  &__icon
+    display: flex
+    gap: 2.4rem
+    margin-bottom: 3.5rem
+
+    &-container
+      padding: 2rem
+      border-radius: 0.5rem
+      background-color: rgba(55, 88, 249, 0.05)
+
+  &__type
+    @extend %text-breadcrumb
+    color: $color-title
+    margin-bottom: 1rem
+
+    &-content
+      @extend %text-mid-content

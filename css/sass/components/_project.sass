@@ -19,21 +19,26 @@
   &__description
     @extend %text-mid-content
     text-align: center
-    margin-bottom: 100px // OIJTJNSIORHIEUGRJH DITEHIZ3EU4HIJH IERUHTIZUEUH 
+    margin-bottom: 6rem 
 
   &__container-cards
-    background-color: tomato // OIJTJNSIORHIEUGRJH DITEHIZ3EU4HIJH IERUHTIZUEUH
+    display: flex
+    justify-content: space-between
 
   &__card
-    width: 32%
+    width: 31%
+    @extend %flex-align-center
+    flex-direction: column
 
     &-texts
       @extend %flex-align-center
       flex-direction: column
+      transform: translateY(-50%)
       background-color: $color-light
       padding: 3.4rem 9rem
       border-radius: 0.8rem
-      width: max-content
+      width: 88%
+      text-align: center
       box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08)
     
     &-tech
