@@ -91,6 +91,13 @@
       color: utils.$color-light
       padding: 1.2rem 1.6rem
       cursor: pointer
+      @extend %transition-button
+
+      &:hover,
+      &:focus
+        outline: none
+        border: 1px solid darken(utils.$color-main, 40%)
+        background-color: darken(utils.$color-main, 40%)
 
   &__circle-icon
     position: absolute

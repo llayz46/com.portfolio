@@ -11,6 +11,12 @@
   margin-right: auto
 
 // Texte extends
+%text-logo
+  font-family: poppins, sans-serif
+  color: var.$color-light
+  font-size: 2.6rem
+  font-weight: 500
+
 %text-header-link
   color: var.$color-light
   font-size: 1.8rem
@@ -55,15 +61,29 @@
   font-size: 1.6rem
   line-height: 2.4rem
 
+%text-footer-container
+  color: var.$color-text-dark
+  font-size: 1.6rem
+  line-height: 2.4rem
+
 // Bouttons
 %button-big
   background-color: var.$color-light
+  border: 1px solid var.$color-light
   color: var.$color-main
   border-radius: 0.6rem
   font-size: 1.8rem
   font-weight: 500
   line-height: 2.6rem
   padding: 1.3rem 2.8rem
+  @extend %transition-button
+
+  &:hover,
+  &:focus
+    outline: none
+    background: none
+    border: 1px solid var.$color-light
+    color: var.$color-light
 
 %button-mid
   border: 1px solid #dfe4ea
@@ -73,8 +93,18 @@
   font-weight: 500
   line-height: 2.4rem
   padding: 1rem 2.8rem
+  @extend %transition-button
 
-  &:hover
+  &:hover,
+  &:focus
     background-color: var.$color-main
     border: 1px solid var.$color-main
     color: var.$color-light
+    outline: none
+
+// Transitions
+%transition-footer
+  transition: all 0.05s ease-out
+
+%transition-button
+  transition: all 0.12s ease-out

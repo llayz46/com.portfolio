@@ -1,9 +1,18 @@
 @use '../tools/all' as utils
 
+@keyframes slideFromTop
+  0%
+    transform: translateY(-100%)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
+
 .header
   display: flex
   justify-content: space-between
   padding-top: 25px
+  animation: 0.75s ease-in-out 0s 1 slideFromTop
 
   &__container
     display: flex
@@ -19,10 +28,7 @@
         filter: brightness(0) saturate(100%) invert(98%) sepia(17%) saturate(0%) hue-rotate(259deg) brightness(99%) contrast(105%)
 
       &-text
-        font-family: poppins, sans-serif
-        color: utils.$color-light
-        font-size: 2.6rem
-        font-weight: 500
+        @extend %text-logo
 
     .header__nav
       @extend %flex-align-center
@@ -57,6 +63,11 @@
       cursor: pointer
       color: utils.$color-text
       fill: utils.$color-text
+
+      &:hover,
+      &:focus
+        outline: none
+        background-color: darken(#fff, 5%)
 
       &-text
         font-family: Inter, sans-serif
