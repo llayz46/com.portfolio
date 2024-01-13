@@ -1,5 +1,7 @@
+@use '../tools/all' as utils
+
 .project
-  background-color: $color-light
+  background-color: utils.$color-light
   padding-top: 12rem
 
   &__container-texts
@@ -34,7 +36,7 @@
       @extend %flex-align-center
       flex-direction: column
       transform: translateY(-50%)
-      background-color: $color-light
+      background-color: utils.$color-light
       padding: 3.4rem 9rem
       border-radius: 0.8rem
       width: 88%

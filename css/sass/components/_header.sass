@@ -1,3 +1,5 @@
+@use '../tools/all' as utils
+
 .header
   display: flex
   justify-content: space-between
@@ -18,7 +20,7 @@
 
       &-text
         font-family: poppins, sans-serif
-        color: $color-light
+        color: utils.$color-light
         font-size: 2.6rem
         font-weight: 500
 
@@ -37,11 +39,11 @@
         cursor: pointer
 
         &:hover
-          text-decoration-color: $color-light
+          text-decoration-color: utils.$color-light
 
   &__mode
     display: flex
-    background-color: $color-light
+    background-color: utils.$color-light
     border-radius: 6px
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12)
     padding: 5px
@@ -53,8 +55,8 @@
       padding: 8px 18px
       gap: 6px
       cursor: pointer
-      color: $color-text
-      fill: $color-text
+      color: utils.$color-text
+      fill: utils.$color-text
 
       &-text
         font-family: Inter, sans-serif
@@ -64,5 +66,5 @@
 
     .active
       background-color: #f9fafb
-      color: $color-main
-      fill: $color-main
+      color: utils.$color-main
+      fill: utils.$color-main

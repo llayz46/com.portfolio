@@ -1,3 +1,5 @@
+@use './variables' as var
+
 %flex-align-center
   display: flex
   align-items: center
@@ -10,53 +12,53 @@
 
 // Texte extends
 %text-header-link
-  color: $color-light
+  color: var.$color-light
   font-size: 1.8rem
 
 %text-breadcrumb
-  color: $color-main
+  color: var.$color-main
   font-size: 1.8rem
   font-weight: 600
   line-height: 2.6rem
 
 %text-card-title
-  color: $color-title
+  color: var.$color-title
   font-size: 2rem
   font-weight: 700
   line-height: 2.4rem
 
 %text-card-content
-  color: $color-main
+  color: var.$color-main
   font-size: 1.4rem
   font-weight: 500
   line-height: 2.2rem
 
 %text-big-title
-  color: $color-light
+  color: var.$color-light
   font-size: 4.8rem
   font-weight: 700
   line-height: 5.8rem
 
 %text-mid-title
-  color: $color-title
+  color: var.$color-title
   font-size: 4rem
   font-weight: 700
   line-height: 4.8rem
 
 %text-big-content
-  color: $color-light
+  color: var.$color-light
   font-size: 1.8rem
   line-height: 2.6rem
 
 %text-mid-content
-  color: $color-text
+  color: var.$color-text
   font-size: 1.6rem
   line-height: 2.4rem
 
 // Bouttons
 %button-big
-  background-color: $color-light
-  color: $color-main
+  background-color: var.$color-light
+  color: var.$color-main
   border-radius: 0.6rem
   font-size: 1.8rem
   font-weight: 500
@@ -66,13 +68,13 @@
 %button-mid
   border: 1px solid #dfe4ea
   border-radius: 0.6rem
-  color: $color-text
+  color: var.$color-text
   font-size: 1.6rem
   font-weight: 500
   line-height: 2.4rem
   padding: 1rem 2.8rem
 
   &:hover
-    background-color: $color-main
-    border: 1px solid $color-main
-    color: $color-light
+    background-color: var.$color-main
+    border: 1px solid var.$color-main
+    color: var.$color-light

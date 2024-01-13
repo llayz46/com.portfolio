@@ -1,12 +1,16 @@
+@use '../tools/all' as utils
+
 .contact
-  background-color: $color-light
+  background-color: utils.$color-light
   padding-top: 12rem
+  padding-bottom: 12rem
 
   &__flux
     display: flex
 
   &__container-texts
-    width: 72%
+    width: 60%
+    padding-right: 8%
 
     .contact__breadcrumb
       @extend %text-breadcrumb
@@ -32,8 +36,74 @@
 
   &__type
     @extend %text-breadcrumb
-    color: $color-title
+    color: utils.$color-title
     margin-bottom: 1rem
 
     &-content
       @extend %text-mid-content
+
+  &__container-form
+    width: 39%
+    position: relative
+
+  &__form
+    display: flex
+    flex-direction: column
+    gap: 2.5rem
+    border-radius: 0.8rem
+    background-color: utils.$color-light
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.07)
+    padding: 5rem
+    position: relative
+    z-index: 1
+
+    &-input,
+    &-button
+      border-radius: 0.6rem
+      font-family: Inter
+
+    &-input
+      @extend %text-mid-content
+      border: 1px solid #dfe4ea
+      line-height: 0 // ????????????????????????????????????????????????????????????????
+      padding: 1.2rem 1.6rem 1.2rem 2rem // ????????????????????????????????????????????????????????????????
+
+      &::placeholder
+        color: #9ca3af // ????????????????????????????????????????????????????????????????
+        @extend %text-mid-content
+
+      &:focus,
+      &:focus-visible
+        border: 1px solid utils.$color-main
+        outline: none
+
+      &--message
+        resize: none
+        height: 13rem
+        line-height: 2.4rem
+
+    &-button
+      border: 1px solid utils.$color-main
+      background-color: utils.$color-main
+      font-weight: 500
+      font-size: 1.6rem
+      line-height: 2.4rem
+      color: utils.$color-light
+      padding: 1.2rem 1.6rem
+      cursor: pointer
+
+  &__circle-icon
+    position: absolute
+    top: -5rem
+    right: -5rem
+    z-index: 0
+
+  &__dot-grid-tright
+    position: absolute
+    top: 6.5rem
+    right: -4rem
+
+  &__dot-grid-bleft
+    position: absolute
+    bottom: -4rem
+    left: -2.5rem

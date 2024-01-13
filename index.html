@@ -298,12 +298,14 @@
               action="mailto:monmail@mail.com"
               method="post"
               enctype="text/plain"
+              class="contact__form"
             >
               <input
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Nom"
+                class="contact__form-input"
                 required
               />
               <input
@@ -311,6 +313,7 @@
                 name="email"
                 id="email"
                 placeholder="Email"
+                class="contact__form-input"
                 required
               />
               <input
@@ -318,17 +321,89 @@
                 name="phone"
                 id="phone"
                 placeholder="Téléphone"
+                class="contact__form-input"
                 required
               />
-              <input
-                type="text"
-                name="message"
-                id="message"
-                placeholder="Message"
-                required
-              />
-              <input type="submit" value="Envoyer le message" />
+              <textarea name="message" id="message" placeholder="Message" class="contact__form-input contact__form-input--message" required></textarea>  
+              <input type="submit" value="Envoyer le message" class="contact__form-button"/>
             </form>
+            <svg class="contact__circle-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z" fill="#3758F9"/>
+            </svg>
+
+            <svg
+              class="contact__dot-grid-tright"
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="110"
+              viewBox="0 0 35 110"
+              fill="none"
+            >
+              <circle cx="2.5" cy="2.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="2.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="2.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="62.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="62.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="62.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="32.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="32.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="32.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="92.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="92.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="92.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="17.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="17.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="17.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="77.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="77.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="77.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="47.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="47.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="47.5" r="1.66667" fill="#13C296" />
+              <circle cx="2.5" cy="107.5" r="1.66667" fill="#13C296" />
+              <circle cx="17.5" cy="107.5" r="1.66667" fill="#13C296" />
+              <circle cx="32.5" cy="107.5" r="1.66667" fill="#13C296" />
+            </svg>
+
+            <svg 
+              class="contact__dot-grid-bleft" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="106" 
+              height="134" 
+              viewBox="0 0 106 134" 
+              fill="none"
+            >
+              <circle cx="104" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="104" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="89.3333" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="89.3333" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="74.6668" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="31.0003" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="74.6668" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="31.0003" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="60.0003" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="60.0003" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="87.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="73.3331" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="44.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="15.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="58.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="30.6666" r="1.66667" fill="#13C296"></circle>
+              <circle cx="16.3333" cy="1.66659" r="1.66667" fill="#13C296"></circle>
+              <circle cx="45.3333" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="117.333" r="1.66667" fill="#13C296"></circle>
+              <circle cx="45.3333" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="102.667" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="87.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="73.3331" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="44.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="15.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="58.9998" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="30.6666" r="1.66667" fill="#13C296"></circle>
+              <circle cx="1.66683" cy="1.66659" r="1.66667" fill="#13C296"></circle>
+            </svg>
           </div>
         </div>
       </section>
