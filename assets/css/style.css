@@ -279,6 +279,11 @@ html {
   color: #3758f9;
   fill: #3758f9;
 }
+.header__mode .active-night {
+  background-color: #374151;
+  color: #3758f9;
+  fill: #3758f9;
+}
 
 .footer__phone, .footer__logo, .project__card-texts, .project__card, .header__container .header__logo, .header__container .header__nav, .header__mode .header__lightmode,
 .header__mode .header__darkmode {
@@ -1220,7 +1225,7 @@ html {
 }
 .footer__list-content:hover, .footer__list-content:focus {
   outline: none;
-  color: white;
+  color: white !important;
 }
 .footer__social {
   display: flex;
