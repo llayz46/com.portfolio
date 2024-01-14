@@ -37,6 +37,10 @@ html {
   font-size: 62.5%;
 }
 
+.js-body-dark-mode {
+  background-color: #0e163e;
+}
+
 .footer__phone, .footer__logo, .project__card-texts, .project__card, .header__container .header__logo, .header__container .header__nav, .header__mode .header__lightmode,
 .header__mode .header__darkmode {
   display: flex;
@@ -262,12 +266,6 @@ html {
   cursor: pointer;
   color: #637381;
   fill: #637381;
-}
-.header__mode .header__lightmode:hover, .header__mode .header__lightmode:focus,
-.header__mode .header__darkmode:hover,
-.header__mode .header__darkmode:focus {
-  outline: none;
-  background-color: #f2f2f2;
 }
 .header__mode .header__lightmode-text,
 .header__mode .header__darkmode-text {

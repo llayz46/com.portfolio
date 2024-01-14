@@ -42,7 +42,7 @@
       </div>
 
       <div class="header__mode">
-        <button class="header__lightmode active">
+        <button class="header__lightmode active js-light">
           <svg
             width="16"
             height="16"
@@ -58,7 +58,7 @@
           <p class="header__lightmode-text">Light mode</p>
         </button>
 
-        <button class="header__darkmode">
+        <button class="header__darkmode js-dark">
           <svg
             width="16"
             height="16"
@@ -177,11 +177,11 @@
       <!-- END : hero -->
 
       <!-- START : project -->
-      <section class="project">
+      <section class="project js-main">
         <div class="project__container-texts">
           <h3 class="project__breadcrumb">Portfolio</h3>
-          <h2 class="project__title">Mes projets récent</h2>
-          <p class="project__description">
+          <h2 class="project__title js-title">Mes projets récent</h2>
+          <p class="project__description js-content">
             Retrouvez ici tous mes projets ainsi que les technologies et
             langages utilisés pour les développer. Plongez dans cette collection
             de réalisations qui témoignent de mon engagement et de mon
@@ -234,12 +234,12 @@
       <!-- END : project -->
 
       <!-- START : contact -->
-      <section class="contact" id="contact">
+      <section class="contact js-main" id="contact">
         <div class="contact__flux">
           <div class="contact__container-texts">
             <h3 class="contact__breadcrumb">Me contacter</h3>
-            <h2 class="contact__title">Collaboration commerciale</h2>
-            <p class="contact__description">
+            <h2 class="contact__title js-title">Collaboration commerciale</h2>
+            <p class="contact__description js-content">
               Bienvenue sur ma page de contact ! Si vous avez des questions, des
               suggestions ou si vous souhaitez discuter de projets potentiels,
               n'hésitez pas à me contacter. Je suis toujours ouvert aux
@@ -273,7 +273,7 @@
               </div>
               <div class="contact__type-container">
                 <h4 class="contact__type">Téléphone</h4>
-                <p class="contact__type-content">(+33)6 73 65 01 38</p>
+                <p class="contact__type-content js-content">(+33) 6 73 65 01 38</p>
               </div>
             </div>
             <div class="contact__icon">
@@ -293,7 +293,7 @@
               </div>
               <div class="contact__type-container">
                 <h4 class="contact__type">Adresse mail</h4>
-                <p class="contact__type-content">pro@llayz.fr</p>
+                <p class="contact__type-content js-content">pro@llayz.fr</p>
               </div>
             </div>
           </div>
@@ -302,14 +302,14 @@
               action="mailto:monmail@mail.com"
               method="post"
               enctype="text/plain"
-              class="contact__form"
+              class="contact__form js-form"
             >
               <input
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Nom"
-                class="contact__form-input"
+                class="contact__form-input js-form js-form-border"
                 required
               />
               <input
@@ -317,7 +317,7 @@
                 name="email"
                 id="email"
                 placeholder="Email"
-                class="contact__form-input"
+                class="contact__form-input js-form js-form-border"
                 required
               />
               <input
@@ -325,10 +325,10 @@
                 name="phone"
                 id="phone"
                 placeholder="Téléphone"
-                class="contact__form-input"
+                class="contact__form-input js-form js-form-border"
                 required
               />
-              <textarea name="message" id="message" placeholder="Message" class="contact__form-input contact__form-input--message" required></textarea>  
+              <textarea name="message" id="message" placeholder="Message" class="contact__form-input contact__form-input--message js-form js-form-border" required></textarea>  
               <input type="submit" value="Envoyer le message" class="contact__form-button"/>
             </form>
             <svg class="contact__circle-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
@@ -446,25 +446,25 @@
 
         <li class="footer__list">
           <h3 class="footer__list-title">Ressources</h3>
-          <a href="#" class="footer__list-content">Github</a>
+          <a href="#" class="footer__list-content js-content">Github</a>
         </li>
 
         <li class="footer__list">
           <h3 class="footer__list-title">Légal</h3>
           <div class="footer__list-wrapper">
-            <a href="#" class="footer__list-content">Confidentialité</a>
-            <a href="#" class="footer__list-content">Contact & Support</a>
-            <a href="#" class="footer__list-content">CGU</a>
-            <a href="#" class="footer__list-content">Mentions Légales</a>
+            <a href="#" class="footer__list-content js-content">Confidentialité</a>
+            <a href="#" class="footer__list-content js-content">Contact & Support</a>
+            <a href="#" class="footer__list-content js-content">CGU</a>
+            <a href="#" class="footer__list-content js-content">Mentions Légales</a>
           </div>
         </li>
 
         <li class="footer__list">
           <h3 class="footer__list-title">Liens Rapides</h3>
           <div class="footer__list-wrapper">
-            <a href="#" class="footer__list-content">Accueil</a>
-            <a href="#" class="footer__list-content">Portfolio</a>
-            <a href="#" class="footer__list-content">Contact</a>
+            <a href="#" class="footer__list-content js-content">Accueil</a>
+            <a href="#" class="footer__list-content js-content">Portfolio</a>
+            <a href="#" class="footer__list-content js-content">Contact</a>
           </div>
         </li>
 
@@ -535,6 +535,10 @@
       </svg>        
     </section>
     <!-- END : footer -->
+
+    <!-- START : script -->
+    <script src="./javascript/darkmode.js"></script>
+    <!-- END : script -->
   </body>
   <!-- END : body -->
 </html>
