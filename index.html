@@ -21,22 +21,28 @@
   <!-- START : body -->
   <body>
     <!-- START : header -->
-    <header class="header">
+    <header class="header flux" id="home">
       <div class="header__container">
-        <div class="header__logo">
+        <a href="#home" class="header__logo">
           <img
             class="header__logo-image"
             src="./assets/icons/L.svg"
             alt="Logo layz"
           />
           <p class="header__logo-text">layz</p>
-        </div>
+        </a>
 
         <nav class="header__nav">
           <ul class="header__nav-list">
-            <li class="header__nav-link">Accueil</li>
-            <li class="header__nav-link">Portfolio</li>
-            <li class="header__nav-link">Contact</li>
+            <li>
+              <a class="header__nav-link" href="#home">Accueil</a>
+            </li>
+            <li>
+              <a class="header__nav-link" href="#project">Portfolio</a>
+            </li>
+            <li>
+              <a class="header__nav-link" href="#contact">Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -80,7 +86,7 @@
     <!-- START : main -->
     <main class="main">
       <!-- START : hero -->
-      <section class="hero">
+      <section class="hero flux">
         <h1 class="hero__title">Portfolio intermédiaire développé en SASS</h1>
         <p class="hero__description">
           Ce portfolio intérimaire offre un aperçu rapide de mes projets en
@@ -177,8 +183,8 @@
       <!-- END : hero -->
 
       <!-- START : project -->
-      <section class="project js-main">
-        <div class="project__container-texts">
+      <section class="project js-main" id="project">
+        <div class="project__container-texts flux">
           <h3 class="project__breadcrumb">Portfolio</h3>
           <h2 class="project__title js-title">Mes projets récent</h2>
           <p class="project__description js-content">
@@ -190,7 +196,7 @@
             collaborations futures.
           </p>
         </div>
-        <div class="project__container-cards">
+        <div class="project__container-cards flux">
           <div class="project__card">
             <img
               src="./assets/images/Alan-card-example.png"
@@ -235,7 +241,7 @@
 
       <!-- START : contact -->
       <section class="contact js-main" id="contact">
-        <div class="contact__flux">
+        <div class="contact__flux flux">
           <div class="contact__container-texts">
             <h3 class="contact__breadcrumb">Me contacter</h3>
             <h2 class="contact__title js-title">Collaboration commerciale</h2>
@@ -417,16 +423,16 @@
 
     <!-- START : footer -->
     <section class="footer">
-      <ul class="footer__list-container">
+      <ul class="footer__list-container flux">
         <li class="footer__list">
-          <div class="footer__logo">
+          <a href="#home" class="footer__logo">
             <img
               class="footer__logo-image"
               src="./assets/icons/L.svg"
               alt="Logo layz"
             />
             <p class="footer__logo-text">layz</p>
-          </div>
+          </a>
           <div class="footer__phone">
             <svg
               xmlns="http://www.w3.org/2000/svg"
