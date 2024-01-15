@@ -156,6 +156,11 @@ html {
   outline: none;
 }
 
+.project__card-button:active {
+  border: 1px solid #031361;
+  background-color: #031361;
+}
+
 .footer__social-link, .footer__list-content {
   transition: all 0.05s ease-out;
 }
@@ -400,6 +405,11 @@ html {
   outline: none;
 }
 
+.project__card-button:active {
+  border: 1px solid #031361;
+  background-color: #031361;
+}
+
 .footer__social-link, .footer__list-content {
   transition: all 0.05s ease-out;
 }
@@ -622,6 +632,11 @@ html {
   border: 1px solid #3758f9;
   color: #fff;
   outline: none;
+}
+
+.project__card-button:active {
+  border: 1px solid #031361;
+  background-color: #031361;
 }
 
 .footer__social-link, .footer__list-content {
@@ -848,6 +863,11 @@ html {
   border: 1px solid #3758f9;
   color: #fff;
   outline: none;
+}
+
+.project__card-button:active {
+  border: 1px solid #031361;
+  background-color: #031361;
 }
 
 .footer__social-link, .footer__list-content {
@@ -1123,6 +1143,11 @@ html {
   border: 1px solid #3758f9;
   color: #fff;
   outline: none;
+}
+
+.project__card-button:active {
+  border: 1px solid #031361;
+  background-color: #031361;
 }
 
 .footer__list-content, .footer__social-link {

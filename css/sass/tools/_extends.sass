@@ -102,6 +102,10 @@
     color: var.$color-light
     outline: none
 
+  &:active
+    border: 1px solid darken(var.$color-main, 40%)
+    background-color: darken(var.$color-main, 40%)
+
 // Transitions
 %transition-footer
   transition: all 0.05s ease-out
