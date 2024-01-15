@@ -83,14 +83,14 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title {
+.error__title, .hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.8rem;
 }
 
-.contact__container-texts .contact__title, .project__title {
+.error__type, .contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -109,7 +109,7 @@ html {
   line-height: 2.4rem;
 }
 
-.contact__form-input::placeholder, .contact__form-input, .contact__type-content, .contact__container-texts .contact__description, .project__description {
+.error__content, .contact__form-input::placeholder, .contact__form-input, .contact__type-content, .contact__container-texts .contact__description, .project__description {
   color: #637381;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -165,7 +165,7 @@ html {
   transition: all 0.05s ease-out;
 }
 
-.contact__form-button, .hero__button, .project__card-button {
+.error__return, .contact__form-button, .hero__button, .project__card-button {
   transition: all 0.12s ease-out;
 }
 
@@ -332,14 +332,14 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title {
+.error__title, .hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.8rem;
 }
 
-.contact__container-texts .contact__title, .project__title {
+.error__type, .contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -358,7 +358,7 @@ html {
   line-height: 2.4rem;
 }
 
-.contact__form-input::placeholder, .contact__form-input, .contact__type-content, .contact__container-texts .contact__description, .project__description {
+.error__content, .contact__form-input::placeholder, .contact__form-input, .contact__type-content, .contact__container-texts .contact__description, .project__description {
   color: #637381;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -414,7 +414,7 @@ html {
   transition: all 0.05s ease-out;
 }
 
-.contact__form-button, .hero__button, .project__card-button {
+.error__return, .contact__form-button, .hero__button, .project__card-button {
   transition: all 0.12s ease-out;
 }
 
@@ -561,14 +561,14 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title {
+.error__title, .hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.8rem;
 }
 
-.contact__container-texts .contact__title, .project__title {
+.error__type, .contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -587,7 +587,7 @@ html {
   line-height: 2.4rem;
 }
 
-.contact__form-input::placeholder, .contact__form-input, .contact__type-content, .contact__container-texts .contact__description, .project__description {
+.error__content, .contact__form-input::placeholder, .contact__form-input, .contact__type-content, .contact__container-texts .contact__description, .project__description {
   color: #637381;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -643,7 +643,7 @@ html {
   transition: all 0.05s ease-out;
 }
 
-.contact__form-button, .hero__button, .project__card-button {
+.error__return, .contact__form-button, .hero__button, .project__card-button {
   transition: all 0.12s ease-out;
 }
 
@@ -792,14 +792,14 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title {
+.error__title, .hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.8rem;
 }
 
-.project__title, .contact__container-texts .contact__title {
+.error__type, .project__title, .contact__container-texts .contact__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -818,7 +818,7 @@ html {
   line-height: 2.4rem;
 }
 
-.project__description, .contact__container-texts .contact__description, .contact__type-content, .contact__form-input, .contact__form-input::placeholder {
+.error__content, .project__description, .contact__container-texts .contact__description, .contact__type-content, .contact__form-input, .contact__form-input::placeholder {
   color: #637381;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -874,7 +874,7 @@ html {
   transition: all 0.05s ease-out;
 }
 
-.contact__form-button, .hero__button, .project__card-button {
+.error__return, .contact__form-button, .hero__button, .project__card-button {
   transition: all 0.12s ease-out;
 }
 
@@ -1072,14 +1072,14 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title {
+.error__title, .hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.8rem;
 }
 
-.project__title, .contact__container-texts .contact__title {
+.error__type, .project__title, .contact__container-texts .contact__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -1098,7 +1098,7 @@ html {
   line-height: 2.4rem;
 }
 
-.project__description, .contact__container-texts .contact__description, .contact__type-content, .contact__form-input, .contact__form-input::placeholder {
+.error__content, .project__description, .contact__container-texts .contact__description, .contact__type-content, .contact__form-input, .contact__form-input::placeholder {
   color: #637381;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -1154,7 +1154,7 @@ html {
   transition: all 0.05s ease-out;
 }
 
-.contact__form-button, .hero__button, .project__card-button {
+.error__return, .contact__form-button, .hero__button, .project__card-button {
   transition: all 0.12s ease-out;
 }
 
@@ -1281,4 +1281,223 @@ html {
 .footer__ellipse--bleft {
   bottom: 0;
   left: 0;
+}
+
+.header__container .header__logo, .header__container .header__nav, .header__mode .header__lightmode,
+.header__mode .header__darkmode, .project__card, .project__card-texts, .footer__logo, .footer__phone {
+  display: flex;
+  align-items: center;
+}
+
+.hero, .project__container-texts {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__container .header__logo-text, .footer__logo-text {
+  font-family: poppins, sans-serif;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 500;
+}
+
+.header__container .header__nav-link {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.project__breadcrumb, .contact__container-texts .contact__breadcrumb, .contact__type {
+  color: #3758f9;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+}
+
+.project__card-title {
+  color: #111928;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+.project__card-tech, .footer__phone-number {
+  color: #3758f9;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
+
+.hero__title, .error__title {
+  color: #fff;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 5.8rem;
+}
+
+.project__title, .contact__container-texts .contact__title, .error__type {
+  color: #111928;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+}
+
+.hero__description, .footer__list-title {
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+}
+
+.contact__form-input::-moz-placeholder {
+  color: #637381;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.project__description, .contact__container-texts .contact__description, .contact__type-content, .contact__form-input, .contact__form-input::placeholder, .error__content {
+  color: #637381;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.footer__list-content, .footer__copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.hero__button {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #3758f9;
+  border-radius: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  padding: 1.3rem 2.8rem;
+}
+
+.hero__button:hover, .hero__button:focus {
+  outline: none;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.project__card-button {
+  border: 1px solid #dfe4ea;
+  border-radius: 0.6rem;
+  color: #637381;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  padding: 1rem 2.8rem;
+}
+
+.project__card-button:hover, .project__card-button:focus {
+  background-color: #3758f9;
+  border: 1px solid #3758f9;
+  color: #fff;
+  outline: none;
+}
+
+.project__card-button:active {
+  border: 1px solid #031361;
+  background-color: #031361;
+}
+
+.footer__list-content, .footer__social-link {
+  transition: all 0.05s ease-out;
+}
+
+.contact__form-button, .error__return, .hero__button, .project__card-button {
+  transition: all 0.12s ease-out;
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    transform: translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.error {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.error__type {
+  color: #3758f9;
+  margin-bottom: 1rem;
+  animation: 1s 0s 1 slideFromTop;
+}
+.error__title {
+  color: #111928;
+  margin-bottom: 2rem;
+  animation: 1s 0s 1 fadeInRight;
+}
+.error__content {
+  color: #040817;
+  margin-bottom: 3.5rem;
+  animation: 1s 0s 1 fadeInLeft;
+}
+.error__return {
+  background-color: #3758f9;
+  color: #fff;
+  border-radius: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  padding: 1.3rem 2.8rem;
+  animation: 1s 0s 1 slideFromBottom;
+}
+.error__return:hover {
+  background-color: #031361;
 }/*# sourceMappingURL=style.css.map */
