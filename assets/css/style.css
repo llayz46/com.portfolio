@@ -91,7 +91,7 @@ html {
   line-height: 2.2rem;
 }
 
-.error__title, .hero__title {
+.hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
@@ -99,12 +99,12 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__title, .hero__title {
+  .hero__title {
     font-size: 4rem;
     line-height: 5rem;
   }
 }
-.error__type, .contact__container-texts .contact__title, .project__title {
+.contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -112,7 +112,7 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__type, .contact__container-texts .contact__title, .project__title {
+  .contact__container-texts .contact__title, .project__title {
     font-size: 3.6rem;
     line-height: 4.4rem;
   }
@@ -373,7 +373,7 @@ html {
   line-height: 2.2rem;
 }
 
-.error__title, .hero__title {
+.hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
@@ -381,12 +381,12 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__title, .hero__title {
+  .hero__title {
     font-size: 4rem;
     line-height: 5rem;
   }
 }
-.error__type, .contact__container-texts .contact__title, .project__title {
+.contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -394,7 +394,7 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__type, .contact__container-texts .contact__title, .project__title {
+  .contact__container-texts .contact__title, .project__title {
     font-size: 3.6rem;
     line-height: 4.4rem;
   }
@@ -637,7 +637,7 @@ html {
   line-height: 2.2rem;
 }
 
-.error__title, .hero__title {
+.hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
@@ -645,12 +645,12 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__title, .hero__title {
+  .hero__title {
     font-size: 4rem;
     line-height: 5rem;
   }
 }
-.error__type, .contact__container-texts .contact__title, .project__title {
+.contact__container-texts .contact__title, .project__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -658,7 +658,7 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__type, .contact__container-texts .contact__title, .project__title {
+  .contact__container-texts .contact__title, .project__title {
     font-size: 3.6rem;
     line-height: 4.4rem;
   }
@@ -911,7 +911,7 @@ html {
   line-height: 2.2rem;
 }
 
-.error__title, .hero__title {
+.hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
@@ -919,12 +919,12 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__title, .hero__title {
+  .hero__title {
     font-size: 4rem;
     line-height: 5rem;
   }
 }
-.error__type, .project__title, .contact__container-texts .contact__title {
+.project__title, .contact__container-texts .contact__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -932,7 +932,7 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .error__type, .project__title, .contact__container-texts .contact__title {
+  .project__title, .contact__container-texts .contact__title {
     font-size: 3.6rem;
     line-height: 4.4rem;
   }
@@ -1289,7 +1289,7 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title, .error__title {
+.hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
@@ -1297,12 +1297,12 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .hero__title, .error__title {
+  .hero__title {
     font-size: 4rem;
     line-height: 5rem;
   }
 }
-.project__title, .contact__container-texts .contact__title, .error__type {
+.project__title, .contact__container-texts .contact__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -1310,7 +1310,7 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .project__title, .contact__container-texts .contact__title, .error__type {
+  .project__title, .contact__container-texts .contact__title {
     font-size: 3.6rem;
     line-height: 4.4rem;
   }
@@ -1442,7 +1442,7 @@ html {
   }
 }
 .error {
-  background-color: #fff;
+  background: linear-gradient(to right top, #3758f9, #5f74fd, #7f90ff, #9eacff, #bdc7ff, #ced5ff, #dee2ff, #eef0ff, rgba(255, 152, 236, 0.1529411765), rgba(255, 85, 224, 0.1529411765), rgba(255, 183, 242, 0.1529411765), #fff7fe, #fbfbff, #ffffff);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -1451,11 +1451,17 @@ html {
   height: 100vh;
 }
 .error__type {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.8rem;
   color: #3758f9;
   margin-bottom: 1rem;
   animation: 1s 0s 1 slideFromTop;
 }
 .error__title {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 5.8rem;
   color: #111928;
   margin-bottom: 2rem;
   animation: 1s 0s 1 fadeInRight;
@@ -1525,7 +1531,7 @@ html {
   line-height: 2.2rem;
 }
 
-.hero__title, .error__title {
+.hero__title {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 700;
@@ -1533,12 +1539,12 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .hero__title, .error__title {
+  .hero__title {
     font-size: 4rem;
     line-height: 5rem;
   }
 }
-.project__title, .contact__container-texts .contact__title, .error__type {
+.project__title, .contact__container-texts .contact__title {
   color: #111928;
   font-size: 4rem;
   font-weight: 700;
@@ -1546,7 +1552,7 @@ html {
 }
 
 @media screen and (max-width: 500px) {
-  .project__title, .contact__container-texts .contact__title, .error__type {
+  .project__title, .contact__container-texts .contact__title {
     font-size: 3.6rem;
     line-height: 4.4rem;
   }
