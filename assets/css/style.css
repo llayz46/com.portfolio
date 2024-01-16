@@ -795,6 +795,11 @@ html {
   position: relative;
   z-index: 1;
 }
+@media screen and (max-width: 600px) {
+  .project {
+    padding-top: 8rem;
+  }
+}
 .project__container-texts {
   width: 46%;
 }
@@ -1062,11 +1067,17 @@ html {
   background-color: #fff;
   padding-top: 12rem;
   padding-bottom: 12rem;
-  padding-bottom: 8rem;
 }
 @media screen and (max-width: 1000px) {
   .contact {
     padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact {
+    padding-top: 0;
+    padding-bottom: 8rem;
   }
 }
 .contact__flux {
@@ -1228,7 +1239,7 @@ html {
   }
   .contact__form {
     box-shadow: none;
-    padding: 0;
+    width: 100%;
   }
 }
 
@@ -1669,6 +1680,11 @@ html {
 .footer {
   padding-top: 12rem;
   position: relative;
+}
+@media screen and (max-width: 600px) {
+  .footer {
+    padding-top: 8rem;
+  }
 }
 .footer__list-container {
   display: flex;
