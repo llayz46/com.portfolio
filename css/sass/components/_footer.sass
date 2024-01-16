@@ -8,6 +8,9 @@
     display: flex
     justify-content: space-between
 
+    @media screen and (max-width: 1000px)
+      flex-direction: column
+
   &__logo
     @extend %flex-align-center
     gap: 20px
@@ -31,10 +34,16 @@
   &__list
     padding-bottom: 10rem
 
+    @media screen and (max-width: 1000px)
+      padding-bottom: 4rem
+
     &-title
       @extend %text-big-content
       font-weight: 600
       margin-bottom: 3.5rem
+
+      @media screen and (max-width: 1000px)
+        margin-bottom: 1.5rem
 
     &-wrapper
       display: flex

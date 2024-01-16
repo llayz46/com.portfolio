@@ -10,6 +10,9 @@
     width: 46%
     @extend %flex-justify-center
 
+    @media screen and (max-width: 1100px)
+      width: 80%
+
   &__breadcrumb
     @extend %text-breadcrumb
     text-align: center
@@ -29,10 +32,20 @@
     display: flex
     justify-content: space-between
 
+    @media screen and (max-width: 1000px)
+      flex-wrap: wrap
+
   &__card
     width: 31%
     @extend %flex-align-center
     flex-direction: column
+
+    @media screen and (max-width: 1000px)
+      width: 48%
+      flex-wrap: wrap
+
+    @media screen and (max-width: 700px)
+      width: 100%
 
     &-texts
       @extend %flex-align-center

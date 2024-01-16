@@ -38,7 +38,7 @@
     object-position: top center
     border-radius: 13px 13px 0 0
 
-  &__dot-grid--tleft,
+  &__dot-grid--bleft,
   &__dot-grid--tright
     position: absolute
 
@@ -46,6 +46,23 @@
     top: -25px
     right: -25px
 
-  &__dot-grid--tleft
+  &__dot-grid--bleft
     bottom: 5px
     left: -40px
+
+@media screen and (max-width: 800px)
+  .hero
+    width: 80%
+
+@media screen and (max-width: 500px)
+  .hero
+    &__dot-grid
+      transform: scale(0.75)
+
+      &--bleft
+        bottom: -8px
+        left: -25px
+
+      &--tright
+        top: -35px
+        right: -35px

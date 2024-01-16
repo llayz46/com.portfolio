@@ -39,6 +39,14 @@
         &:hover
           text-decoration-color: utils.$color-light
 
+    @media screen and (max-width: 1100px)
+      .header__nav
+        margin-left: 50px
+
+      @media screen and (max-width: 900px)
+        .header__nav-list
+          display: none
+
   &__mode
     display: flex
     background-color: utils.$color-light
@@ -61,6 +69,11 @@
         font-size: 1.4rem
         font-weight: 500
         line-height: 2.2rem
+
+    @media screen and (max-width: 600px)
+      .header__lightmode-text,
+      .header__darkmode-text
+        display: none
 
     .active
       background-color: #f9fafb

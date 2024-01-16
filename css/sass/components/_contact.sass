@@ -5,12 +5,24 @@
   padding-top: 12rem
   padding-bottom: 12rem
 
+  @media screen and (max-width: 1000px)
+    padding-top: 8rem
+  padding-bottom: 8rem
+
   &__flux
     display: flex
+
+    @media screen and (max-width: 1000px)
+      flex-wrap: wrap
 
   &__container-texts
     width: 60%
     padding-right: 8%
+
+    @media screen and (max-width: 1000px)
+      width: 100%
+      padding-right: 0
+      text-align: center
 
     .contact__breadcrumb
       @extend %text-breadcrumb
@@ -23,6 +35,14 @@
     .contact__description
       @extend %text-mid-content
       margin-bottom: 5rem
+
+  &__wrapper
+    @media screen and (max-width: 1000px)
+      display: flex
+      justify-content: space-around
+
+    @media screen and (max-width: 600px)
+      flex-direction: column
 
   &__icon
     display: flex
@@ -45,6 +65,15 @@
   &__container-form
     width: 39%
     position: relative
+
+    @media screen and (max-width: 1300px)
+      margin-right: 4rem
+
+    @media screen and (max-width: 1000px)
+      width: 70%
+      margin-top: 5rem
+      margin-left: auto
+      margin-right: auto
 
   &__form
     display: flex
@@ -112,3 +141,29 @@
     position: absolute
     bottom: -4rem
     left: -2.5rem
+
+    @media screen and (max-width: 1160px)
+      bottom: -1.5rem
+
+    @media screen and (max-width: 1125px)
+      bottom: 1rem
+
+    @media screen and (max-width: 1045px)
+      bottom: 3rem
+
+    @media screen and (max-width: 1000px)
+      bottom: -4rem
+      left: -2.5rem
+
+  @media screen and (max-width: 1000px)
+    &__container-form
+      width: 100%
+
+    &__circle-icon,
+    &__dot-grid-tright,
+    &__dot-grid-bleft
+      display: none
+
+    &__form
+      box-shadow: none
+      padding: 0
