@@ -830,7 +830,7 @@ html {
   }
 }
 .project__card {
-  width: 31%;
+  width: 32%;
   flex-direction: column;
 }
 @media screen and (max-width: 1000px) {
@@ -853,6 +853,11 @@ html {
   width: 88%;
   text-align: center;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+}
+@media screen and (max-width: 1250px) {
+  .project__card-texts {
+    padding: 2rem 5rem;
+  }
 }
 .project__card-tech {
   margin-bottom: 0.6rem;

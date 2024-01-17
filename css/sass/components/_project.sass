@@ -39,7 +39,7 @@
       flex-wrap: wrap
 
   &__card
-    width: 31%
+    width: 32%
     @extend %flex-align-center
     flex-direction: column
 
@@ -60,6 +60,9 @@
       width: 88%
       text-align: center
       box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08)
+
+      @media screen and (max-width: 1250px)
+        padding: 2rem 5rem
     
     &-tech
       @extend %text-card-content
