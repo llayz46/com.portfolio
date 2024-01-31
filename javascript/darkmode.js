@@ -11,6 +11,19 @@ const cardBtn = document.querySelectorAll('.js-cards-btn')
 const formBg = document.querySelectorAll('.js-form')
 const formBorder = document.querySelectorAll('.js-form-border')
 
+let sizeWindow = window.innerWidth
+function formQuery(x) {
+  if (x <= 500) {
+    formBg.forEach(function(each) {
+      each.style.backgroundColor = "rgb(4, 8, 23)"
+    })
+  } else {
+    formBg.forEach(function(each) {
+      each.style.backgroundColor = "#0e163e"
+    })
+  }
+}
+
 switcherNight.addEventListener('click', () => {
   switcherDay.classList.remove('active')
   switcherNight.classList.add('active-night')
@@ -42,8 +55,11 @@ switcherNight.addEventListener('click', () => {
     each.style.border ="1px solid #3758f9"
   })
 
-  formBg.forEach(function(each) {
-    each.style.backgroundColor = "#0e163e"
+  formQuery(sizeWindow)
+
+  window.addEventListener('resize', () => {
+    sizeWindow = window.innerWidth
+    formQuery(sizeWindow)
   })
 
   formBorder.forEach(function(each) {
@@ -84,6 +100,12 @@ switcherDay.addEventListener('click', () => {
 
   formBg.forEach(function(each) {
     each.style.backgroundColor = ""
+  })
+
+  window.addEventListener('resize', () => {
+    formBg.forEach(function(each) {
+      each.style.backgroundColor = ""
+    })
   })
 
   formBorder.forEach(function(each) {

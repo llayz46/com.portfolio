@@ -32,6 +32,12 @@ button {
     width: auto;
   }
 }
+@media screen and (max-width: 1300px) and (max-width: 500px) {
+  .flux {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
 body {
   background-color: #3758f9;
   font-family: Inter, sans-serif;
@@ -579,6 +585,14 @@ html {
   }
 }
 @media screen and (max-width: 500px) {
+  .hero {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .hero__title {
+    margin-top: 60px;
+  }
   .hero__dot-grid {
     transform: scale(0.75);
   }
@@ -1245,6 +1259,11 @@ html {
   .contact__form {
     box-shadow: none;
     width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact__form {
+    padding: 0;
   }
 }
 
