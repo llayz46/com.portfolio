@@ -1,0 +1,52 @@
+@use '../utils/_all' as utils
+@use 'sass:math'
+
+.hero
+  display: flex
+  margin-top: utils.$marge
+  margin-bottom: utils.$marge
+
+  @media screen and (max-width: 1000px)
+    margin-top: calc(utils.$marge * 0.6)
+    margin-bottom: calc(utils.$marge * 0.6)
+    flex-direction: column
+    gap: 3.2rem
+
+  &__container-texts,
+  &__container-images
+    width: 50%
+
+    @media screen and (max-width: 1000px)
+      width: 100%
+
+  &__container-texts
+    display: flex
+    flex-direction: column
+    gap: 2.4rem
+    padding-right: math.div(utils.$marge, 2)
+
+    @media screen and (max-width: 1000px)
+      padding-right: 0
+
+  &__button-wrapper
+    display: flex
+    gap: 1rem
+
+  &__presentation
+    @extend %flex-alIt-center
+    gap: 1.5rem
+
+  &__container-images
+    @extend %flex-alIt-center
+    justify-content: center
+    padding-left: math.div(utils.$marge, 2)
+
+    @media screen and (max-width: 1000px)
+      padding-left: 0
+
+  &__phone-mockup
+    position: absolute
+
+    @media screen and (max-width: 1000px)
+      position: relative
+      height: 410px

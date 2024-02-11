@@ -1,0 +1,16 @@
+@use '../utils/_all' as utils
+
+.testimonials
+  &__nav
+    &-list
+      display: flex
+      gap: utils.$size-xxs
+
+    &-item
+      width: utils.$size-xxs
+      height: utils.$size-xxs
+      border-radius: 10px
+      background-color: utils.$color-light-grey
+      &.active
+        background-color: utils.$color-main
+        width: utils.$size-xxs * 4

@@ -1,0 +1,47 @@
+@use '../utils/_variables' as var
+
+.icon
+
+  &__features-wrap
+    display: flex
+    position: relative
+    width: fit-content
+    border-radius: 100%
+    padding: 1.5rem
+    background-color: var.$features-red
+
+    &--yellow
+      background-color: var.$features-yellow
+
+    &--blue
+      background-color: var.$features-blue
+
+  &__features-border
+    border: 2px dashed
+    border-radius: 100%
+    position: absolute
+    width: 101%
+    height: 101%
+
+    &--red
+      border-color: var.$features-red
+      bottom: 3px
+      left: -8px
+
+    &--yellow
+      border-color: var.$features-yellow
+      bottom: 3px
+      right: -8px
+
+    &--blue
+      border-color: var.$features-blue
+      top: 3px
+      right: -8px
+
+.testimonials__arrow
+  width: 4.8rem
+  height: 4.8rem
+  fill: var.$color-light-grey
+
+  @media screen and (max-width: 1000px)
+    display: none

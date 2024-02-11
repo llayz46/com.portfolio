@@ -1,0 +1,66 @@
+@use '../utils/_all' as utils
+@use 'sass:math'
+
+.services
+  @extend %padding-8-0
+
+  &__wrapper
+    display: flex
+
+    @media screen and (max-width: 1000px)
+      flex-direction: column
+
+  &__container-texts,
+  &__container-images
+    width: 50%
+    display: flex
+    justify-content: center{}
+
+    @media screen and (max-width: 1000px)
+      width: 100%
+
+  &__container-texts
+    flex-direction: column
+    gap: utils.$size-xxs * 3
+    padding-right: math.div(utils.$marge, 2)
+
+    @media screen and (max-width: 1000px)
+      padding-right: 0
+
+  &__button
+    width: fit-content
+
+    @media screen and (max-width: 1000px)
+      margin-left: auto
+      margin-right: auto
+
+  &__container-images
+    @extend %flex-alIt-center
+    position: relative
+    padding-left: math.div(utils.$marge, 2)
+
+    @media screen and (max-width: 1000px)
+      padding-left: 0
+
+      svg
+        position: absolute
+        max-width: 90%
+        z-index: 0
+
+  &__phone-mockup
+    position: absolute
+    scale: 0.95
+
+    @media screen and (max-width: 1000px)
+      position: relative
+      max-width: 90%
+
+  &__frame-wrapper
+    position: absolute
+    display: flex
+    height: 130px
+    gap: utils.$size-xxs
+    left: 5rem
+
+    @media screen and (max-width: 1000px)
+      display: none

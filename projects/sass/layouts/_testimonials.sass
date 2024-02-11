@@ -1,0 +1,73 @@
+@use '../utils/_all' as utils
+@use 'sass:math'
+
+.testimonials
+
+  &__wrapper
+    display: flex
+    @extend %padding-8-0
+
+    @media screen and (max-width: 1000px)
+      flex-direction: column
+      align-items: center
+      gap: 3.2rem
+
+  &__container-images,
+  &__container-texts
+    width: 50%
+    display: flex
+    align-items: center
+    gap: 2.4rem
+
+    @media screen and (max-width: 1000px)
+      width: 100%
+      justify-content: center
+
+  &__container-images
+    margin-right: math.div(utils.$marge, 2)
+    position: relative
+
+    @media screen and (max-width: 1000px)
+      margin-right: 0
+
+  &__user
+    width: 100%
+
+    @media screen and (max-width: 1000px)
+      width: 50%
+
+    @media screen and (max-width: 600px)
+      width: 75%
+
+  &__container-texts
+    margin-left: math.div(utils.$marge, 2)
+
+    @media screen and (max-width: 1000px)
+      text-align: center
+      margin-left: 0
+      display: block
+
+  &__user-frame
+    position: absolute
+    right: -(utils.$size-xxs * 6)
+    top: utils.$size-xxs * 6
+
+    @media screen and (max-width: 1000px)
+      display: none
+
+  &__nav
+    margin-top: utils.$size-xxs * 6
+
+    @media screen and (max-width: 1000px)
+      display: flex
+      justify-content: center
+      margin-top: utils.$size-xxs * 4
+
+.quote__text
+  margin: (utils.$size-xxs * 2) 0
+
+.secondTEST
+  display: none
+
+.activeCarousel
+  display: flex

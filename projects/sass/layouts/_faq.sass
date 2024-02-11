@@ -1,0 +1,10 @@
+@use '../utils/_all' as utils
+
+.faq
+  @extend %padding-8-0
+
+  &__title
+    margin-bottom: utils.$marge
+
+    @media screen and (max-width: 1000px)
+      margin-bottom: utils.$size-xxs * 4

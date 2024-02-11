@@ -1,0 +1,133 @@
+@use '../utils/_all' as utils
+
+// HERO
+.hero__title
+  font-size: 7.2rem
+  font-weight: 800
+  line-height: 7.9rem
+  color: utils.$color-text
+
+.hero__desc
+  @extend %font-size-18-28-400
+
+@media screen and (max-width: 1000px)
+  .hero__title,
+  .hero__desc
+    text-align: center
+
+@media screen and (max-width: 700px)
+  .hero__title
+    font-size: 4rem
+    font-weight: 700
+    line-height: 4.4rem
+
+// FEATURES
+.features__card
+  &-title
+    @extend %font-size-24-24-700
+    color: utils.$color-text
+
+  &-text
+    @extend %font-size-18-28-400
+
+// CONTENT
+.content
+  &__title
+    @extend %font-size-56-60-800
+
+  &__info
+    @extend %font-size-18-28-400
+    text-align: center
+
+  &__accordion-title
+    @extend %font-size-20-22-500
+
+  &__accordion-info
+    @extend %font-size-18-28-400
+
+// TESTIMONIALS
+.testimonials
+  &__title
+    font-size: 2rem
+    font-weight: 700
+    letter-spacing: 0.3rem
+    color: utils.$color-grey
+
+.quote
+  &__text
+    @extend %font-size-24-38-400
+    color: utils.$color-text
+
+  &__open,
+  &__close
+    font-size: 3.2rem
+    font-weight: 700
+    line-height: 3.5rem
+
+    @media screen and (max-width: 1000px)
+      font-size: 1.8rem
+      font-weight: 400
+      line-height: 2.8rem
+
+  &__open
+    color: utils.$features-yellow
+
+  &__close
+    color: utils.$features-red
+
+  &__footer-text
+    @extend %font-size-18-28-400
+    line-height: normal
+
+    &-strong
+      @extend %font-size-20-22-500
+
+// FAQ
+.faq
+  &__title
+    @extend %font-size-56-60-800
+
+  &__question-title
+    @extend %font-size-24-38-400
+    color: utils.$color-main
+
+  &__answers
+    @extend %font-size-18-28-400
+
+// SERVICES
+.services
+  &__title
+    @extend %font-size-56-60-800
+    text-align: left
+
+    @media screen and (max-width: 1000px)
+      text-align: center
+
+  &__info
+    @extend %font-size-18-28-400
+
+    @media screen and (max-width: 1000px)
+      text-align: center
+
+// FOOTER
+.footer
+  &__item
+    &-title
+      @extend %font-size-16-24-500
+      color: utils.$color-grey
+
+      @media screen and (max-width: 1000px)
+        text-align: center
+    
+    &-link
+      @extend %font-size-16-22-400
+
+      @media screen and (max-width: 1000px)
+        text-align: center
+
+    @media screen and (min-width: utils.$desktop)
+      .footer__item-link:hover
+        color: darken(utils.$color-grey, 33%)
+
+  &__copyright
+    @extend %font-size-16-22-400

@@ -1,0 +1,75 @@
+@use '../utils/_variables' as var
+
+// Fonts
+%font-size-56-60-800
+  font-size: 5.6rem
+  font-weight: 800
+  line-height: 6rem
+  color: var.$color-text
+  text-align: center
+
+  @media screen and (max-width: 1000px)
+    font-size: 3.2rem
+    font-weight: 700
+    line-height: 3.5rem
+
+%font-size-24-38-400
+  font-size: 2.4rem
+  font-weight: 400
+  line-height: 3.8rem
+
+  @media screen and (max-width: 1000px)
+    font-size: 1.8rem
+    font-weight: 400
+    line-height: 2.8rem
+
+%font-size-24-24-700
+  font-size: 2.4rem
+  font-weight: 700
+  line-height: 2.4rem
+
+%font-size-20-22-500
+  font-size: 2rem
+  font-weight: 500
+  line-height: 2.2rem
+  color: var.$color-text
+
+%font-size-18-28-400
+  font-size: 1.8rem
+  font-weight: 400
+  line-height: 2.8rem
+  color: var.$color-text
+
+  @media screen and (max-width: 700px)
+    font-size: 1.6rem
+    font-weight: 400
+    line-height: 2.2rem
+
+%font-size-16-24-500
+  font-size: 1.6rem
+  font-weight: 500
+  line-height: 2.4rem
+
+%font-size-16-22-400
+  font-size: 1.6rem
+  font-weight: 400
+  line-height: 2.2rem
+  color: var.$color-grey
+
+// Flex
+%flex-alIt-center
+  display: flex
+  align-items: center
+
+// Padding
+%padding-8-0
+  padding: 8rem 0
+
+  @media screen and (max-width: 1000px)
+    padding: 4.8rem 0
+
+// Others
+%accordion-hide
+  height: 0
+  overflow: hidden
+  transition: 0.3s
