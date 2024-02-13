@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List - Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="vw-100 vh-100">
+    <div class="d-flex flex-column align-items-center mx-auto">
+      <h1 class="display-2 fw-medium text-light my-4">ToDo List - Bootstrap</h1>
+      <div class="d-flex gap-3 justify-content-center mb-4">
+        <input
+          class="form-control border-0 col-md-8 js-task-input"
+          type="text"
+          placeholder="Ajouter une tâche"
+          name="task"
+        />
+        <input class="btn btn-primary btn-md fw-medium js-task-submit" type="button" value="Ajouter"/>
+      </div>
+      <ul class="p-0 js-task-list">
+        
+      </ul>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="./script.js"></script> -->
+    <script src="./main.js"></script>
+  </body>
+</html>
