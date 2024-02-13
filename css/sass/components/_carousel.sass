@@ -1,0 +1,21 @@
+@use '../tools/all' as all
+
+.splide__arrow
+	background: none
+	opacity: 1
+
+	&:hover
+		svg
+			fill: all.$color-accent
+
+	svg
+		width: 40px
+		height: 40px
+		fill: all.$color-main
+		@extend %transition-button
+
+	&--prev
+		left: -4rem
+
+	&--next
+		right: -4rem

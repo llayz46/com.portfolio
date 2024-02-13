@@ -29,17 +29,10 @@
   &__description
     @extend %text-mid-content
     text-align: center
-    margin-bottom: 6rem 
-
-  &__container-cards
-    display: flex
-    justify-content: space-between
-
-    @media screen and (max-width: 1000px)
-      flex-wrap: wrap
+    margin-bottom: 6rem
 
   &__card
-    width: 32%
+    width: 100%
     @extend %flex-align-center
     flex-direction: column
 
@@ -53,13 +46,13 @@
     &-texts
       @extend %flex-align-center
       flex-direction: column
-      transform: translateY(-50%)
-      background-color: utils.$color-light
+      border-left: 1px solid utils.$color-main-dark
+      border-right: 1px solid utils.$color-main-dark
+      border-bottom: 1px solid utils.$color-main-dark
       padding: 3.4rem 9rem
-      border-radius: 0.8rem
-      width: 88%
+      border-radius: 0rem 0rem 0.8rem 0.8rem
+      width: 100%
       text-align: center
-      box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08)
 
       @media screen and (max-width: 1250px)
         padding: 2rem 5rem
@@ -76,5 +69,5 @@
       @extend %button-mid
 
     &-image
-      border-radius: 1rem
+      border-radius: 1rem 1rem 0rem 0rem 
       width: 100%
