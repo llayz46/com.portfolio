@@ -1,0 +1,62 @@
+@use '../tools/all' as utils
+
+.skills
+  background-color: darken(utils.$color-light, 5%)
+  padding-top: 12rem
+  padding-bottom: 12rem
+
+  @media screen and (max-width: 600px)
+    padding-top: 8rem
+    padding-bottom: 8rem
+
+  &__breadcrumb
+    @extend %text-breadcrumb
+    text-align: center
+    padding-bottom: 0.8rem
+
+  &__title
+    @extend %text-mid-title
+    text-align: center
+    padding-bottom: 1.2rem
+
+  &__description
+    @extend %text-mid-content
+    text-align: center
+    margin-bottom: 6rem
+
+  &__brand-container
+    white-space: nowrap
+    overflow: hidden
+    position: relative
+
+    &::before,
+    &::after
+      position: absolute
+      top: 0
+      height: 100%
+      width: 125px
+      content: ''
+      z-index: 2
+
+    &::before
+      +utils.fade-on-side(left)
+
+    &::after
+      +utils.fade-on-side(right)
+
+    &:hover .skills__brand
+      animation-play-state: paused
+
+  &__brand
+    display: inline-block
+    animation: slide 30s linear infinite
+
+    &-item
+      width: 200px
+      height: 75px
+
+@keyframes slide
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-100%)

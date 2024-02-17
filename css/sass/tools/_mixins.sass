@@ -1,0 +1,9 @@
+@use './_variables' as var
+
+@mixin fade-on-side($side)
+  @if $side == left
+    left: 0
+    background: linear-gradient(to left, #f2f2f200, darken(var.$color-light, 5%))
+  @else if $side == right
+    right: 0
+    background: linear-gradient(to right, #f2f2f200, darken(var.$color-light, 5%))
