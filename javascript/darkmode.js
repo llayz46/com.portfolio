@@ -11,7 +11,8 @@ const cardBtn = document.querySelectorAll('.js-cards-btn')
 const formBg = document.querySelectorAll('.js-form')
 const formBorder = document.querySelectorAll('.js-form-border')
 const skillsBg = document.querySelector('.js-skills')
-// const skillsBrand = document.querySelector('.js-skills-brand')
+const skillsFadeLeft = document.querySelector('.js-skills-fade-left')
+const skillsFadeRight = document.querySelector('.js-skills-fade-right')
 
 let sizeWindow = window.innerWidth
 function formQuery(x) {
@@ -69,6 +70,9 @@ switcherNight.addEventListener('click', () => {
   })
 
   skillsBg.style.backgroundColor = "#060b20"
+
+  skillsFadeLeft.style.background = "linear-gradient(to right, #060b20, transparent)"
+  skillsFadeRight.style.background = "linear-gradient(to left, #060b20, transparent)"
 })
 
 switcherDay.addEventListener('click', () => {
@@ -117,5 +121,8 @@ switcherDay.addEventListener('click', () => {
   })
 
   skillsBg.style.backgroundColor = ""
+
+  skillsFadeLeft.style.background = ""
+  skillsFadeRight.style.background = ""
 })
 

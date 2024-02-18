@@ -29,21 +29,6 @@
     overflow: hidden
     position: relative
 
-    &::before,
-    &::after
-      position: absolute
-      top: 0
-      height: 100%
-      width: 125px
-      content: ''
-      z-index: 2
-
-    &::before
-      +utils.fade-on-side(left)
-
-    &::after
-      +utils.fade-on-side(right)
-
     &:hover .skills__brand
       animation-play-state: paused
 
@@ -54,6 +39,20 @@
     &-item
       width: 200px
       height: 75px
+
+  &__side-fade
+    position: absolute
+    top: 0
+    height: 100%
+    width: 125px
+    content: ''
+    z-index: 2
+
+    &--left
+      +utils.fade-on-side(left)
+
+    &--right
+      +utils.fade-on-side(right)
 
 @keyframes slide
   0%
