@@ -10,6 +10,8 @@ const cardText = document.querySelectorAll('.js-cards-text')
 const cardBtn = document.querySelectorAll('.js-cards-btn')
 const formBg = document.querySelectorAll('.js-form')
 const formBorder = document.querySelectorAll('.js-form-border')
+const skillsBg = document.querySelector('.js-skills')
+// const skillsBrand = document.querySelector('.js-skills-brand')
 
 let sizeWindow = window.innerWidth
 function formQuery(x) {
@@ -65,6 +67,8 @@ switcherNight.addEventListener('click', () => {
   formBorder.forEach(function(each) {
     each.style.border = "1px solid #3758f9"
   })
+
+  skillsBg.style.backgroundColor = "#060b20"
 })
 
 switcherDay.addEventListener('click', () => {
@@ -111,5 +115,7 @@ switcherDay.addEventListener('click', () => {
   formBorder.forEach(function(each) {
     each.style.border = ""
   })
+
+  skillsBg.style.backgroundColor = ""
 })
 
