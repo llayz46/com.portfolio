@@ -52,14 +52,14 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   xhr.send(JSON.stringify({
     Messages: [{
       From: {
-        Email: "your@email.com",
-        Name: "Your Name"
+        Email: "crf450rbylel@gmail.com",
+        Name: "TEST"
       },
       To: [{
         Email: "pro@llayz.fr",
         Name: "llayz.fr"
       }],
-      Subject: "New message from contact form",
+      Subject: "Nouveau message depuis le site llayz.fr",
       TextPart: "Name: " + formData.name + "\nEmail: " + formData.email + "\nMessage: " + formData.message
     }]
   }));
