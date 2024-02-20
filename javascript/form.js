@@ -63,4 +63,24 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       TextPart: "Name: " + formData.name + "\nEmail: " + formData.email + "\nMessage: " + formData.message
     }]
   }));
+
+  fetch("https://api.mailjet.com/v3.1/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log("Message sent successfully!");
+      document.getElementById("contact-form").reset(); // Reset form after successful submission
+    } else {
+      throw new Error("Error sending message");
+    }
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    alert("An error occurred. Please try again later.");
+  });
 });
