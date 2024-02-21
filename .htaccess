@@ -1,9 +1,0 @@
-DirectoryIndex index.html
-
-RewriteEngine On
-
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{REQUEST_FILENAME}\.html -f
-
-RewritreRule ^(.*)$ $1.html [NC,L]
