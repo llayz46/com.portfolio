@@ -16,7 +16,7 @@ const randomColor = () => {
         color += Math.floor(Math.random() * 16).toString(16) // Génère une valeur hexadécimale entre 0 et F
     }
 
-    return `linear-gradient(45deg, ${color} 0%, ${darkenColor(color, 40)} 100%)`
+    return `linear-gradient(45deg, ${color} 0%, ${darkenColor(color, 50)} 100%)`
 }
 
 // Fonction pour assombrir une couleur

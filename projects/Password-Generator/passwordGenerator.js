@@ -38,18 +38,16 @@ let passwordLength = document.querySelector('.js-length')
 passwordLength.value = 8
 
 const optionsChecker = () => {
-    if (majBtn.checked === false && numBtn.checked === false && speBtn.checked === false) {
-        passwordContainer = 'abcdefghijklmnopqrstuvwxyz'
-    } else {
-        if (majBtn.checked) {
-            passwordContainer += majChars
-        }
-        if (numBtn.checked) {
-            passwordContainer += numChars
-        }
-        if (speBtn.checked) {
-            passwordContainer += speChars
-        }
+    passwordContainer = 'abcdefghijklmnopqrstuvwxyz'
+
+    if (majBtn.checked && !passwordContainer.includes(majChars)) {
+        passwordContainer += majChars
+    }
+    if (numBtn.checked && !passwordContainer.includes(numChars)) {
+        passwordContainer += numChars
+    }
+    if (speBtn.checked && !passwordContainer.includes(speChars)) {
+        passwordContainer += speChars
     }
 }
 
@@ -95,6 +93,7 @@ const startPasswordGenerator = () => {
         optionsChecker()
 
         passwordGenerator()
+        console.log(passwordContainer) // TO DELETE
 
         if (document.querySelector('.gen__container') < 1 || document.querySelector('.gen__password') < 1) {
             elementCreator()
