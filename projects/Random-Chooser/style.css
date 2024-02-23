@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: url(/assets/images/RC-BG.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.random__title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+
+@media screen and (max-width: 475px) {
+  .random__title {
+    font-size: 3rem;
+  }
+}
+
+.random__form {
+  padding-bottom: 60px;
+}
+
+.random__choice-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.random__choice {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.random__choice-button {
+  width: 1rem;
+}
