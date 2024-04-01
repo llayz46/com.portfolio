@@ -126,3 +126,26 @@ switcherDay.addEventListener('click', () => {
   skillsFadeRight.style.background = ""
 })
 
+// Stocker en localStorage le thème choisi
+const selectedTheme = (btn) => {
+  if (btn === switcherNight) {
+    switcherNight.addEventListener('click', () => {
+      localStorage.setItem('theme', 'dark')
+    })
+  } else {
+    switcherDay.addEventListener('click', () => {
+      localStorage.setItem('theme', 'light')
+    })
+  }
+}
+
+selectedTheme(switcherNight)
+selectedTheme(switcherDay)
+
+// Récupérer le thème stocké en localStorage
+const currentTheme = localStorage.getItem('theme')
+if (currentTheme === 'dark') {
+  switcherNight.click()
+} else {
+  switcherDay.click()
+}
