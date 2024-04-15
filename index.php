@@ -56,6 +56,12 @@ $projects = [
     'tech' => 'JavaScript',
     'link' => './projects/Calculator/index.html',
     'image' => 'Calculator-example.jpg'
+  ],
+  [
+    'title' => 'Detailing Store',
+    'tech' => 'Wordpress',
+    'link' => 'https://llayz.store/',
+    'image' => 'Detailing-example.jpg'
   ]
 ];
 ?>
