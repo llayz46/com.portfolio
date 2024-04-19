@@ -21,7 +21,7 @@
           </clipPath>
         </defs>
       </svg>
-      <p class="font-GeneralSans-Variable font-semibold bg-red-600">llayz</p>
+      <p class="font-semibold bg-red-600">llayz</p>
     </div>
   </header>
 </body>
