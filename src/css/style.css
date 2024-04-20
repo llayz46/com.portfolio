@@ -2,11 +2,68 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@font-face {
-  font-family: 'GeneralSans-Variable';
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
-  src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Variable.woff') format('woff');
+@layer base {
+  @font-face {
+    font-family: 'GeneralSans-Variable';
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+    src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
+          url('../fonts/GeneralSans-Variable.woff') format('woff');
+  };
 }
+
+.textLarge {
+  @apply text-lg leading-relaxed font-semibold;
+}
+
+.textNav {
+  @apply text-base leading-5 text-textColors-navPrimary font-medium;
+}
+
+.buttonPrimary {
+  @apply font-medium text-sm leading-6 text-textColors-primary;
+}
+
+.titleLarge {
+  @apply font-semibold text-3xl text-textColors-primary;
+}
+
+.textMedium {
+  @apply text-base font-medium text-textColors-secondary leading-snug tracking-wide;
+}
+
+.badgePrimary {
+  @apply text-base leading-snug text-accentColor-100 py-1 px-4 rounded-full bg-accentColor-10 border border-accentColor-100 inline-block relative overflow-hidden backdrop-blur-sm after:absolute after:inset-0 after:animate-shiny-badge-slide after:bg-accentColor-100/10;
+}
+
+.badgeSkill {
+  @apply p-1.5 bg-accentColor-10 border border-accentColor-100 rounded relative overflow-hidden backdrop-blur-sm after:absolute after:inset-0 after:animate-shiny-badge-slide after:bg-accentColor-100/10;
+}
+
+@keyframes shiny-badge-slide {
+  0% {
+    transform: translateX(-110%) skew(-16deg);
+  }
+  15%, to {
+    transform: translateX(110%) skew(-16deg);
+  }
+}
+
+.after\:animate-shiny-badge-slide:after {
+  content: "";
+  display: inline-block;
+  animation: shiny-badge-slide 7s infinite;
+}
+
+@keyframes marquee {
+  to {
+      transform: translate(-100%)
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite
+}
+
+/* max-w-5xl mx-auto */
