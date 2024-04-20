@@ -215,14 +215,47 @@
     </div>
   </section>
 
-  <section class="flex gap-20 items-center mx-56 pt-20 pb-24 border-b border-borderColor">
+  <section class="flex flex-col gap-14 items-center pt-20 pb-24 border-b border-borderColor">
     <div class="flex flex-col max-w-max mx-auto">
       <p class="badgePrimary mx-auto">SKILLS</p>
       <h2 class="titleLarge pb-4 pt-3 text-center">Mastered technologies</h2>
       <p class="textMedium text-center">Here are all the technologies that I have mastered and use for <br>development. I am still learning these technologies and a few others.</p>
     </div>
-    <div>
-      <ul>
+    <div class="overflow-x-hidden w-full side-mask flex group gap-14">
+      <ul class="flex gap-14 items-center group-hover:play-state-paused motion-reduce:play-state-paused animate-marquee whitespace-nowrap">
+        <li>
+          <img src="./assets/image/skill-BOOTSTRAP5.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-CSS3.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-DIGITALOCEAN.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-FIGMA.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-GIT.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-GITHUB.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-HTML5.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-JAVASCRIPT.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-TAILWIND.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-TYPESCRIPT.svg" alt="">
+        </li>
+        <li>
+          <img src="./assets/image/skill-VSCode.svg" alt="">
+        </li>
       </ul>
     </div>
   </section>

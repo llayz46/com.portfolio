@@ -41,6 +41,10 @@
   @apply p-1.5 bg-accentColor-10 border border-accentColor-100 rounded relative overflow-hidden backdrop-blur-sm after:absolute after:inset-0 after:animate-shiny-badge-slide after:bg-accentColor-100/10;
 }
 
+.side-mask {
+  mask-image: linear-gradient(to right,transparent,#0D0D0D 25%,#0D0D0D 75%,transparent);
+}
+
 @keyframes shiny-badge-slide {
   0% {
     transform: translateX(-110%) skew(-16deg);
