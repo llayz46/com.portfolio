@@ -14,7 +14,7 @@
 }
 
 .textLarge {
-  @apply text-lg leading-6 font-semibold;
+  @apply text-lg leading-26 font-semibold;
 }
 
 .textNav {
@@ -23,6 +23,10 @@
 
 .buttonPrimary {
   @apply font-medium text-sm leading-6 text-textColors-primary;
+}
+
+.buttonContact {
+  @apply flex gap-2 items-center text-textColors-contactPrimary text-sm px-4 py-2 bg-buttonColor-backgroundTransparent border border-buttonColor-borderTransparent rounded-md;
 }
 
 .titleLarge {
@@ -67,7 +71,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 35s linear infinite
+  animation: marquee 35s linear infinite;
 }
 
 /* max-w-5xl mx-auto */
