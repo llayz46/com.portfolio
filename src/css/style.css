@@ -30,11 +30,11 @@
 }
 
 .titleLarge {
-  @apply font-semibold text-3xl text-textColors-primary;
+  @apply font-semibold text-2xl sm:text-3xl text-textColors-primary;
 }
 
 .textMedium {
-  @apply text-base font-medium text-textColors-secondary leading-snug tracking-wide;
+  @apply text-sm sm:text-base font-medium text-textColors-secondary leading-snug tracking-wide;
 }
 
 .badgePrimary {

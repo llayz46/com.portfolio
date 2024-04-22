@@ -60,13 +60,13 @@
 
     </header>
 
-    <div class="flex flex-col gap-4 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl pt-24 pb-20">
+    <div class="flex flex-col gap-4 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl pt-20 sm:pt-24 md:pb-24 pb-12">
       <h1 class="titleLarge text-center">Welcome on my portfolio !</h1>
       <p class="textMedium text-center text-balance">Here you will find some of my projects and more. This isn't a final version of my portfolio. Hope you like what you see!</p>
     </div>
   </section>
 
-  <section class="flex md:flex-row flex-col md:gap-20 gap-10 items-center justify-center pt-20 pb-24 border-b border-borderColor mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
+  <section class="flex md:flex-row flex-col md:gap-20 gap-10 items-center justify-center md:pt-20 pt-10 md:pb-24 pb-12 border-b border-borderColor mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
     <svg class="min-w-fit" xmlns="http://www.w3.org/2000/svg" width="182" height="159" viewBox="0 0 182 159" fill="none">
       <g clip-path="url(#clip0_207_84)">
         <path d="M164.098 82.7461C164.122 102.421 156.54 121.338 142.946 135.522C142.127 136.383 141.285 137.223 140.421 138.042C139.105 139.297 137.745 140.504 136.34 141.663C123.202 152.519 106.801 158.62 89.7822 158.981C89.2152 158.994 88.646 159 88.0746 159C74.5018 159 57.4303 151.729 41.9379 141.663C40.6562 140.83 39.3858 139.978 38.1269 139.106C37.5385 138.703 36.9529 138.294 36.3701 137.879C30.3949 133.647 24.7233 129 19.3971 123.971C15.9098 120.688 12.6396 117.181 9.60737 113.472C-2.29646 98.7442 -4.92202 85.474 12.0489 82.7461C14.0582 82.4242 16.0083 82.0801 17.8992 81.7138C20.6382 81.1858 23.2594 80.6156 25.763 80.0032C29.1354 79.1812 32.3038 78.2898 35.2681 77.329C36.2653 77.0071 37.2396 76.6787 38.1911 76.3439C52.2583 71.3882 61.6735 64.9259 68.0823 57.9141C69.1693 56.7272 70.1715 55.526 71.0887 54.3105C72.4921 52.4604 73.7669 50.5156 74.904 48.4899C76.4735 45.6754 77.7918 42.7271 78.8435 39.6796L78.9012 39.5122C84.0004 24.7589 82.4491 11.0745 88.0746 6.49441C112.122 -13.0858 142.06 14.7982 156.112 47.6808C156.821 49.3377 157.487 51.0046 158.111 52.6815C158.391 53.4306 158.662 54.1811 158.922 54.933C159.607 56.8925 160.228 58.857 160.786 60.8265C161 61.5777 161.204 62.3282 161.398 63.078C161.605 63.8871 161.804 64.6941 161.988 65.5011C163.356 71.4097 164.098 77.2367 164.098 82.7461Z" fill="#EBEBEB" />
@@ -161,7 +161,7 @@
     </div>
   </section>
 
-  <section class="flex gap-20 items-center pt-20 pb-24 border-b border-borderColor mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
+  <section class="flex gap-20 items-center md:pt-20 pt-10 md:pb-24 pb-12 border-b border-borderColor mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
     <div>
       <p class="badgePrimary">PROJECTS</p>
       <h2 class="titleLarge pb-4 pt-3">My recent projects</h2>
@@ -227,7 +227,7 @@
     </div>
   </section>
 
-  <section class="flex flex-col gap-14 items-center pt-20 pb-24">
+  <section class="flex flex-col gap-14 items-center md:pt-20 pt-10 md:pb-24 pb-12">
     <div class="flex flex-col max-w-max mx-auto">
       <p class="badgePrimary mx-auto">SKILLS</p>
       <h2 class="titleLarge pb-4 pt-3 text-center">Mastered technologies</h2>
@@ -419,7 +419,7 @@
     </div>
   </section>
 
-  <section class="pt-20 pb-20 border-t border-borderColor mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl">
+  <section class="md:py-20 py-10 border-t border-borderColor mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl">
     <div class="rounded-xl bg-gradient-to-bl from-borderColor from-0% via-borderColor via-85% to-accentColor-yellow/50 to-100% p-px">
       <div class="flex p-6 bg-headerBack rounded-xl relative overflow-hidden md:flex-row flex-col gap-8 md:gap-0">
         <div class="flex flex-col md:w-3/5 md:pr-28">
@@ -486,7 +486,7 @@
     </div>
   </section>
 
-  <section class="pb-24 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
+  <section class="md:pb-12 pb-6 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
     <div class="rounded-xl bg-gradient-to-tl from-borderColor from-0% via-borderColor via-85% to-accentColor-50 to-100% p-px">
       <div class="flex flex-col gap-3 bg-headerBack p-6 relative overflow-hidden rounded-xl">
         <div class="flex flex-col sm:flex-row gap-4">
@@ -516,59 +516,61 @@
     </div>
   </section>
 
-  <section class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
-    <footer class="flex flex-col items-center">
-      <div class="pb-10">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H44C46.2091 0 48 1.79086 48 4V44C48 46.2091 46.2091 48 44 48H4C1.79086 48 0 46.2091 0 44V4ZM30.3715 9.375H25.2993C24.7157 9.375 24.1759 9.68379 23.8849 10.184L7.1237 38.9675H12.2073C12.7845 38.9675 13.3177 38.6635 13.6055 38.1682L30.3715 9.375ZM38.8904 38.9675H22.7095H17.6259L34.3871 10.184C34.6781 9.68379 35.2179 9.375 35.8015 9.375H40.8737L26.5089 34.0445L38.8936 34.1362C39.3049 34.1394 39.6382 34.4707 39.6382 34.8792V38.2277C39.6382 38.6362 39.3033 38.9675 38.8904 38.9675Z" fill="white" />
-        </svg>
-      </div>
-
-      <div class="w-full h-px bg-gradient-to-r from-borderColor/10 via-borderColor to-borderColor/10"></div>
-
-      <nav class="w-full">
-        <ul class="flex gap-1 py-10 justify-center">
-          <li class="py-2 px-4">
-            <a href="#" class="textNav">Projects</a>
-          </li>
-          <li class="py-2 px-4">
-            <a href="#" class="textNav">Contact</a>
-          </li>
-          <li class="py-2 px-4">
-            <a href="#" class="textNav">Admin</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="w-full h-px bg-gradient-to-r from-borderColor/10 via-borderColor to-borderColor/10"></div>
-
-      <div class="w-full pb-3 pt-10 flex justify-between">
-        <p class="text-base text-textColors-navPrimary">Product by <span class="text-textColors-secondary">Louis Mazeau</span></p>
-        <a href="https://github.com/llayz46" class="flex gap-2 items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
-            <g clip-path="url(#clip0_232_162)">
-              <path d="M11.7253 0.618652C5.58062 0.618652 0.520264 5.3624 0.520264 11.2749C0.520264 15.9499 3.7372 19.9374 8.21923 21.3812C8.79756 21.4843 8.97828 21.1405 8.97828 20.8999C8.97828 20.6593 8.97828 19.9718 8.94214 19.0437C5.83364 19.7312 5.18302 17.5999 5.18302 17.5999C4.67698 16.3968 3.91793 16.053 3.91793 16.053C2.90586 15.3655 3.95408 15.3655 3.95408 15.3655C5.07458 15.3999 5.68905 16.4655 5.68905 16.4655C6.66498 18.1155 8.32767 17.6343 8.94214 17.3249C9.05057 16.6374 9.33974 16.1562 9.66505 15.8812C7.20716 15.6405 4.56855 14.7124 4.56855 10.6562C4.56855 9.4874 5.03844 8.55928 5.7252 7.8374C5.61676 7.59678 5.21916 6.49678 5.83364 5.01865C5.83364 5.01865 6.80956 4.74365 8.94214 6.11865C9.84577 5.87803 10.7856 5.74053 11.7615 5.74053C12.7374 5.74053 13.7133 5.84365 14.5808 6.11865C16.7134 4.77803 17.6532 5.01865 17.6532 5.01865C18.2676 6.4624 17.9062 7.59678 17.7616 7.8374C18.4845 8.55928 18.9183 9.52178 18.9183 10.6562C18.9183 14.7124 16.2797 15.6405 13.8218 15.8812C14.2194 16.2249 14.5808 16.9124 14.5808 17.8749C14.5808 19.3187 14.5447 20.453 14.5447 20.7968C14.5447 21.0718 14.7615 21.3812 15.3037 21.278C19.7135 19.8687 22.9304 15.9155 22.9304 11.2062C22.8943 5.3624 17.87 0.618652 11.7253 0.618652Z" fill="#7D7D7D" />
-            </g>
-            <defs>
-              <clipPath id="clip0_232_162">
-                <rect width="23.133" height="22" fill="white" transform="translate(0.158813)" />
-              </clipPath>
-            </defs>
+  <section class="bg-gradient-to-t from-headerBack via-headerBack via-75% to-bodyBack to-100%">
+    <div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl md:pt-12 pt-6">
+      <footer class="flex flex-col items-center">
+        <div class="pb-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H44C46.2091 0 48 1.79086 48 4V44C48 46.2091 46.2091 48 44 48H4C1.79086 48 0 46.2091 0 44V4ZM30.3715 9.375H25.2993C24.7157 9.375 24.1759 9.68379 23.8849 10.184L7.1237 38.9675H12.2073C12.7845 38.9675 13.3177 38.6635 13.6055 38.1682L30.3715 9.375ZM38.8904 38.9675H22.7095H17.6259L34.3871 10.184C34.6781 9.68379 35.2179 9.375 35.8015 9.375H40.8737L26.5089 34.0445L38.8936 34.1362C39.3049 34.1394 39.6382 34.4707 39.6382 34.8792V38.2277C39.6382 38.6362 39.3033 38.9675 38.8904 38.9675Z" fill="white" />
           </svg>
-          <p class="text-base text-textColors-secondary">@llayz46</p>
-        </a>
-      </div>
-      <div class="w-full pb-5 flex justify-between">
-        <p class="text-base text-textColors-navPrimary">© 2024 - LAYZ</p>
-        <a href="#" class="flex gap-2 items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-            <path d="M20.9227 4H4.92273C3.81816 4 2.92273 4.89543 2.92273 6V18C2.92273 19.1046 3.81816 20 4.92273 20H20.9227C22.0273 20 22.9227 19.1046 22.9227 18V6C22.9227 4.89543 22.0273 4 20.9227 4Z" stroke="#7D7D7D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M22.9227 7L13.9527 12.7C13.644 12.8934 13.287 12.996 12.9227 12.996C12.5584 12.996 12.2015 12.8934 11.8927 12.7L2.92273 7" stroke="#7D7D7D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <p class="text-base text-textColors-secondary">pro@llayz.fr</p>
-        </a>
-      </div>
-    </footer>
+        </div>
+  
+        <div class="w-full h-px bg-gradient-to-r from-borderColor/10 via-borderColor to-borderColor/10"></div>
+  
+        <nav class="w-full">
+          <ul class="flex gap-1 py-10 justify-center">
+            <li class="py-2 px-4">
+              <a href="#" class="textNav">Projects</a>
+            </li>
+            <li class="py-2 px-4">
+              <a href="#" class="textNav">Contact</a>
+            </li>
+            <li class="py-2 px-4">
+              <a href="#" class="textNav">Admin</a>
+            </li>
+          </ul>
+        </nav>
+  
+        <div class="w-full h-px bg-gradient-to-r from-borderColor/10 via-borderColor to-borderColor/10"></div>
+  
+        <div class="w-full pb-3 pt-10 flex justify-between">
+          <p class="text-base text-textColors-navPrimary">Product by <span class="text-textColors-secondary">Louis Mazeau</span></p>
+          <a href="https://github.com/llayz46" class="flex gap-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+              <g clip-path="url(#clip0_232_162)">
+                <path d="M11.7253 0.618652C5.58062 0.618652 0.520264 5.3624 0.520264 11.2749C0.520264 15.9499 3.7372 19.9374 8.21923 21.3812C8.79756 21.4843 8.97828 21.1405 8.97828 20.8999C8.97828 20.6593 8.97828 19.9718 8.94214 19.0437C5.83364 19.7312 5.18302 17.5999 5.18302 17.5999C4.67698 16.3968 3.91793 16.053 3.91793 16.053C2.90586 15.3655 3.95408 15.3655 3.95408 15.3655C5.07458 15.3999 5.68905 16.4655 5.68905 16.4655C6.66498 18.1155 8.32767 17.6343 8.94214 17.3249C9.05057 16.6374 9.33974 16.1562 9.66505 15.8812C7.20716 15.6405 4.56855 14.7124 4.56855 10.6562C4.56855 9.4874 5.03844 8.55928 5.7252 7.8374C5.61676 7.59678 5.21916 6.49678 5.83364 5.01865C5.83364 5.01865 6.80956 4.74365 8.94214 6.11865C9.84577 5.87803 10.7856 5.74053 11.7615 5.74053C12.7374 5.74053 13.7133 5.84365 14.5808 6.11865C16.7134 4.77803 17.6532 5.01865 17.6532 5.01865C18.2676 6.4624 17.9062 7.59678 17.7616 7.8374C18.4845 8.55928 18.9183 9.52178 18.9183 10.6562C18.9183 14.7124 16.2797 15.6405 13.8218 15.8812C14.2194 16.2249 14.5808 16.9124 14.5808 17.8749C14.5808 19.3187 14.5447 20.453 14.5447 20.7968C14.5447 21.0718 14.7615 21.3812 15.3037 21.278C19.7135 19.8687 22.9304 15.9155 22.9304 11.2062C22.8943 5.3624 17.87 0.618652 11.7253 0.618652Z" fill="#7D7D7D" />
+              </g>
+              <defs>
+                <clipPath id="clip0_232_162">
+                  <rect width="23.133" height="22" fill="white" transform="translate(0.158813)" />
+                </clipPath>
+              </defs>
+            </svg>
+            <p class="text-base text-textColors-secondary">@llayz46</p>
+          </a>
+        </div>
+        <div class="w-full pb-5 flex justify-between">
+          <p class="text-base text-textColors-navPrimary">© 2024 - LAYZ</p>
+          <a href="#" class="flex gap-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <path d="M20.9227 4H4.92273C3.81816 4 2.92273 4.89543 2.92273 6V18C2.92273 19.1046 3.81816 20 4.92273 20H20.9227C22.0273 20 22.9227 19.1046 22.9227 18V6C22.9227 4.89543 22.0273 4 20.9227 4Z" stroke="#7D7D7D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M22.9227 7L13.9527 12.7C13.644 12.8934 13.287 12.996 12.9227 12.996C12.5584 12.996 12.2015 12.8934 11.8927 12.7L2.92273 7" stroke="#7D7D7D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="text-base text-textColors-secondary">pro@llayz.fr</p>
+          </a>
+        </div>
+      </footer>
+    </div>
   </section>
 </body>
 
