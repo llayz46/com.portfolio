@@ -1,16 +1,17 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
   @font-face {
-    font-family: 'GeneralSans-Variable';
+    font-family: "GeneralSans-Variable";
     font-weight: 200 700;
     font-display: swap;
     font-style: normal;
-    src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
-          url('../fonts/GeneralSans-Variable.woff') format('woff');
-  };
+    src:
+      url("../fonts/GeneralSans-Variable.woff2") format("woff2"),
+      url("../fonts/GeneralSans-Variable.woff") format("woff");
+  }
 }
 
 .textLarge {
@@ -26,7 +27,7 @@
 }
 
 .buttonContact {
-  @apply flex gap-2 items-center text-textColors-contactPrimary text-sm px-4 py-2 bg-buttonColor-backgroundTransparent border border-buttonColor-borderTransparent rounded-md;
+  @apply flex gap-2 items-center text-textColors-contactPrimary text-sm px-4 py-2 bg-buttonColor-backgroundTransparent border border-buttonColor-borderTransparent md:hover:border-accentColor-yellow/60 transition-colors duration-200 rounded-md;
 }
 
 .titleLarge {
@@ -46,7 +47,13 @@
 }
 
 .side-mask {
-  mask-image: linear-gradient(to right,transparent,#0D0D0D 25%,#0D0D0D 75%,transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #0d0d0d 25%,
+    #0d0d0d 75%,
+    transparent
+  );
 }
 
 .line__child {
@@ -58,7 +65,8 @@
   0% {
     transform: translateX(-110%) skew(-16deg);
   }
-  15%, to {
+  15%,
+  to {
     transform: translateX(110%) skew(-16deg);
   }
 }
@@ -71,7 +79,7 @@
 
 @keyframes marquee {
   to {
-    transform: translate(-100%)
+    transform: translate(-100%);
   }
 }
 
@@ -96,8 +104,8 @@
 }
 
 .line__middle.active {
-  transform: rotate(45deg); 
-  border-radius: 40% / 400%; 
+  transform: rotate(45deg);
+  border-radius: 40% / 400%;
 }
 
 .line__bottom {
@@ -108,4 +116,40 @@
   transform: rotate(45deg);
   top: calc(50% - 2px / 2);
   border-radius: 40% / 400%;
+}
+
+::selection {
+  background-color: #6919ffe6;
+}
+
+.js-scroll-animation {
+  opacity: 0;
+}
+
+.show {
+  @apply animate-slideTop opacity-100;
+}
+
+@layer utilities {
+  .card-wrapper::before {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #6919ff 0deg,
+      #e62be9 112.5deg,
+      #ccfa02a6 228.75deg,
+      #2b2b2b 360deg
+    );
+
+    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''] opacity-0 duration-300;
+  }
+
+  .card-wrapper::before:hover {
+    background: conic-gradient(
+      rgba(244, 114, 182, 0.4) 0deg,
+      rgba(192, 132, 252, 0.4) 0deg,
+      transparent 80deg
+    );
+
+    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''] opacity-100;
+  }
 }
