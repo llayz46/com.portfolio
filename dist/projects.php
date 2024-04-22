@@ -31,7 +31,7 @@ require_once __DIR__ . '/templates/header.php';
 </section>
 
 <section class="flex gap-20 items-center md:pt-20 pt-10 md:pb-24 pb-12 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
-  <div class="grid grid-cols-3 gap-3">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
     <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
       <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
         <div class="flex flex-col gap-6">

@@ -140,7 +140,7 @@
       #2b2b2b 360deg
     );
 
-    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''] opacity-0 duration-300;
+    @apply absolute left-[-50%] top-[-50%] h-[200%] w-[200%] xl:left-[-25%] xl:top-[-25%] lg:left-[-50%] lg:top-[-40%] lg:h-[200%] xl:h-[150%] lg:w-[200%] xl:w-[150%] animate-border-spin content-[''] opacity-0 duration-300;
   }
 
   .card-wrapper::before:hover {
@@ -150,11 +150,11 @@
       transparent 80deg
     );
 
-    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''] opacity-100;
+    @apply absolute left-[-50%] top-[-50%] h-[200%] w-[200%] xl:left-[-25%] xl:top-[-25%] lg:left-[-50%] lg:top-[-40%] lg:h-[200%] xl:h-[150%] lg:w-[200%] xl:w-[150%] animate-border-spin content-[''] opacity-100;
   }
 }
 
 * {
-  scrollbar-width: thin; 
+  scrollbar-width: thin;
   scrollbar-color: #6919ffd5 #2b2b2b;
 }
