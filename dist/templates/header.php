@@ -34,14 +34,17 @@
 
         <nav class="hidden md:flex md:gap-20 lg:gap-56 xl:gap-80">
           <ul class="flex gap-1">
-            <li>
-              <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer">Projects</a>
+            <li class="relative group">
+              <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item active z-20">Projects</a>
+              <div class="nav__active z-10 hidden"></div>
             </li>
-            <li>
-              <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer">Contact</a>
+            <li class="relative">
+              <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20">Contact</a>
+              <div class="nav__active z-10 hidden"></div>
             </li>
-            <li>
-              <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer">Admin</a>
+            <li class="relative">
+              <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20">Admin</a>
+              <div class="nav__active z-10 hidden"></div>
             </li>
           </ul>
         </nav>

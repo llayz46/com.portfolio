@@ -158,3 +158,14 @@
   scrollbar-width: thin;
   scrollbar-color: #6919ffd5 #2b2b2b;
 }
+
+.nav__active {
+  @apply bottom-0 h-0.5 overflow-hidden absolute w-4 group-hover:w-6 left-[calc(50%-16px/2)] group-hover:left-[calc(50%-22px/2)] transition-all duration-300;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(255, 255, 255, 0.04) 0px -0.636953px 0.891735px 0px, rgba(255, 255, 255, 0.12) 0px -1.9316px 2.70425px 0px, rgba(255, 255, 255, 0.318) 0px -5.10612px 7.14857px 0px, rgb(255, 255, 255) 0px -16px 22.4px 0px;
+}
+
+/* box-shadow: rgba(255, 255, 255, 0.04) 0px -0.636953px 0.891735px 0px, rgba(255, 255, 255, 0.12) 0px -1.9316px 2.70425px 0px, rgba(255, 255, 255, 0.318) 0px -5.10612px 7.14857px 0px, rgb(255, 255, 255) 0px -16px 22.4px 0px; */
+/* border-radius: 8px; */
+/* background-color: rgb(255, 255, 255); */
