@@ -1,7 +1,7 @@
 <section class="bg-gradient-to-t from-headerBack via-headerBack via-75% to-bodyBack to-100%">
   <div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl md:pt-12 pt-6">
     <footer class="js-scroll-animation flex flex-col items-center">
-      <a href="#" class="pb-10">
+      <a href="#" class="pb-10 md:hover:scale-105 transition-all duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H44C46.2091 0 48 1.79086 48 4V44C48 46.2091 46.2091 48 44 48H4C1.79086 48 0 46.2091 0 44V4ZM30.3715 9.375H25.2993C24.7157 9.375 24.1759 9.68379 23.8849 10.184L7.1237 38.9675H12.2073C12.7845 38.9675 13.3177 38.6635 13.6055 38.1682L30.3715 9.375ZM38.8904 38.9675H22.7095H17.6259L34.3871 10.184C34.6781 9.68379 35.2179 9.375 35.8015 9.375H40.8737L26.5089 34.0445L38.8936 34.1362C39.3049 34.1394 39.6382 34.4707 39.6382 34.8792V38.2277C39.6382 38.6362 39.3033 38.9675 38.8904 38.9675Z" fill="white" />
         </svg>
@@ -11,14 +11,17 @@
 
       <nav class="w-full">
         <ul class="flex gap-1 py-10 justify-center">
-          <li>
-            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer">Projects</a>
+          <li class="relative group">
+            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20 active">Projects</a>
+            <div class="nav__active z-10 hidden"></div>
           </li>
-          <li>
-            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer">Contact</a>
+          <li class="relative group">
+            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20">Contact</a>
+            <div class="nav__active z-10 hidden"></div>
           </li>
-          <li>
-            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer">Admin</a>
+          <li class="relative group">
+            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20">Admin</a>
+            <div class="nav__active z-10 hidden"></div>
           </li>
         </ul>
       </nav>
