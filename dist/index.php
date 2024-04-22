@@ -10,7 +10,7 @@
 
 <body class="bg-bodyBack">
   <section class="bg-headerBack">
-    <header class="fixed top-0 right-0 left-0 w-full flex justify-between py-6 md:py-3 backdrop-blur-md bg-headerBack/90 z-10">
+    <header class="fixed top-0 right-0 left-0 w-full flex flex-col py-6 md:py-3 backdrop-blur-md bg-headerBack/90 z-10">
       <div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl flex justify-between">
         <div class="flex gap-1 items-center">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,16 +48,44 @@
           Connexion
         </button>
 
-        <button class="md:hidden">
+        <!-- <button class="md:hidden js-burger-menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
-            <path d="M22.5 7.17505H11.7375C11.2875 7.17505 10.875 7.55005 10.875 8.03755C10.875 8.48755 11.25 8.90005 11.7375 8.90005H22.5C22.95 8.90005 23.3625 8.52505 23.3625 8.03755C23.3625 7.55005 22.95 7.17505 22.5 7.17505Z" fill="white" />
-            <path d="M22.5002 13.55H1.5002C1.0502 13.55 0.637695 13.925 0.637695 14.4125C0.637695 14.9 1.0127 15.275 1.5002 15.275H22.5002C22.9502 15.275 23.3627 14.9 23.3627 14.4125C23.3627 13.925 22.9502 13.55 22.5002 13.55Z" fill="white" />
-            <path d="M1.5002 2.4501H22.5002C22.9502 2.4501 23.3627 2.0751 23.3627 1.5876C23.3627 1.1001 22.9877 0.725098 22.5002 0.725098H1.5002C1.0502 0.725098 0.637695 1.1001 0.637695 1.5876C0.637695 2.0751 1.0502 2.4501 1.5002 2.4501Z" fill="white" />
+            <path class="line-middle" d="M22.5 7.17505H11.7375C11.2875 7.17505 10.875 7.55005 10.875 8.03755C10.875 8.48755 11.25 8.90005 11.7375 8.90005H22.5C22.95 8.90005 23.3625 8.52505 23.3625 8.03755C23.3625 7.55005 22.95 7.17505 22.5 7.17505Z" fill="white" />
+            <path class="line-bottom" d="M22.5002 13.55H1.5002C1.0502 13.55 0.637695 13.925 0.637695 14.4125C0.637695 14.9 1.0127 15.275 1.5002 15.275H22.5002C22.9502 15.275 23.3627 14.9 23.3627 14.4125C23.3627 13.925 22.9502 13.55 22.5002 13.55Z" fill="white" />
+            <path class="line-top" d="M1.5002 2.4501H22.5002C22.9502 2.4501 23.3627 2.0751 23.3627 1.5876C23.3627 1.1001 22.9877 0.725098 22.5002 0.725098H1.5002C1.0502 0.725098 0.637695 1.1001 0.637695 1.5876C0.637695 2.0751 1.0502 2.4501 1.5002 2.4501Z" fill="white" />
           </svg>
+        </button> -->
+
+        <button class="md:hidden w-[26px] aspect-square relative overflow-hidden origin-[50%_50%_0px] js-burger-menu">
+          <div class="line__child line__top"></div>
+          <div class="line__child line__middle"></div>
+          <div class="line__child line__bottom"></div>
         </button>
       </div>
-
-
+      <div class="hidden mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl js-dropmenu">
+        <nav class="pt-6">
+          <ul class="flex flex-col gap-1">
+            <li class="py-2">
+              <a href="#" class="text-xl font-semibold text-textColors-navPrimary">Projects</a>
+            </li>
+            <li class="py-2">
+              <a href="#" class="text-xl font-semibold text-textColors-navPrimary">Contact</a>
+            </li>
+            <li class="py-2">
+              <a href="#" class="text-xl font-semibold text-textColors-navPrimary">Admin</a>
+            </li>
+            <li class="py-2">
+              <button class="w-full flex justify-center buttonPrimary gap-2 px-7 py-2 items-center bg-buttonColor-background border border-borderColor rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+                  <path d="M10.2261 4.94999V5.35713L10.6248 5.43962C11.8614 5.69547 12.7719 6.75348 12.7512 7.99166L12.7511 7.99166V7.99999V12.55C12.7511 13.9238 11.625 15.05 10.2511 15.05H3.65115C2.29955 15.05 1.17615 13.9461 1.17615 12.575V8.04999C1.17615 6.74333 2.10224 5.67206 3.31931 5.44123L3.72615 5.36408V4.94999V4.14999C3.72615 3.26967 4.11381 2.40344 4.78629 1.79604C5.46346 1.1844 6.37658 0.861818 7.27874 0.947738L7.27874 0.947803L7.2868 0.948439C8.90641 1.0763 10.2261 2.53999 10.2261 4.29999V4.94999ZM9.60115 5.37499H10.1011V4.87499V4.29999C10.1011 2.66157 8.87417 1.22901 7.27451 1.07733C6.38015 0.988296 5.51636 1.28771 4.86481 1.88002C4.21448 2.47123 3.85115 3.27893 3.85115 4.12499V4.87499V5.37499H4.35115H9.60115ZM10.2761 14.95C11.5773 14.95 12.6511 13.8761 12.6511 12.575V7.99999C12.6511 6.63287 11.486 5.52499 10.1011 5.52499H3.85115C2.45001 5.52499 1.32615 6.64885 1.32615 8.04999V12.6C1.32615 13.9011 2.37501 14.95 3.67615 14.95H10.2761Z" stroke="#ededed" />
+                  <path d="M6.90112 9.2C6.90112 9.1833 6.90724 9.16603 6.92436 9.14942C6.94359 9.13075 6.96465 9.125 6.97612 9.125C6.98835 9.125 7.01207 9.13149 7.03344 9.1516C7.04733 9.16467 7.05051 9.17387 7.05112 9.17634V11.825C7.05112 11.8417 7.045 11.859 7.02788 11.8756C7.00865 11.8943 6.98759 11.9 6.97612 11.9C6.95942 11.9 6.94215 11.8939 6.92554 11.8768C6.90687 11.8575 6.90112 11.8365 6.90112 11.825V9.2Z" stroke="#ededed" />
+                </svg>
+                Connexion
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <div class="flex flex-col gap-4 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl pt-20 sm:pt-24 md:pb-24 pb-12">
@@ -524,9 +552,9 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H44C46.2091 0 48 1.79086 48 4V44C48 46.2091 46.2091 48 44 48H4C1.79086 48 0 46.2091 0 44V4ZM30.3715 9.375H25.2993C24.7157 9.375 24.1759 9.68379 23.8849 10.184L7.1237 38.9675H12.2073C12.7845 38.9675 13.3177 38.6635 13.6055 38.1682L30.3715 9.375ZM38.8904 38.9675H22.7095H17.6259L34.3871 10.184C34.6781 9.68379 35.2179 9.375 35.8015 9.375H40.8737L26.5089 34.0445L38.8936 34.1362C39.3049 34.1394 39.6382 34.4707 39.6382 34.8792V38.2277C39.6382 38.6362 39.3033 38.9675 38.8904 38.9675Z" fill="white" />
           </svg>
         </div>
-  
+
         <div class="w-full h-px bg-gradient-to-r from-borderColor/10 via-borderColor to-borderColor/10"></div>
-  
+
         <nav class="w-full">
           <ul class="flex gap-1 py-10 justify-center">
             <li class="py-2 px-4">
@@ -540,9 +568,9 @@
             </li>
           </ul>
         </nav>
-  
+
         <div class="w-full h-px bg-gradient-to-r from-borderColor/10 via-borderColor to-borderColor/10"></div>
-  
+
         <div class="w-full pb-3 pt-10 flex justify-between">
           <p class="text-base text-textColors-navPrimary">Product by <span class="text-textColors-secondary">Louis Mazeau</span></p>
           <a href="https://github.com/llayz46" class="flex gap-2 items-center">
@@ -572,6 +600,8 @@
       </footer>
     </div>
   </section>
+
+  <script src="./assets/javascript/nav.js"></script>
 </body>
 
 </html>

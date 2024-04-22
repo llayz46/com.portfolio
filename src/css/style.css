@@ -49,6 +49,11 @@
   mask-image: linear-gradient(to right,transparent,#0D0D0D 25%,#0D0D0D 75%,transparent);
 }
 
+.line__child {
+  @apply w-5 h-0.5 bg-white rounded-lg absolute origin-[50%_50%_0px];
+  left: calc(50% -20px / 2);
+}
+
 @keyframes shiny-badge-slide {
   0% {
     transform: translateX(-110%) skew(-16deg);
@@ -74,4 +79,33 @@
   animation: marquee 35s linear infinite;
 }
 
-/* fixed top-0 right-0 left-0 mx-auto w-11/12 flex justify-between py-6 md:py-3 max-w-5xl 2xl:max-w-7xl backdrop-blur-md */
+/* <nav class="hidden md:flex md:gap-20 lg:gap-56 xl:gap-80"> */
+
+.line__top {
+  top: calc(23% - 2px / 2);
+}
+
+.line__top.active {
+  transform: rotate(-45deg);
+  top: calc(50% - 2px / 2);
+  border-radius: 40% / 400%;
+}
+
+.line__middle {
+  top: calc(50% - 2px / 2);
+}
+
+.line__middle.active {
+  transform: rotate(45deg); 
+  border-radius: 40% / 400%; 
+}
+
+.line__bottom {
+  top: calc(76.92307692307695% - 2px / 2);
+}
+
+.line__bottom.active {
+  transform: rotate(45deg);
+  top: calc(50% - 2px / 2);
+  border-radius: 40% / 400%;
+}
