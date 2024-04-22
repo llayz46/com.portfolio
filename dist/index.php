@@ -500,15 +500,15 @@
           <form class="flex flex-col gap-3 z-10">
             <label for="" class="flex flex-col gap-1.5 text-sm text-textColors-contactPrimary">
               Name
-              <input type="text" placeholder="John" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow">
+              <input type="text" placeholder="John" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500">
             </label>
             <label for="" class="flex flex-col gap-1.5 text-sm text-textColors-contactPrimary">
               Email
-              <input type="text" placeholder="example@mail.com" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow">
+              <input type="text" placeholder="example@mail.com" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500">
             </label>
             <label for="" class="flex flex-col gap-1.5 text-sm text-textColors-contactPrimary">
               Phone
-              <input type="tel" placeholder="01 23 45 67 89 " class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow">
+              <input type="tel" placeholder="01 23 45 67 89 " class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500">
             </label>
           </form>
 
