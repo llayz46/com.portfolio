@@ -74,10 +74,4 @@
   animation: marquee 35s linear infinite;
 }
 
-/* max-w-5xl mx-auto */
-
-/* flex justify-between pt-3 container px-56 */
-
-/* mx-56 */
-
-/* mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl */
+/* fixed top-0 right-0 left-0 mx-auto w-11/12 flex justify-between py-6 md:py-3 max-w-5xl 2xl:max-w-7xl backdrop-blur-md */

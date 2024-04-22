@@ -10,51 +10,63 @@
 
 <body class="bg-bodyBack">
   <section class="bg-headerBack">
-    <header class="mx-auto w-11/12 flex justify-between pt-3 max-w-5xl 2xl:max-w-7xl">
-      <div class="flex gap-1 items-center">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_212_394)">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H26V26H0V0ZM16.4513 5.07811H13.7038C13.3877 5.07811 13.0953 5.24537 12.9377 5.5163L3.85868 21.1074H6.61232C6.92493 21.1074 7.21377 20.9427 7.36963 20.6744L16.4513 5.07811ZM21.0656 21.1074H12.301H9.54736L18.6263 5.51631C18.784 5.24538 19.0763 5.07812 19.3925 5.07812H22.1399L14.359 18.4408L21.0674 18.4904C21.2902 18.4922 21.4707 18.6716 21.4707 18.8929V20.7066C21.4707 20.9279 21.2893 21.1074 21.0656 21.1074Z" fill="white" />
-          </g>
-          <defs>
-            <clipPath id="clip0_212_394">
-              <rect width="26" height="26" fill="white"/>
-            </clipPath>
-          </defs>
-        </svg>
-        <p class="textLarge text-white">llayz</p>
+    <header class="fixed top-0 right-0 left-0 w-full flex justify-between py-6 md:py-3 backdrop-blur-md bg-headerBack/90 z-10">
+      <div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl flex justify-between">
+        <div class="flex gap-1 items-center">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_212_394)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H26V26H0V0ZM16.4513 5.07811H13.7038C13.3877 5.07811 13.0953 5.24537 12.9377 5.5163L3.85868 21.1074H6.61232C6.92493 21.1074 7.21377 20.9427 7.36963 20.6744L16.4513 5.07811ZM21.0656 21.1074H12.301H9.54736L18.6263 5.51631C18.784 5.24538 19.0763 5.07812 19.3925 5.07812H22.1399L14.359 18.4408L21.0674 18.4904C21.2902 18.4922 21.4707 18.6716 21.4707 18.8929V20.7066C21.4707 20.9279 21.2893 21.1074 21.0656 21.1074Z" fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_212_394">
+                <rect width="26" height="26" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <p class="textLarge text-white">llayz</p>
+        </div>
+
+        <nav class="hidden md:flex md:gap-20 lg:gap-56 xl:gap-80">
+          <ul class="flex gap-1">
+            <li class="py-2 px-4">
+              <a href="#" class="textNav">Projects</a>
+            </li>
+            <li class="py-2 px-4">
+              <a href="#" class="textNav">Contact</a>
+            </li>
+            <li class="py-2 px-4">
+              <a href="#" class="textNav">Admin</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="hidden md:flex buttonPrimary gap-2 px-7 py-2 items-center bg-buttonColor-background border border-borderColor rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+            <path d="M10.2261 4.94999V5.35713L10.6248 5.43962C11.8614 5.69547 12.7719 6.75348 12.7512 7.99166L12.7511 7.99166V7.99999V12.55C12.7511 13.9238 11.625 15.05 10.2511 15.05H3.65115C2.29955 15.05 1.17615 13.9461 1.17615 12.575V8.04999C1.17615 6.74333 2.10224 5.67206 3.31931 5.44123L3.72615 5.36408V4.94999V4.14999C3.72615 3.26967 4.11381 2.40344 4.78629 1.79604C5.46346 1.1844 6.37658 0.861818 7.27874 0.947738L7.27874 0.947803L7.2868 0.948439C8.90641 1.0763 10.2261 2.53999 10.2261 4.29999V4.94999ZM9.60115 5.37499H10.1011V4.87499V4.29999C10.1011 2.66157 8.87417 1.22901 7.27451 1.07733C6.38015 0.988296 5.51636 1.28771 4.86481 1.88002C4.21448 2.47123 3.85115 3.27893 3.85115 4.12499V4.87499V5.37499H4.35115H9.60115ZM10.2761 14.95C11.5773 14.95 12.6511 13.8761 12.6511 12.575V7.99999C12.6511 6.63287 11.486 5.52499 10.1011 5.52499H3.85115C2.45001 5.52499 1.32615 6.64885 1.32615 8.04999V12.6C1.32615 13.9011 2.37501 14.95 3.67615 14.95H10.2761Z" stroke="#ededed" />
+            <path d="M6.90112 9.2C6.90112 9.1833 6.90724 9.16603 6.92436 9.14942C6.94359 9.13075 6.96465 9.125 6.97612 9.125C6.98835 9.125 7.01207 9.13149 7.03344 9.1516C7.04733 9.16467 7.05051 9.17387 7.05112 9.17634V11.825C7.05112 11.8417 7.045 11.859 7.02788 11.8756C7.00865 11.8943 6.98759 11.9 6.97612 11.9C6.95942 11.9 6.94215 11.8939 6.92554 11.8768C6.90687 11.8575 6.90112 11.8365 6.90112 11.825V9.2Z" stroke="#ededed" />
+          </svg>
+          Connexion
+        </button>
+
+        <button class="md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
+            <path d="M22.5 7.17505H11.7375C11.2875 7.17505 10.875 7.55005 10.875 8.03755C10.875 8.48755 11.25 8.90005 11.7375 8.90005H22.5C22.95 8.90005 23.3625 8.52505 23.3625 8.03755C23.3625 7.55005 22.95 7.17505 22.5 7.17505Z" fill="white" />
+            <path d="M22.5002 13.55H1.5002C1.0502 13.55 0.637695 13.925 0.637695 14.4125C0.637695 14.9 1.0127 15.275 1.5002 15.275H22.5002C22.9502 15.275 23.3627 14.9 23.3627 14.4125C23.3627 13.925 22.9502 13.55 22.5002 13.55Z" fill="white" />
+            <path d="M1.5002 2.4501H22.5002C22.9502 2.4501 23.3627 2.0751 23.3627 1.5876C23.3627 1.1001 22.9877 0.725098 22.5002 0.725098H1.5002C1.0502 0.725098 0.637695 1.1001 0.637695 1.5876C0.637695 2.0751 1.0502 2.4501 1.5002 2.4501Z" fill="white" />
+          </svg>
+        </button>
       </div>
 
-      <nav>
-        <ul class="flex gap-1">
-          <li class="py-2 px-4">
-            <a href="#" class="textNav">Projects</a>
-          </li>
-          <li class="py-2 px-4">
-            <a href="#" class="textNav">Contact</a>
-          </li>
-          <li class="py-2 px-4">
-            <a href="#" class="textNav">Admin</a>
-          </li>
-        </ul>
-      </nav>
 
-      <button class="flex buttonPrimary gap-2 px-7 py-2 items-center bg-buttonColor-background border border-borderColor rounded-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
-          <path d="M10.2261 4.94999V5.35713L10.6248 5.43962C11.8614 5.69547 12.7719 6.75348 12.7512 7.99166L12.7511 7.99166V7.99999V12.55C12.7511 13.9238 11.625 15.05 10.2511 15.05H3.65115C2.29955 15.05 1.17615 13.9461 1.17615 12.575V8.04999C1.17615 6.74333 2.10224 5.67206 3.31931 5.44123L3.72615 5.36408V4.94999V4.14999C3.72615 3.26967 4.11381 2.40344 4.78629 1.79604C5.46346 1.1844 6.37658 0.861818 7.27874 0.947738L7.27874 0.947803L7.2868 0.948439C8.90641 1.0763 10.2261 2.53999 10.2261 4.29999V4.94999ZM9.60115 5.37499H10.1011V4.87499V4.29999C10.1011 2.66157 8.87417 1.22901 7.27451 1.07733C6.38015 0.988296 5.51636 1.28771 4.86481 1.88002C4.21448 2.47123 3.85115 3.27893 3.85115 4.12499V4.87499V5.37499H4.35115H9.60115ZM10.2761 14.95C11.5773 14.95 12.6511 13.8761 12.6511 12.575V7.99999C12.6511 6.63287 11.486 5.52499 10.1011 5.52499H3.85115C2.45001 5.52499 1.32615 6.64885 1.32615 8.04999V12.6C1.32615 13.9011 2.37501 14.95 3.67615 14.95H10.2761Z" stroke="#ededed" />
-          <path d="M6.90112 9.2C6.90112 9.1833 6.90724 9.16603 6.92436 9.14942C6.94359 9.13075 6.96465 9.125 6.97612 9.125C6.98835 9.125 7.01207 9.13149 7.03344 9.1516C7.04733 9.16467 7.05051 9.17387 7.05112 9.17634V11.825C7.05112 11.8417 7.045 11.859 7.02788 11.8756C7.00865 11.8943 6.98759 11.9 6.97612 11.9C6.95942 11.9 6.94215 11.8939 6.92554 11.8768C6.90687 11.8575 6.90112 11.8365 6.90112 11.825V9.2Z" stroke="#ededed" />
-        </svg>
-        Connexion
-      </button>
     </header>
 
-    <div class="flex flex-col gap-4 max-w-max mx-auto pt-24 pb-20">
+    <div class="flex flex-col gap-4 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl pt-24 pb-20">
       <h1 class="titleLarge text-center">Welcome on my portfolio !</h1>
-      <p class="textMedium text-center">Here you will find some of my projects and more. This isn't a final <br>version of my portfolio. Hope you like what you see!</p>
+      <p class="textMedium text-center text-balance">Here you will find some of my projects and more. This isn't a final version of my portfolio. Hope you like what you see!</p>
     </div>
   </section>
 
-  <section class="flex gap-20 items-center justify-center pt-20 pb-24 border-b border-borderColor mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
+  <section class="flex md:flex-row flex-col md:gap-20 gap-10 items-center justify-center pt-20 pb-24 border-b border-borderColor mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
     <svg class="min-w-fit" xmlns="http://www.w3.org/2000/svg" width="182" height="159" viewBox="0 0 182 159" fill="none">
       <g clip-path="url(#clip0_207_84)">
         <path d="M164.098 82.7461C164.122 102.421 156.54 121.338 142.946 135.522C142.127 136.383 141.285 137.223 140.421 138.042C139.105 139.297 137.745 140.504 136.34 141.663C123.202 152.519 106.801 158.62 89.7822 158.981C89.2152 158.994 88.646 159 88.0746 159C74.5018 159 57.4303 151.729 41.9379 141.663C40.6562 140.83 39.3858 139.978 38.1269 139.106C37.5385 138.703 36.9529 138.294 36.3701 137.879C30.3949 133.647 24.7233 129 19.3971 123.971C15.9098 120.688 12.6396 117.181 9.60737 113.472C-2.29646 98.7442 -4.92202 85.474 12.0489 82.7461C14.0582 82.4242 16.0083 82.0801 17.8992 81.7138C20.6382 81.1858 23.2594 80.6156 25.763 80.0032C29.1354 79.1812 32.3038 78.2898 35.2681 77.329C36.2653 77.0071 37.2396 76.6787 38.1911 76.3439C52.2583 71.3882 61.6735 64.9259 68.0823 57.9141C69.1693 56.7272 70.1715 55.526 71.0887 54.3105C72.4921 52.4604 73.7669 50.5156 74.904 48.4899C76.4735 45.6754 77.7918 42.7271 78.8435 39.6796L78.9012 39.5122C84.0004 24.7589 82.4491 11.0745 88.0746 6.49441C112.122 -13.0858 142.06 14.7982 156.112 47.6808C156.821 49.3377 157.487 51.0046 158.111 52.6815C158.391 53.4306 158.662 54.1811 158.922 54.933C159.607 56.8925 160.228 58.857 160.786 60.8265C161 61.5777 161.204 62.3282 161.398 63.078C161.605 63.8871 161.804 64.6941 161.988 65.5011C163.356 71.4097 164.098 77.2367 164.098 82.7461Z" fill="#EBEBEB" />
@@ -143,9 +155,9 @@
       </defs>
     </svg>
     <div>
-      <p class="badgePrimary">ABOUT</p>
+      <p class="badgePrimary mr-auto">ABOUT</p>
       <h2 class="titleLarge pb-4 pt-3">Web Developer</h2>
-      <p class="textMedium text-balance">I am Louis, a junior web developer from France. Passionate about cars, particularly BMWs. Currently in training, I am learning front-end and back-end while waiting to specialize in one of them.</p>
+      <p class="textMedium sm:text-balance">I am Louis, a junior web developer from France. Passionate about cars, particularly BMWs. Currently in training, I am learning front-end and back-end while waiting to specialize in one of them.</p>
     </div>
   </section>
 
@@ -153,11 +165,11 @@
     <div>
       <p class="badgePrimary">PROJECTS</p>
       <h2 class="titleLarge pb-4 pt-3">My recent projects</h2>
-      <div class="flex items-center gap-14 pb-6">
-        <p class="textMedium">Explore my latest projects here. Each project comes with a detailed description, providing insights into its context, objectives, and the technologies utilized for its realization. Dive in and discover the innovation behind each creation.</p>
+      <div class="flex items-center sm:gap-14 gap-7 pb-6 sm:flex-row flex-col">
+        <p class="textMedium sm:text-left text-justify">Explore my latest projects here. Each project comes with a detailed description, providing insights into its context, objectives, and the technologies utilized for its realization. Dive in and discover the innovation behind each creation.</p>
         <a href="" class="buttonPrimary gap-2 px-4 py-2 items-center bg-buttonColor-background border border-borderColor rounded-md inline-block whitespace-nowrap">Explore all</a>
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-3 sm:flex-row flex-col">
         <div class="flex p-6 border border-borderColor rounded-xl">
           <div class="flex flex-col gap-6">
             <div class="flex gap-3">
@@ -219,7 +231,7 @@
     <div class="flex flex-col max-w-max mx-auto">
       <p class="badgePrimary mx-auto">SKILLS</p>
       <h2 class="titleLarge pb-4 pt-3 text-center">Mastered technologies</h2>
-      <p class="textMedium text-center">Here are all the technologies that I have mastered and use for <br>development. I am still learning these technologies and a few others.</p>
+      <p class="textMedium text-center text-balance">Here are all the technologies that I have mastered and use for development. I am still learning these technologies and a few others.</p>
     </div>
     <div class="overflow-x-hidden w-full side-mask flex group gap-14">
       <ul class="flex gap-14 items-center group-hover:play-state-paused motion-reduce:play-state-paused animate-marquee">
@@ -409,8 +421,8 @@
 
   <section class="pt-20 pb-20 border-t border-borderColor mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl">
     <div class="rounded-xl bg-gradient-to-bl from-borderColor from-0% via-borderColor via-85% to-accentColor-yellow/50 to-100% p-px">
-      <div class="flex p-6 bg-headerBack rounded-xl relative overflow-hidden">
-        <div class="flex flex-col w-3/5 pr-28">
+      <div class="flex p-6 bg-headerBack rounded-xl relative overflow-hidden md:flex-row flex-col gap-8 md:gap-0">
+        <div class="flex flex-col md:w-3/5 md:pr-28">
           <div class="flex gap-1">
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_212_394)">
@@ -429,7 +441,7 @@
 
           <p class="textMedium">If you have any questions, suggestions, or would like to discuss potential projects, feel free to contact me. I am always open to new collaboration opportunities. Use the form to send me a message, and I will respond to you as soon as possible. Thank you for visiting my portfolio!</p>
 
-          <div class="flex gap-3 pt-16">
+          <div class="flex gap-3 md:pt-16 pt-8 flex-col md:flex-row">
             <button class="buttonContact">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M13.3333 2.66663H2.66667C1.93029 2.66663 1.33334 3.26358 1.33334 3.99996V12C1.33334 12.7363 1.93029 13.3333 2.66667 13.3333H13.3333C14.0697 13.3333 14.6667 12.7363 14.6667 12V3.99996C14.6667 3.26358 14.0697 2.66663 13.3333 2.66663Z" stroke="white" stroke-opacity="0.8118" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
@@ -452,7 +464,7 @@
           <img class="absolute bottom-0 left-0" src="./assets/image/contact-mesh.svg" alt="">
         </div>
 
-        <div class="flex flex-col w-2/5 justify-between">
+        <div class="flex flex-col md:w-2/5 justify-between">
           <div class="flex flex-col gap-3">
             <label for="" class="flex flex-col gap-1.5 text-sm text-textColors-contactPrimary">
               Name
@@ -468,7 +480,7 @@
             </label>
           </div>
 
-          <input class="py-2 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background rounded-md border border-buttonColor-borderColor" type="submit" value="Send message">
+          <input class="mt-5 md:mt-0 py-2 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background rounded-md border border-buttonColor-borderColor" type="submit" value="Send message">
         </div>
       </div>
     </div>
@@ -477,7 +489,7 @@
   <section class="pb-24 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
     <div class="rounded-xl bg-gradient-to-tl from-borderColor from-0% via-borderColor via-85% to-accentColor-50 to-100% p-px">
       <div class="flex flex-col gap-3 bg-headerBack p-6 relative overflow-hidden rounded-xl">
-        <div class="flex gap-4">
+        <div class="flex flex-col sm:flex-row gap-4">
           <div class="flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
               <g clip-path="url(#clip0_225_3970)">
@@ -495,11 +507,11 @@
             </svg>
             <h3 class="text-lg leading-26 font-semibold text-textColors-primary"><span class="text-transparent bg-clip-text bg-gradient-to-r from-textColors-primary from-0% via-textColors-primary via-60% to-accentColor-100 to-100%">Admin</span> Dashboard</h3>
           </div>
-          <p class="bg-white/10 rounded p-1.5 text-xs leading-3 text-textColors-primary border border-white/15">Please log in to gain access</p>
+          <p class="bg-white/10 rounded p-1.5 text-xs leading-3 text-textColors-primary border border-white/15 mr-auto">Please log in to gain access</p>
         </div>
-        <p class="text-base text-textColors-secondary w-[375px]">Exclusive access to the admin dashboard, the central hub for project management and much more.</p>
-        <img class="absolute top-0 right-0" src="./assets/image/admin-pattern.svg" alt="">
-        <img class="absolute top-0 left-0" src="./assets/image/admin-mesh.svg" alt="">
+        <p class="text-base text-textColors-secondary sm:w-[375px]">Exclusive access to the admin dashboard, the central hub for project management and much more.</p>
+        <img class="absolute top-0 -right-40 sm:right-0 h-full" src="./assets/image/admin-pattern.svg" alt="">
+        <img class="absolute top-0 left-0 h-full" src="./assets/image/admin-mesh.svg" alt="">
       </div>
     </div>
   </section>
