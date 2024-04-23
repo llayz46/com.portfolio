@@ -12,7 +12,7 @@
           </div>
         <?php } ?>
       </div>
-      <img src="assets/image/project-1.png" alt="" class="rounded">
+      <img width="918" height="612" src="<?=_PATH_UPLOADS_PROJECTS_ . 'project-' . $project['id'] . '.png'?>" alt="" class="rounded max-w-[375] aspect-[3/2] object-cover object-top">
       <div class="flex flex-col gap-1.5">
         <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5"><?=$project['title']?></h4>
         <p class="text-textColors-cardPrimary/[.5] text-base leading-5"><?=$project['content']?></p>

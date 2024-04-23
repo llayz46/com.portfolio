@@ -1,18 +1,9 @@
 <?php
 require_once __DIR__ . '/lib/required_files.php';
 require_once __DIR__ . '/lib/project.php';
-// require_once __DIR__ . '/lib/technologies.php';
 require_once __DIR__ . '/templates/header.php';
 
 $projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
-
-// $projects = getProjectsAndTech($pdo, _HOME_LIMIT_PROJECTS_);
-
-// foreach($projects as $t) {
-//   var_dump($t);
-// }
-
-// $technologies = getTechnologiesById($pdo, $projects['id']);
 ?>
 
 <section class="bg-headerBack">
