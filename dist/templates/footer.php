@@ -11,18 +11,14 @@
 
       <nav class="w-full">
         <ul class="flex gap-1 py-10 justify-center">
-          <li class="relative group">
-            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20 active">Projects</a>
-            <div class="nav__active z-10 hidden"></div>
-          </li>
-          <li class="relative group">
-            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20">Contact</a>
-            <div class="nav__active z-10 hidden"></div>
-          </li>
-          <li class="relative group">
-            <a href="#" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20">Admin</a>
-            <div class="nav__active z-10 hidden"></div>
-          </li>
+          <?php foreach ($mainMenu as $key => $menuItem) {
+            if (!array_key_exists('exclude', $menuItem)) { ?>
+              <li class="relative group">
+                <a href="<?= $key ?>" class="h-full textNav py-2 px-4 flex items-center rounded-md md:hover:bg-white/5 transition-colors duration-200 cursor-pointer nav__item z-20 <?php if ($currentPage === $key) { echo 'active'; } ?>"><?= $menuItem['menu_title'] ?></a>
+                <div class="nav__active z-10 hidden"></div>
+              </li>
+          <?php }
+          } ?>
         </ul>
       </nav>
 

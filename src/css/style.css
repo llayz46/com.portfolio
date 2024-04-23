@@ -160,12 +160,17 @@
 }
 
 .nav__active {
-  @apply bottom-0 h-0.5 overflow-hidden absolute w-4 group-hover:w-6 left-[calc(50%-16px/2)] group-hover:left-[calc(50%-22px/2)] transition-all duration-300;
-  border-radius: 8px;
-  background-color: rgb(255, 255, 255);
+  @apply bottom-0 h-0.5 overflow-hidden absolute w-4 rounded-lg bg-white group-hover:w-6 left-[calc(50%-16px/2)] group-hover:left-[calc(50%-22px/2)] transition-all duration-300;
   box-shadow: rgba(255, 255, 255, 0.04) 0px -0.636953px 0.891735px 0px, rgba(255, 255, 255, 0.12) 0px -1.9316px 2.70425px 0px, rgba(255, 255, 255, 0.318) 0px -5.10612px 7.14857px 0px, rgb(255, 255, 255) 0px -16px 22.4px 0px;
 }
 
-/* box-shadow: rgba(255, 255, 255, 0.04) 0px -0.636953px 0.891735px 0px, rgba(255, 255, 255, 0.12) 0px -1.9316px 2.70425px 0px, rgba(255, 255, 255, 0.318) 0px -5.10612px 7.14857px 0px, rgb(255, 255, 255) 0px -16px 22.4px 0px; */
-/* border-radius: 8px; */
-/* background-color: rgb(255, 255, 255); */
+.nav__item--mobile.active {
+  @apply pl-2 text-white;
+}
+
+.nav__active--mobile {
+  @apply rounded-lg bg-white h-4 w-0.5 absolute;
+  box-shadow: rgba(255, 255, 255, 0.03) 0.711334px 0px 0.569067px 0px, rgba(255, 255, 255, 0.082) 1.93715px 0px 1.54972px 0px, rgba(255, 255, 255, 0.176) 4.25329px 0px 3.40263px 0px, rgba(255, 255, 255, 0.392) 9.44132px 0px 7.55306px 0px, rgb(255, 255, 255) 24px 0px 19.2px 0px;
+  left: unset;
+  bottom: calc(50% - 16px / 2);
+}
