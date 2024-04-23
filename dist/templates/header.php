@@ -1,10 +1,17 @@
+<?php 
+require_once __DIR__ . ('/../lib/menu.php');
+
+$currentPage = basename($_SERVER['SCRIPT_FILENAME']);
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TITRE DOCUMENT</title>
+  <meta name="description" content="<?=$mainMenu[$currentPage]['head_meta']?>">
+  <title><?=$mainMenu[$currentPage]['head_title']?></title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
