@@ -1,5 +1,18 @@
 <?php
-  require_once __DIR__ . '/templates/header.php';
+require_once __DIR__ . '/lib/required_files.php';
+require_once __DIR__ . '/lib/project.php';
+// require_once __DIR__ . '/lib/technologies.php';
+require_once __DIR__ . '/templates/header.php';
+
+$projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
+
+// $projects = getProjectsAndTech($pdo, _HOME_LIMIT_PROJECTS_);
+
+// foreach($projects as $t) {
+//   var_dump($t);
+// }
+
+// $technologies = getTechnologiesById($pdo, $projects['id']);
 ?>
 
 <section class="bg-headerBack">
@@ -9,8 +22,8 @@
   </div>
 </section>
 
-<section class="flex md:flex-row flex-col md:gap-20 gap-10 items-center justify-center md:pt-20 pt-10 md:pb-24 pb-12 border-b border-buttonColor-borderColor-normal mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
-  <svg class="js-scroll-animation min-w-fit" xmlns="http://www.w3.org/2000/svg" width="182" height="159" viewBox="0 0 182 159" fill="none">
+<section class="flex md:flex-row flex-col md:gap-20 gap-10 items-center justify-center md:pt-20 pt-10 md:pb-24 pb-12 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
+  <svg class="js-scroll-animation min-w-fit 2xl:pl-32" xmlns="http://www.w3.org/2000/svg" width="182" height="159" viewBox="0 0 182 159" fill="none">
     <g clip-path="url(#clip0_207_84)">
       <path d="M164.098 82.7461C164.122 102.421 156.54 121.338 142.946 135.522C142.127 136.383 141.285 137.223 140.421 138.042C139.105 139.297 137.745 140.504 136.34 141.663C123.202 152.519 106.801 158.62 89.7822 158.981C89.2152 158.994 88.646 159 88.0746 159C74.5018 159 57.4303 151.729 41.9379 141.663C40.6562 140.83 39.3858 139.978 38.1269 139.106C37.5385 138.703 36.9529 138.294 36.3701 137.879C30.3949 133.647 24.7233 129 19.3971 123.971C15.9098 120.688 12.6396 117.181 9.60737 113.472C-2.29646 98.7442 -4.92202 85.474 12.0489 82.7461C14.0582 82.4242 16.0083 82.0801 17.8992 81.7138C20.6382 81.1858 23.2594 80.6156 25.763 80.0032C29.1354 79.1812 32.3038 78.2898 35.2681 77.329C36.2653 77.0071 37.2396 76.6787 38.1911 76.3439C52.2583 71.3882 61.6735 64.9259 68.0823 57.9141C69.1693 56.7272 70.1715 55.526 71.0887 54.3105C72.4921 52.4604 73.7669 50.5156 74.904 48.4899C76.4735 45.6754 77.7918 42.7271 78.8435 39.6796L78.9012 39.5122C84.0004 24.7589 82.4491 11.0745 88.0746 6.49441C112.122 -13.0858 142.06 14.7982 156.112 47.6808C156.821 49.3377 157.487 51.0046 158.111 52.6815C158.391 53.4306 158.662 54.1811 158.922 54.933C159.607 56.8925 160.228 58.857 160.786 60.8265C161 61.5777 161.204 62.3282 161.398 63.078C161.605 63.8871 161.804 64.6941 161.988 65.5011C163.356 71.4097 164.098 77.2367 164.098 82.7461Z" fill="#EBEBEB" />
       <path d="M89.7822 158.981C89.2152 158.994 88.646 159 88.0746 159C74.5018 159 57.4303 151.729 41.9379 141.663C40.6562 140.83 39.3859 139.978 38.1269 139.106L39.2311 132.367L72.6572 127.916L89.4334 140.783L89.7822 158.981Z" fill="#2F2E41" />
@@ -97,84 +110,32 @@
       </clipPath>
     </defs>
   </svg>
-  <div class="js-scroll-animation">
-    <p class="badgePrimary mr-auto">ABOUT</p>
-    <h2 class="titleLarge pb-4 pt-3">Web Developer</h2>
-    <p class="textMedium sm:text-balance">I am Louis, a junior web developer from France. Passionate about cars, particularly BMWs. Currently in training, I am learning front-end and back-end while waiting to specialize in one of them.</p>
+  <div class="js-scroll-animation flex flex-col">
+    <p class="badgePrimary ml-auto mr-auto md:ml-0">ABOUT</p>
+    <h2 class="titleLarge pb-4 pt-3 md:text-left text-center">Web Developer</h2>
+    <p class="textMedium 2xl:pr-32 text-center md:text-left">I am Louis, a junior web developer from France. Passionate about cars, particularly BMWs. Currently in training, I am learning front-end and back-end while waiting to specialize in one of them.</p>
   </div>
 </section>
 
-<section class="flex gap-20 items-center md:pt-20 pt-10 md:pb-24 pb-12 border-b border-buttonColor-borderColor-normal mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
+<div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl h-px bg-gradient-to-r from-buttonColor-borderColor-normal/10 via-buttonColor-borderColor-normal to-buttonColor-borderColor-normal/10"></div>
+
+<section class="flex gap-20 items-center md:pt-20 pt-10 md:pb-24 pb-12 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
   <div class="js-scroll-animation">
     <p class="badgePrimary">PROJECTS</p>
     <h2 class="titleLarge pb-4 pt-3">My recent projects</h2>
     <div class="flex items-center sm:gap-14 gap-7 pb-6 sm:flex-row flex-col">
       <p class="textMedium sm:text-left text-justify">Explore my latest projects here. Each project comes with a detailed description, providing insights into its context, objectives, and the technologies utilized for its realization. Dive in and discover the innovation behind each creation.</p>
-      <a href="" class="buttonPrimary gap-2 px-4 py-2 items-center bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md inline-block whitespace-nowrap md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Explore all</a>
+      <a href="projects.php" class="buttonPrimary gap-2 px-4 py-2 items-center bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md inline-block whitespace-nowrap md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Explore all</a>
     </div>
     <div class="flex gap-3 sm:flex-row flex-col">
-      <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10">
-        <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-          <div class="flex flex-col gap-6">
-            <div class="flex gap-3">
-              <div class="badgeSkill">
-                <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-              </div>
-              <div class="badgeSkill">
-                <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-              </div>
-            </div>
-            <img src="assets/image/project-1.png" alt="" class="rounded">
-            <div class="flex flex-col gap-1.5">
-              <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-              <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10">
-        <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-          <div class="flex flex-col gap-6">
-            <div class="flex gap-3">
-              <div class="badgeSkill">
-                <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-              </div>
-              <div class="badgeSkill">
-                <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-              </div>
-            </div>
-            <img src="assets/image/project-2.png" alt="" class="rounded">
-            <div class="flex flex-col gap-1.5">
-              <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-              <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10">
-        <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-          <div class="flex flex-col gap-6">
-            <div class="flex gap-3">
-              <div class="badgeSkill">
-                <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-              </div>
-              <div class="badgeSkill">
-                <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-              </div>
-            </div>
-            <img src="assets/image/project-1.png" alt="" class="rounded">
-            <div class="flex flex-col gap-1.5">
-              <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-              <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-            </div>
-          </div>
-        </a>
-      </div>
+      <?php foreach($projects as $project) {
+        require 'templates/project_part.php';
+      } ?>
     </div>
   </div>
 </section>
+
+<div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl h-px bg-gradient-to-r from-buttonColor-borderColor-normal/10 via-buttonColor-borderColor-normal to-buttonColor-borderColor-normal/10"></div>
 
 <section class="flex flex-col gap-14 items-center md:pt-20 pt-10 md:pb-24 pb-12">
   <div class="flex flex-col max-w-max mx-auto js-scroll-animation">
@@ -368,7 +329,9 @@
   </div>
 </section>
 
-<section class="md:py-20 py-10 border-t border-buttonColor-borderColor-normal mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl" id="contact">
+<div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl h-px bg-gradient-to-r from-buttonColor-borderColor-normal/10 via-buttonColor-borderColor-normal to-buttonColor-borderColor-normal/10"></div>
+
+<section class="md:py-20 py-10 mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl" id="contact">
   <div class="js-scroll-animation rounded-xl bg-gradient-to-bl from-buttonColor-borderColor-normal from-0% via-buttonColor-borderColor-normal via-85% to-accentColor-yellow/50 to-100% p-px">
     <div class="group flex p-6 bg-headerBack rounded-xl relative overflow-hidden md:flex-row flex-col gap-8 md:gap-0">
       <div class="flex flex-col md:w-3/5 md:pr-28">
