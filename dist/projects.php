@@ -1,5 +1,9 @@
 <?php
+require_once __DIR__ . '/lib/required_files.php';
+require_once __DIR__ . '/lib/project.php';
 require_once __DIR__ . '/templates/header.php';
+
+$projects = getProjects($pdo);
 ?>
 
 <section class="bg-headerBack">
@@ -32,185 +36,9 @@ require_once __DIR__ . '/templates/header.php';
 
 <section class="flex gap-20 items-center md:pt-20 pt-10 md:pb-24 pb-12 mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-1.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-1.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-2.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-2.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-1.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-1.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-1.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-2.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
-      <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-3">
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-            <div class="badgeSkill">
-              <img width="12" height="12" src="assets/image/badge-TypeScript.svg" alt="">
-            </div>
-          </div>
-          <img src="assets/image/project-1.png" alt="" class="rounded">
-          <div class="flex flex-col gap-1.5">
-            <h4 class="font-semibold text-textColors-cardPrimary text-base leading-5">Project name</h4>
-            <p class="text-textColors-cardPrimary/[.5] text-base leading-5">Explain what the project did and which technologies it uses.</p>
-          </div>
-        </div>
-      </a>
-    </div>
+    <?php foreach($projects as $project) {
+      require 'templates/project_part.php';
+    } ?>
   </div>
 </section>
 

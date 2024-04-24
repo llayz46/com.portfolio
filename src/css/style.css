@@ -23,11 +23,11 @@
 }
 
 .buttonPrimary {
-  @apply font-medium text-sm leading-6 text-textColors-primary;
+  @apply font-medium text-sm leading-6 text-textColors-primary focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack;
 }
 
 .buttonContact {
-  @apply flex gap-2 items-center text-textColors-contactPrimary text-sm px-4 py-2 bg-buttonColor-backgroundTransparent border border-buttonColor-borderTransparent md:hover:border-accentColor-yellow/60 transition-colors duration-200 rounded-md;
+  @apply flex gap-2 items-center text-textColors-contactPrimary text-sm px-4 py-2 bg-buttonColor-backgroundTransparent border border-buttonColor-borderTransparent md:hover:border-accentColor-yellow/60 transition-colors duration-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack;
 }
 
 .titleLarge {

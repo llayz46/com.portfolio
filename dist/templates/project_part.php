@@ -2,7 +2,7 @@
   $skills = getProjectById($pdo, $project['id']);
 ?>
 
-<div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10">
+<div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
   <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
     <div class="flex flex-col gap-6">
       <div class="flex gap-3">
