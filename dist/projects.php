@@ -39,6 +39,7 @@ $projects = getProjects($pdo);
     <?php foreach($projects as $project) {
       require 'templates/project_part.php';
     } ?>
+    <!-- AJOUTER LES PAGES AVEC PAGINATION : voir l'autre projet. -->
   </div>
 </section>
 

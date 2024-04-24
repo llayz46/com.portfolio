@@ -37,3 +37,13 @@ function getProjectById(PDO $pdo, INT $id): array {
 
   return $query->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getProjectImageById(string $image): string {
+  if (file_exists($image)) {
+    return $image;
+  } else {
+    return _PATH_UPLOADS_PROJECTS_ . 'project-default.png';
+  }
+}
+
+// getProjectImageById($imagePath)
