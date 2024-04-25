@@ -65,7 +65,7 @@ require_once __DIR__ . '/templates/header.php';
             </label>
           </form>
   
-          <input class="mt-5 md:mt-0 py-2 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200" type="submit" value="Send message">
+          <input class="mt-5 md:mt-0 py-2 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Send message">
         </div>
       </div>
     </div>
