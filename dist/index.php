@@ -410,9 +410,15 @@ $projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
           </svg>
           <h3 class="text-lg leading-26 font-semibold text-textColors-primary">Admin Dashboard</h3>
         </div>
-        <a href="" class="bg-white/10 md:hover:bg-white/5 rounded p-1.5 text-xs leading-3 text-textColors-primary border border-white/15 md:hover:border-white/10 transition-colors duration-200 mr-auto cursor-pointer">Please log in to gain access</a>
+        <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') { ?>
+          <a href="admin/index.php" class="bg-white/10 md:hover:bg-white/5 rounded p-1.5 text-xs leading-3 text-textColors-primary border border-white/15 md:hover:border-white/10 transition-colors duration-200 mr-auto cursor-pointer">Access to the admin dashboard</a>
+        <?php } else if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'user') { ?>
+          <button class="bg-white/10 md:hover:bg-white/5 rounded p-1.5 text-xs leading-3 text-textColors-primary border border-white/15 md:hover:border-white/10 transition-colors duration-200 mr-auto cursor-pointer">You need to be an admin to gain access</button>
+        <?php } else { ?>
+          <a href="login.php" class="bg-white/10 md:hover:bg-white/5 rounded p-1.5 text-xs leading-3 text-textColors-primary border border-white/15 md:hover:border-white/10 transition-colors duration-200 mr-auto cursor-pointer">Please log in to gain access</a>
+        <?php } ?>
       </div>
-      <p class="text-base text-textColors-secondary sm:w-[375px] z-10">Exclusive access to the admin dashboard, the central hub for project management and much more.</p>
+        <p class="text-base text-textColors-secondary sm:w-[375px] z-10">Exclusive access to the admin dashboard, the central hub for project management and much more.</p>
       <img class="absolute top-0 -right-40 sm:right-0 h-full" src="./assets/image/admin-pattern.svg" alt="">
       <img class="absolute top-0 left-0 h-full group-hover:brightness-75 transition-all duration-200" src="./assets/image/admin-mesh.svg" alt="">
     </div>

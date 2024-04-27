@@ -26,6 +26,16 @@ function getProjects(PDO $pdo, INT $limit = null, INT $page = null): array {
   return $projects;
 }
 
+function getTotalProjects(PDO $pdo): INT {
+  $sql = 'SELECT COUNT(*) AS total FROM projects';
+  $query = $pdo->prepare($sql);
+  $query->execute();
+
+  $result = $query->fetch(PDO::FETCH_ASSOC);
+
+  return $result['total'];
+}
+
 function getProjectById(PDO $pdo, INT $id): array {
   $sql = 'SELECT p.*, t.name skill FROM projects p
           JOIN projects_technologies pt ON p.id = pt.project_id
@@ -45,5 +55,3 @@ function getProjectImageById(string $image): string {
     return _PATH_UPLOADS_PROJECTS_ . 'project-default.png';
   }
 }
-
-// getProjectImageById($imagePath)
