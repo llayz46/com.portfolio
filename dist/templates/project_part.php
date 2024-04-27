@@ -2,15 +2,17 @@
   $skills = getProjectById($pdo, $project['id']);
 
   $imagePath = 'uploads/projects/project-' . $project['id'] . '.png';
+
+  $adminCheck = basename(dirname($_SERVER['SCRIPT_FILENAME']));
 ?>
 
-<div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 js-scroll-animation">
+<div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 <?php if($adminCheck !== 'admin') { echo 'js-scroll-animation'; } ?>">
   <a href="" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
     <div class="flex flex-col gap-6">
       <div class="flex gap-3">
         <?php foreach ($skills as $skill) { ?>
           <div class="badgeSkill">
-            <img width="12" height="12" src="assets/image/badge-<?=$skill['skill'] ?>.svg" alt="">
+            <img width="12" height="12" src="<?php if($adminCheck === 'admin') { echo '../'; } ?>assets/image/badge-<?=$skill['skill'] ?>.svg" alt="">
           </div>
         <?php } ?>
       </div>

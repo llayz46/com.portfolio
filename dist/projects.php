@@ -3,18 +3,24 @@ require_once __DIR__ . '/lib/required_files.php';
 require_once __DIR__ . '/lib/project.php';
 require_once __DIR__ . '/templates/header.php';
 
-if (isset($_GET['page'])) {
-  $page = $_GET['page'];
-  $currentPage = $_GET['page'];
-} else {
-  $page = 1;
-}
-
-$projects = getProjects($pdo, _PROJECTS_LIMIT_PROJECTS_, $page);
-
 $totalProjects = getTotalProjects($pdo);
 
 $totalPages = ceil($totalProjects / _PROJECTS_LIMIT_PROJECTS_);
+
+if ($totalPages > 1) {
+  if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $totalPages) {
+    $page = $_GET['page'];
+    $currentPage = $_GET['page'];
+  } else if ($_GET['page'] > $totalPages) {
+    $page = $totalPages;
+  } else {
+    $page = 1;
+  }
+
+  $projects = getProjects($pdo, _PROJECTS_LIMIT_PROJECTS_, $page);
+}
+
+$projects = getProjects($pdo, _PROJECTS_LIMIT_PROJECTS_);
 ?>
 
 <section class="bg-headerBack">
@@ -94,8 +100,7 @@ $totalPages = ceil($totalProjects / _PROJECTS_LIMIT_PROJECTS_);
       </div>
     </div>
   </section>
-<?php } ?>
+<?php }
 
-<?php
 require_once __DIR__ . '/templates/footer.php';
 ?>
