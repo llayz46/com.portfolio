@@ -28,14 +28,14 @@ if ($totalPages > 1) {
 
 ?>
 
-<section class="px-12 pt-8 h-full">
+<section class="px-8 md:px-12 pt-8 h-full">
   <div class="flex justify-between pb-6 border-b border-textColors-navPrimary">
     <div class="flex flex-col gap-2">
       <h1 class="text-2xl text-textColors-primary font-semibold"><?=$adminMenu[$actualPage]['menu_title']?></h1>
       <p class="text-base text-textColors-navPrimary font-medium">Find here all of the projects</p>
     </div>
   </div>
-  <div class="pt-8 gap-4 mx-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:pb-12 pb-6">
+  <div class="pt-8 gap-4 mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:pb-12 pb-6">
     <?php foreach ($projects as $project) {
       require __DIR__ . '../../templates/project_part.php';
     } ?>

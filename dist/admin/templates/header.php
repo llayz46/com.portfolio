@@ -1,4 +1,4 @@
-<section class="w-10/12 flex flex-col">
+<section class="w-full md:w-10/12 flex flex-col">
   <header class="bg-gradient-to-r from-[#101010] from-0% via-headerBack via-5% to-headerBack to-100% py-3 pr-8 pl-6 flex justify-between items-center">
     <div>
       <p class="text-xl text-textColors-primary font-semibold">Hello <?=ucfirst($_SESSION['user']['name'])?>!</p>
