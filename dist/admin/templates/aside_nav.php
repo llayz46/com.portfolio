@@ -19,7 +19,7 @@ adminOnly();
 </head>
 
 <body class="bg-bodyBack w-screen flex">
-  <aside class="w-2/12 bg-headerBack h-screen flex flex-col justify-between">
+  <aside class="w-2/12 bg-headerBack min-h-screen flex flex-col justify-between">
     <div class="flex flex-col">
       <a href="../index.php" class="flex gap-3 items-center p-8">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +60,7 @@ adminOnly();
       <img width="40" height="40" src="../assets/image/avatar-default.png" alt="" class="rounded-full">
       <div class="">
         <p class="text-base/5 text-textColors-primary font-medium">Hello <?=ucfirst($_SESSION['user']['name'])?>!</p>
-        <p class="text-sm/tight text-textColors-navPrimary">user@mail.com</p>
+        <p class="text-sm/tight text-textColors-navPrimary"><?=$_SESSION['user']['email']?></p>
       </div>
     </div>
   </aside>

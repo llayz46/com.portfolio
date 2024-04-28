@@ -11,7 +11,7 @@ if ($totalPages > 1) {
   if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $totalPages) {
     $page = $_GET['page'];
     $currentPage = $_GET['page'];
-  } else if ($_GET['page'] > $totalPages) {
+  } else if (isset($_GET['page']) && $_GET['page'] > $totalPages) {
     $page = $totalPages;
   } else {
     $page = 1;
