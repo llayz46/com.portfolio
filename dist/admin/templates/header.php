@@ -2,7 +2,7 @@
   <header class="bg-gradient-to-r from-[#101010] from-0% via-headerBack via-5% to-headerBack to-100% py-3 pr-8 pl-6 flex justify-between items-center">
     <div>
       <p class="text-xl text-textColors-primary font-semibold">Hello <?=ucfirst($_SESSION['user']['name'])?>!</p>
-      <p class="text-sm/5 text-textColors-navPrimary">Welcome back to dashboard.</p>
+      <p class="text-base text-textColors-navPrimary">Welcome back to dashboard.</p>
     </div>
     <div class="flex items-center gap-6">
       <div class="flex items-center gap-1">

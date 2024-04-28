@@ -43,7 +43,7 @@ if ($totalPages > 1) {
 </section>
 
 <?php if ($totalPages > 1) { ?>
-  <section class="px-12 pt-8 h-full md:pb-24 pb-12">
+  <section class="px-12 pt-8 h-full lg:pb-24 md:pb-8 sm:pb-3">
     <div class="flex items-center justify-between px-4 py-3 sm:px-6">
       <div class="flex flex-1 justify-between sm:hidden">
         <a href="<?php if (isset($_GET['page'])) { if ($_GET['page'] > 1) { echo '?page='.(int)--$_GET['page']; } }?>" class="<?php if (!isset($_GET['page']) || (int)$page < 2) { echo 'pointer-events-none'; } ?> relative inline-flex items-center rounded-md border border-buttonColor-borderColor-normal px-4 py-2 text-sm font-medium text-textColors-cardPrimary hover:bg-accentColor-100/30">Previous</a>
