@@ -48,6 +48,15 @@ function getProjectById(PDO $pdo, INT $id): array {
   return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getOneProjectById(PDO $pdo, INT $id): array {
+  $sql = 'SELECT * FROM projects WHERE id = :id';
+  $query = $pdo->prepare($sql);
+  $query->bindValue(':id', $id, PDO::PARAM_INT);
+  $query->execute();
+
+  return $query->fetch(PDO::FETCH_ASSOC);
+}
+
 function getProjectImageById(string $image): string {
   if (file_exists($image)) {
     return $image;

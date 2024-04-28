@@ -192,7 +192,7 @@ $projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
             (+33) 6 78 90 12 34
           </button>
         </div>
-        <img class="absolute bottom-0 left-0 group-hover:brightness-75 transition-all duration-200" src="./assets/image/contact-mesh.svg" alt="">
+        <img class="absolute bottom-0 left-0 group-hover:brightness-75 transition-all duration-200 z-0" src="./assets/image/contact-mesh.svg" alt="">
       </div>
 
       <div class="flex flex-col md:w-2/5 justify-between">
@@ -211,7 +211,7 @@ $projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
           </label>
         </form>
 
-        <input class="mt-5 md:mt-0 py-2 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Send message">
+        <input class="mt-5 md:mt-0 py-2 text-sm leading-6 z-10 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Send message">
       </div>
     </div>
   </div>

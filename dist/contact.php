@@ -4,7 +4,7 @@ require_once __DIR__ . '/templates/header.php';
 
 <div class="min-h-screen flex items-center">
 
-  <section class="mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl" id="contact">
+  <section class="mx-auto w-11/12 flex max-w-5xl 2xl:max-w-7xl max-sm:pt10" id="contact">
     <div class="js-scroll-animation rounded-xl bg-gradient-to-bl from-buttonColor-borderColor-normal from-0% via-buttonColor-borderColor-normal via-85% to-accentColor-yellow/50 to-100% p-px">
       <div class="group flex p-6 bg-headerBack rounded-xl relative overflow-hidden md:flex-row flex-col gap-8 md:gap-0">
         <div class="flex flex-col md:w-3/5 md:pr-28">
@@ -65,7 +65,7 @@ require_once __DIR__ . '/templates/header.php';
             </label>
           </form>
   
-          <input class="mt-5 md:mt-0 py-2 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Send message">
+          <input class="mt-5 md:mt-0 py-2 z-10 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Send message">
         </div>
       </div>
     </div>
