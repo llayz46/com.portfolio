@@ -71,9 +71,9 @@ $currentPage = basename($_SERVER['SCRIPT_FILENAME']);
         </a>
 
         <button class="md:hidden w-[26px] aspect-square relative overflow-hidden origin-[50%_50%_0px] js-burger-menu">
-          <div class="line__child line__top"></div>
-          <div class="line__child line__middle"></div>
-          <div class="line__child line__bottom"></div>
+          <div class="line__child line__top transition-all duration-300"></div>
+          <div class="line__child line__middle transition-all duration-300"></div>
+          <div class="line__child line__bottom transition-all duration-300"></div>
         </button>
       </div>
       <div class="hidden mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl js-dropmenu">
