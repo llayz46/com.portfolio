@@ -7,10 +7,14 @@ $mainMenu['project.php'] = ['head_title' => 'Project not found', 'head_meta' => 
 
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php';
 
-if (strpos($referer, 'index.php') !== false) {
-  $backLink = 'index.php';
+if (strpos($referer, 'admin/index.php') !== false) {
+  $backLink = 'admin/index.php';
+} else if (strpos($referer, 'admin/projects.php') !== false) {
+  $backLink = 'admin/projects.php';
 } else if (strpos($referer, 'projects.php') !== false) {
   $backLink = 'projects.php';
+} else if (strpos($referer, 'index.php') !== false) {
+  $backLink = 'index.php';
 } else {
   $backLink = 'projects.php';
 }
@@ -48,7 +52,29 @@ if (!$error) { ?>
         <div class="p-6 border border-buttonColor-borderColor-normal rounded-lg h-fit">
           <img width="918" height="612" src="<?= getProjectImageById($imagePath) ?>" alt="" class="rounded max-w-[375] aspect-[3/2] object-cover object-top">
         </div>
-        <a class="py-4 px-8 bg-accentColor-yellow rounded-lg" href="">Let's view the live demo</a>
+        <div class="flex justify-between">
+          <a class="py-4 px-12 bg-accentColor-yellow rounded-lg flex items-center gap-2 text-base font-medium text-headerBack w-fit" href="">
+            Let's view the live demo
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="fill-headerBack rotate-180">
+              <path d="M14 7.45H3.32502L7.57502 3.125C7.80002 2.9 7.80002 2.55 7.57502 2.325C7.35002 2.1 7.00002 2.1 6.77502 2.325L1.60002 7.575C1.37502 7.8 1.37502 8.15 1.60002 8.375L6.77502 13.625C6.87502 13.725 7.02502 13.8 7.17502 13.8C7.32502 13.8 7.45002 13.75 7.57502 13.65C7.80002 13.425 7.80002 13.075 7.57502 12.85L3.35002 8.575H14C14.3 8.575 14.55 8.325 14.55 8.025C14.55 7.7 14.3 7.45 14 7.45Z" />
+            </svg>
+          </a>
+          <div class="h-full w-px rounded bg-buttonColor-borderColor-normal"></div>
+          <button class="flex items-center py-4 rounded-lg px-8 bg-white/15 text-textColors-primary gap-2 text-base font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <g clip-path="url(#clip0_376_632)">
+                <path d="M9.94863 5.49017L10.0624 5.72872L10.3235 5.76912L14.6785 6.44283L11.5161 9.7018L11.3408 9.88248L11.3816 10.1309L12.1168 14.6138L8.29071 12.5118L8.0507 12.3799L7.81035 12.5112L3.93049 14.6296L4.66837 10.1309L4.70912 9.88248L4.53379 9.7018L1.36888 6.44026L5.67413 5.79447L5.93765 5.75494L6.05178 5.51416L8.00025 1.40334L9.94863 5.49017Z" stroke="rgb(237, 237, 237)" />
+              </g>
+              <defs>
+                <clipPath id="clip0_376_632">
+                  <rect width="16" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            Like the project
+            <span class="border-l border-white/20 pl-2 h-full font-medium">8</span>
+          </button>
+        </div>
       </div>
       <div class="flex flex-col gap-4 w-2/6">
         <div class="p-6 bg-headerBack rounded-lg flex flex-col gap-1.5">

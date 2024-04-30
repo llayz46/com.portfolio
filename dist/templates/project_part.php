@@ -7,7 +7,7 @@
 ?>
 
 <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 <?php if($adminCheck !== 'admin') { echo 'js-scroll-animation'; } ?>">
-  <a href="project.php?id=<?=$project['id']?>" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
+  <a href="<?php if($adminCheck === 'admin') { echo '../project.php?id=' . $project['id']; } else { echo 'project.php?id=' . $project['id']; } ?>" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
     <div class="flex flex-col gap-6">
       <div class="flex gap-3">
         <?php foreach ($skills as $skill) { ?>
