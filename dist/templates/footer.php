@@ -1,4 +1,4 @@
-<section class="bg-gradient-to-t from-headerBack via-headerBack via-75% to-bodyBack to-100%">
+<section class="bg-gradient-to-t from-headerBack via-headerBack via-75% to-bodyBack to-100% js-footer">
   <div class="mx-auto w-11/12 max-w-5xl 2xl:max-w-7xl md:pt-12 pt-6">
     <footer class="js-scroll-animation flex flex-col items-center">
       <a href="#" class="pb-10 md:hover:scale-105 transition-all duration-300">
@@ -56,6 +56,7 @@
 
 <script src="../assets/javascript/nav.js"></script>
 <script src="../assets/javascript/scrollAnimation.js"></script>
+<script src="../assets/javascript/windowSize.js"></script>
 </body>
 
 </html>

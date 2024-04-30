@@ -52,7 +52,7 @@ if (!$error) { ?>
         <div class="p-6 border border-buttonColor-borderColor-normal rounded-lg h-fit">
           <img width="918" height="612" src="<?= getProjectImageById($imagePath) ?>" alt="" class="rounded max-w-[375] aspect-[3/2] object-cover object-top">
         </div>
-        <div class="flex justify-between">
+        <div class="flex gap-4">
           <a class="py-4 px-12 bg-accentColor-yellow rounded-lg flex items-center gap-2 text-base font-medium text-headerBack w-fit" href="">
             Let's view the live demo
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="fill-headerBack rotate-180">
@@ -60,7 +60,7 @@ if (!$error) { ?>
             </svg>
           </a>
           <div class="h-full w-px rounded bg-buttonColor-borderColor-normal"></div>
-          <button class="flex items-center py-4 rounded-lg px-8 bg-white/15 text-textColors-primary gap-2 text-base font-medium">
+          <button class="flex items-center py-4 rounded-lg px-8 bg-white/15 text-textColors-primary gap-2 text-base font-medium md:active:bg-white/10 transition-all duration-75" <?php if(!$_SESSION) { echo 'disabled="disabled"'; } ?>>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
               <g clip-path="url(#clip0_376_632)">
                 <path d="M9.94863 5.49017L10.0624 5.72872L10.3235 5.76912L14.6785 6.44283L11.5161 9.7018L11.3408 9.88248L11.3816 10.1309L12.1168 14.6138L8.29071 12.5118L8.0507 12.3799L7.81035 12.5112L3.93049 14.6296L4.66837 10.1309L4.70912 9.88248L4.53379 9.7018L1.36888 6.44026L5.67413 5.79447L5.93765 5.75494L6.05178 5.51416L8.00025 1.40334L9.94863 5.49017Z" stroke="rgb(237, 237, 237)" />

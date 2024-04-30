@@ -17,7 +17,7 @@ $currentPage = basename($_SERVER['SCRIPT_FILENAME']);
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="bg-bodyBack body">
+<body class="bg-bodyBack body js-body">
   <a href="#" class="will-change-scroll js-to-top-button hidden xl:block p-2 border border-textColors-primary/50 rounded-md fixed bottom-7 xl:hover:bottom-8 xl:transition-all scale-0 right-7">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M20.4751 10.1625L12.6001 2.39998C12.2626 2.06248 11.7376 2.06248 11.4001 2.39998L3.5251 10.1625C3.1876 10.5 3.1876 11.025 3.5251 11.3625C3.8626 11.7 4.3876 11.7 4.7251 11.3625L11.1376 5.06248V21C11.1376 21.45 11.5126 21.825 11.9626 21.825C12.4126 21.825 12.8251 21.45 12.8251 21V4.98748L19.3126 11.3625C19.4626 11.5125 19.6876 11.5875 19.9126 11.5875C20.1376 11.5875 20.3626 11.5125 20.5126 11.325C20.8126 11.025 20.8126 10.4625 20.4751 10.1625Z" fill="#EDEDED80" />
