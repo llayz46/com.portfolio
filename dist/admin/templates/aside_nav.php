@@ -38,7 +38,8 @@ adminOnly();
       <nav>
         <ul class="flex flex-col gap-1 pt-4">
           <?php
-          foreach ($adminMenu as $url => $item) { ?>
+          foreach ($adminMenu as $url => $item) { 
+            if (!array_key_exists('exclude', $item)) { ?>
             <li class="<?php if($currentPage === $url) { echo 'bg-accentColor-10 border-r-4 border-accentColor-100'; } else { echo 'md:hover:bg-accentColor-10'; } ?>">
               <a href="<?=$url?>" class="py-2 pl-8 flex items-center md:gap-[10px]">
                 <?php if($currentPage === $url) {
@@ -52,7 +53,7 @@ adminOnly();
             <?php if ($item === array_values($adminMenu)[1]) { ?>
               <div class="mx-6 md:mx-8 h-px bg-textColors-navPrimary my-6"></div>
             <?php } ?>
-          <?php } ?>
+          <?php } } ?>
         </ul>
       </nav>
     </div>

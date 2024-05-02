@@ -57,4 +57,5 @@ $adminMenu = [
     <path d="M17.5 10H7.5" stroke="color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>'
   ],
+  'new_project.php' => ['menu_title' => 'Add a new project', 'head_title' => 'Admin New Project - Portfolio', 'head_meta' => 'Add a new project to your portfolio.', 'exclude' => true],
 ];
