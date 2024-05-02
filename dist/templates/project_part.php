@@ -1,7 +1,12 @@
 <?php 
   $skills = getProjectById($pdo, $project['id']);
 
-  $imagePath = 'uploads/projects/project-' . $project['id'] . '.png';
+  foreach (_ALLOWED_IMAGE_TYPES_ as $ext) {
+    $imagePath = 'uploads/projects/project-' . $project['id'] . '.' . $ext;
+    if (file_exists($imagePath)) {
+      break;
+    }
+  }
 
   $adminCheck = basename(dirname($_SERVER['SCRIPT_FILENAME']));
 ?>

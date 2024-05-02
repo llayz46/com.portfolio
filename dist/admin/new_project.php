@@ -23,8 +23,8 @@ if (isset($_POST['createProject'])) {
     $content = htmlspecialchars($_POST['project-content']);
     $res = addProject($pdo, $title, $content, $_POST['project-technologies']);
 
-    if ($res) {
-      $projectId = $pdo->lastInsertId();
+    if ($res['success']) {
+      $projectId = $res['projectId'];
       $success[] = 'Project successfully added';
 
       $files = $_FILES['project-image'];

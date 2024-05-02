@@ -85,7 +85,7 @@ function addProject(PDO $pdo, $title, $content, $technologies)
 
     $pdo->commit();
 
-    return true;
+    return ['success' => true, 'projectId' => $projectId];
   } catch (PDOException $e) {
     $pdo->rollBack();
     return false;
