@@ -34,13 +34,34 @@ if (isset($_GET['id'])) {
   }
 
   if ($project) {
-    // IMAGE ????
     $mainMenu['project.php'] = ['head_title' => htmlentities($project['title']) . ' - Portfolio', 'head_meta' => htmlentities($project['content']), 'exclude' => true];
   } else {
     $error = true;
   }
 } else {
   $error = true;
+}
+
+if (isset($_GET['project-delete'])) {
+  $id = $_GET['project-delete'];
+  $projectToDelete = getOneProjectById($pdo, $id);
+
+  if ($projectToDelete) {
+    if (deleteProject($pdo, $id)) {
+      foreach (_ALLOWED_IMAGE_TYPES_ as $ext) {
+        $file = 'uploads/projects/project-' . $id . '.' . $ext;
+        if (file_exists($file)) {
+          unlink($file);
+        }
+      }
+      header('Location: projects.php');
+      exit();
+    } else {
+      $error = true;
+    }
+  } else {
+    $error = true;
+  }
 }
 
 require_once __DIR__ . '/templates/header.php';
@@ -98,6 +119,13 @@ if (!$error) { ?>
             <?php } ?>
           </ul>
         </div>
+        <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') { ?>
+          <div class="p-6 bg-headerBack rounded-lg flex flex-col gap-1.5">
+            <h3 class="text-xl text-textColors-primary font-semibold">Delete project</h3>
+            <p class="text-base text-[#b8b8b8]">Click on this button to delete this project from the portfolio.</p>
+            <a href="?project-delete=<?=$project['id']?>" onclick="return confirm('Are you sure you want to delete this project?')" class="buttonPrimary gap-2 px-8 py-2 mt-2 items-center bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md inline-block whitespace-nowrap w-fit md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Delete</a>
+          </div>
+        <?php } ?>
       </div>
     </div>
   </section>

@@ -92,17 +92,28 @@ function addProject(PDO $pdo, $title, $content, $technologies)
   }
 }
 
-/* 
-INSERT INTO projects (title, content)
-VALUES ('Test requête SQL', 'Test requête SQL description');
-
-INSERT INTO projects_technologies (project_id, technologies_id)
-SELECT LAST_INSERT_ID(), id
-FROM technologies
-WHERE name IN ('php', 'typescript');
-*/
-
 function getAllTechnologies(PDO $pdo): array {
   $query = $pdo->query('SELECT * FROM technologies');
   return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function deleteProject(PDO $pdo, INT $id): bool {
+  try {
+    $pdo->beginTransaction();
+
+    $stmt = $pdo->prepare('DELETE FROM projects_technologies WHERE project_id = :id');
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $stmt = $pdo->prepare('DELETE FROM projects WHERE id = :id');
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $pdo->commit();
+
+    return true;
+  } catch (PDOException $e) {
+    $pdo->rollBack();
+    return false;
+  }
 }

@@ -1,16 +1,19 @@
 <?php 
   $skills = getProjectById($pdo, $project['id']);
 
+  $adminCheck = basename(dirname($_SERVER['SCRIPT_FILENAME']));
+
   foreach (_ALLOWED_IMAGE_TYPES_ as $ext) {
-    $imagePath = 'uploads/projects/project-' . $project['id'] . '.' . $ext;
+    if ($adminCheck === 'admin') {
+      $imagePath = '../uploads/projects/project-' . $project['id'] . '.' . $ext;
+    } else {
+      $imagePath = 'uploads/projects/project-' . $project['id'] . '.' . $ext;
+    }
     if (file_exists($imagePath)) {
       break;
     }
   }
-
-  $adminCheck = basename(dirname($_SERVER['SCRIPT_FILENAME']));
 ?>
-
 <div class="p-px flex card-wrapper overflow-hidden relative rounded-xl z-10 <?php if($adminCheck !== 'admin') { echo 'js-scroll-animation'; } ?>">
   <a href="<?php if($adminCheck === 'admin') { echo '../project.php?id=' . $project['id']; } else { echo 'project.php?id=' . $project['id']; } ?>" class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20">
     <div class="flex flex-col gap-6">
