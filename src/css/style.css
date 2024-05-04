@@ -43,7 +43,7 @@
 }
 
 .badgeSkill {
-  @apply p-1.5 bg-accentColor-10 border border-accentColor-100 rounded relative overflow-hidden backdrop-blur-sm after:absolute after:inset-0 after:animate-shiny-badge-slide after:bg-accentColor-100/10;
+  @apply p-1.5 w-[26px] h-[26px] flex justify-center items-center bg-accentColor-10 border border-accentColor-100 rounded relative overflow-hidden backdrop-blur-sm after:absolute after:inset-0 after:animate-shiny-badge-slide after:bg-accentColor-100/10;
 }
 
 .side-mask {

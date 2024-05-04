@@ -54,6 +54,7 @@ if (isset($_GET['project-delete'])) {
           unlink($file);
         }
       }
+
       header('Location: projects.php');
       exit();
     } else {
