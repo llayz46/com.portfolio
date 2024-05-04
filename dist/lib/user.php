@@ -17,3 +17,36 @@ function verifyUserAndRoleByLoginPassword(PDO $pdo, string $email, string $passw
     return false;
   }
 }
+
+function updateUserProfile(PDO $pdo, int $id, string $name = null, string $email = null): bool {
+  $sql = 'UPDATE users SET ';
+
+  if(!$name && !$email) {
+    return false;
+  }
+
+  if($name && $email) {
+    $sql .= 'name = :name, email = :email WHERE id = :id';
+  }
+
+  if($name) {
+    $sql .= 'name = :name WHERE id = :id';
+  }
+
+  if($email) {
+    $sql .= 'email = :email WHERE id = :id';
+  }
+
+  $stmt = $pdo->prepare($sql);
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+  if($name) {
+    $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+  }
+
+  if($email) {
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+  }
+
+  return $stmt->execute();
+}
