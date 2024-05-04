@@ -7,6 +7,7 @@ require_once __DIR__ . '/../lib/menu.php';
 
 $actualPage = basename($_SERVER['SCRIPT_FILENAME']);
 
+// Mise à jour profile
 if (isset($_POST['profileUpdate'])) {
   $userId = $_SESSION['user']['id'];
 
@@ -15,37 +16,66 @@ if (isset($_POST['profileUpdate'])) {
     $email = htmlspecialchars(strtolower(trim($_POST['profile-email'])));
 
     if ($name === $_SESSION['user']['name'] && $email === $_SESSION['user']['email']) {
-      $_SESSION['errors'][] = 'You have not made any changes on the profile name and email address';
+      $_SESSION['updateErrors'][] = 'You have not made any changes on the profile name and email address';
     } else {
       if ($_SESSION['user']['name'] !== $name && $_SESSION['user']['email'] !== $email) {
         $res = updateUserProfile($pdo, $userId, $name, $email);
         if ($res) {
           $_SESSION['user']['name'] = $name;
           $_SESSION['user']['email'] = $email;
-          $_SESSION['success'][] = 'Profile successfully updated';
+          $_SESSION['updateSuccess'][] = 'Profile successfully updated';
         } else {
-          $_SESSION['errors'][] = 'An error occurred while updating the profile';
+          $_SESSION['updateErrors'][] = 'An error occurred while updating the profile';
         }
       } else if ($_SESSION['user']['name'] !== $name) {
         $res = updateUserProfile($pdo, $userId, $name);
         if ($res) {
           $_SESSION['user']['name'] = $name;
-          $_SESSION['success'][] = 'Profile name successfully updated';
+          $_SESSION['updateSuccess'][] = 'Profile name successfully updated';
         } else {
-          $_SESSION['errors'][] = 'An error occurred while updating the profile name';
+          $_SESSION['updateErrors'][] = 'An error occurred while updating the profile name';
         }
       } else if ($_SESSION['user']['email'] !== $email) {
         $res = updateUserProfile($pdo, $userId, null, $email);
         if ($res) {
           $_SESSION['user']['email'] = $email;
-          $_SESSION['success'][] = 'Profile email successfully updated';
+          $_SESSION['updateSuccess'][] = 'Profile email successfully updated';
         } else {
-          $_SESSION['errors'][] = 'An error occurred while updating the profile email';
+          $_SESSION['updateErrors'][] = 'An error occurred while updating the profile email';
         }
       }
     }
   } else {
-    $_SESSION['errors'][] = 'Please fill in all the fields';
+    $_SESSION['updateErrors'][] = 'Please fill in all the fields';
+  }
+
+  header('Location: ' . $_SERVER['PHP_SELF']);
+  exit();
+}
+
+// Mise à jour du mot de passe
+if (isset($_POST['passwordUpdate'])) {
+  $userId = $_SESSION['user']['id'];
+
+  if (isset($_POST['current-password']) && isset($_POST['new-password']) && isset($_POST['confirm-new-password'])) {
+    $currentPassword = htmlspecialchars(trim($_POST['current-password']));
+    $newPassword = htmlspecialchars(trim($_POST['new-password']));
+    $confirmNewPassword = htmlspecialchars(trim($_POST['confirm-new-password']));
+
+    if (password_verify($currentPassword, $_SESSION['user']['password'])) {
+      if ($newPassword === $confirmNewPassword) {
+        $res = updatePassword($pdo, $userId, $newPassword);
+        if ($res) {
+          $_SESSION['passwordSuccess'][] = 'Password successfully updated';
+        } else {
+          $_SESSION['passwordErrors'][] = 'An error occurred while updating the password';
+        }
+      } else {
+        $_SESSION['passwordErrors'][] = 'The new password and the confirmation do not match';
+      }
+    } else {
+      $_SESSION['passwordErrors'][] = 'The current password is incorrect';
+    }
   }
 
   header('Location: ' . $_SERVER['PHP_SELF']);
@@ -88,9 +118,9 @@ require_once 'templates/header.php';
         </label>
         <input class="mt-1 py-2 z-10 text-sm leading-6 font-medium text-textColors-primary bg-accentColor-100/90 rounded-md cursor-pointer md:hover:bg-accentColor-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Update Now" name="profileUpdate">
       </form>
-      <?php if (isset($_SESSION['errors'])) { ?>
+      <?php if (isset($_SESSION['updateErrors'])) { ?>
         <div class="flex gap-3 py-3 px-5 bg-red-200 rounded-md items-center w-fit mt-4">
-          <?php foreach ($_SESSION['errors'] as $error) { ?>
+          <?php foreach ($_SESSION['updateErrors'] as $error) { ?>
             <div class="bg-red-600 p-1 rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M6 0.337402C2.86875 0.337402 0.3375 2.86865 0.3375 5.9999C0.3375 9.13115 2.86875 11.6812 6 11.6812C9.13125 11.6812 11.6813 9.13115 11.6813 5.9999C11.6813 2.86865 9.13125 0.337402 6 0.337402ZM6 10.8374C3.3375 10.8374 1.18125 8.6624 1.18125 5.9999C1.18125 3.3374 3.3375 1.18115 6 1.18115C8.6625 1.18115 10.8375 3.35615 10.8375 6.01865C10.8375 8.6624 8.6625 10.8374 6 10.8374Z" fill="white" />
@@ -100,10 +130,10 @@ require_once 'templates/header.php';
             <p class="text-base font-medium text-red-700"><?= $error ?></p>
           <?php } ?>
         </div>
-        <?php unset($_SESSION['errors']) ?>
-      <?php } else if (isset($_SESSION['success'])) { ?>
+        <?php unset($_SESSION['updateErrors']) ?>
+      <?php } else if (isset($_SESSION['updateSuccess'])) { ?>
         <div class="flex gap-3 py-3 px-5 bg-green-200 rounded-md items-center w-fit mt-4">
-          <?php foreach ($_SESSION['success'] as $message) { ?>
+          <?php foreach ($_SESSION['updateSuccess'] as $message) { ?>
             <div class="bg-green-600 p-1 rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M6 0.337402C2.86875 0.337402 0.337502 2.86865 0.337502 5.9999C0.337502 9.13115 2.86875 11.6812 6 11.6812C9.13125 11.6812 11.6813 9.13115 11.6813 5.9999C11.6813 2.86865 9.13125 0.337402 6 0.337402ZM6 10.8374C3.3375 10.8374 1.18125 8.6624 1.18125 5.9999C1.18125 3.3374 3.3375 1.18115 6 1.18115C8.6625 1.18115 10.8375 3.35615 10.8375 6.01865C10.8375 8.6624 8.6625 10.8374 6 10.8374Z" fill="white" />
@@ -113,13 +143,13 @@ require_once 'templates/header.php';
             <p class="text-base font-medium text-emerald-900"><?= $message ?></p>
           <?php } ?>
         </div>
-        <?php unset($_SESSION['success']) ?>
+        <?php unset($_SESSION['updateSuccess']) ?>
       <?php } ?>
     </div>
 
     <div class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20 w-full flex flex-col gap-2 h-fit">
       <h2 class="text-xl text-textColors-primary font-medium pb-6">Password</h2>
-      <form class="flex flex-col gap-5">
+      <form method="post" class="flex flex-col gap-5">
         <label for="current-password" class="flex flex-col gap-2 text-base text-textColors-contactPrimary font-medium">
           Current Password
           <input type="text" name="current-password" id="current-password" value="" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border font-normal border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
@@ -132,8 +162,35 @@ require_once 'templates/header.php';
           Confirm New Password
           <input type="text" name="confirm-new-password" id="confirm-new-password" value="" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border font-normal border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
         </label>
-        <input class="mt-1 py-2 z-10 text-sm leading-6 font-medium text-textColors-primary bg-accentColor-100/90 rounded-md cursor-pointer md:hover:bg-accentColor-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Update Password" name="profileUpdate">
+        <input class="mt-1 py-2 z-10 text-sm leading-6 font-medium text-textColors-primary bg-accentColor-100/90 rounded-md cursor-pointer md:hover:bg-accentColor-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Update Password" name="passwordUpdate">
       </form>
+      <?php if (isset($_SESSION['passwordErrors'])) { ?>
+        <div class="flex gap-3 py-3 px-5 bg-red-200 rounded-md items-center w-fit mt-4">
+          <?php foreach ($_SESSION['passwordErrors'] as $error) { ?>
+            <div class="bg-red-600 p-1 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 0.337402C2.86875 0.337402 0.3375 2.86865 0.3375 5.9999C0.3375 9.13115 2.86875 11.6812 6 11.6812C9.13125 11.6812 11.6813 9.13115 11.6813 5.9999C11.6813 2.86865 9.13125 0.337402 6 0.337402ZM6 10.8374C3.3375 10.8374 1.18125 8.6624 1.18125 5.9999C1.18125 3.3374 3.3375 1.18115 6 1.18115C8.6625 1.18115 10.8375 3.35615 10.8375 6.01865C10.8375 8.6624 8.6625 10.8374 6 10.8374Z" fill="white" />
+                <path d="M7.725 4.25596C7.55625 4.08721 7.29375 4.08721 7.125 4.25596L6 5.39971L4.85625 4.25596C4.6875 4.08721 4.425 4.08721 4.25625 4.25596C4.0875 4.42471 4.0875 4.68721 4.25625 4.85596L5.4 5.99971L4.25625 7.14346C4.0875 7.31221 4.0875 7.57471 4.25625 7.74346C4.33125 7.81846 4.44375 7.87471 4.55625 7.87471C4.66875 7.87471 4.78125 7.83721 4.85625 7.74346L6 6.59971L7.14375 7.74346C7.21875 7.81846 7.33125 7.87471 7.44375 7.87471C7.55625 7.87471 7.66875 7.83721 7.74375 7.74346C7.9125 7.57471 7.9125 7.31221 7.74375 7.14346L6.6 5.99971L7.74375 4.85596C7.89375 4.68721 7.89375 4.42471 7.725 4.25596Z" fill="white" />
+              </svg>
+            </div>
+            <p class="text-base font-medium text-red-700"><?= $error ?></p>
+          <?php } ?>
+        </div>
+        <?php unset($_SESSION['passwordErrors']) ?>
+      <?php } else if (isset($_SESSION['passwordSuccess'])) { ?>
+        <div class="flex gap-3 py-3 px-5 bg-green-200 rounded-md items-center w-fit mt-4">
+          <?php foreach ($_SESSION['passwordSuccess'] as $message) { ?>
+            <div class="bg-green-600 p-1 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 0.337402C2.86875 0.337402 0.337502 2.86865 0.337502 5.9999C0.337502 9.13115 2.86875 11.6812 6 11.6812C9.13125 11.6812 11.6813 9.13115 11.6813 5.9999C11.6813 2.86865 9.13125 0.337402 6 0.337402ZM6 10.8374C3.3375 10.8374 1.18125 8.6624 1.18125 5.9999C1.18125 3.3374 3.3375 1.18115 6 1.18115C8.6625 1.18115 10.8375 3.35615 10.8375 6.01865C10.8375 8.6624 8.6625 10.8374 6 10.8374Z" fill="white" />
+                <path d="M7.6125 4.25626L5.38125 6.43126L4.36875 5.43751C4.2 5.26876 3.9375 5.28751 3.76875 5.43751C3.6 5.60626 3.61875 5.86876 3.76875 6.03751L4.96875 7.20001C5.08125 7.31251 5.23125 7.36876 5.38125 7.36876C5.53125 7.36876 5.68125 7.31251 5.79375 7.20001L8.2125 4.87501C8.38125 4.70626 8.38125 4.44376 8.2125 4.27501C8.04375 4.10626 7.78125 4.10626 7.6125 4.25626Z" fill="white" />
+              </svg>
+            </div>
+            <p class="text-base font-medium text-emerald-900"><?= $message ?></p>
+          <?php } ?>
+        </div>
+        <?php unset($_SESSION['passwordSuccess']) ?>
+      <?php } ?>
     </div>
   </div>
 </section>

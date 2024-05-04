@@ -50,3 +50,13 @@ function updateUserProfile(PDO $pdo, int $id, string $name = null, string $email
 
   return $stmt->execute();
 }
+
+function updatePassword(PDO $pdo, int $id, string $password): bool {
+  $sql = 'UPDATE users SET password = :password WHERE id = :id';
+
+  $stmt = $pdo->prepare($sql);
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);
+
+  return $stmt->execute();
+}
