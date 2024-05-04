@@ -11,8 +11,6 @@ if (isset($_POST['createProject'])) {
     $_SESSION['errors'][] = 'Please enter a project title';
   } else if (empty($_POST['project-content'])) {
     $_SESSION['errors'][] = 'Please enter a project description';
-  } else if (empty($_FILES['project-image']['name'])) {
-    $_SESSION['errors'][] = 'Please upload an image for the project';
   } else if (empty($_POST['project-technologies'])) {
     $_SESSION['errors'][] = 'Please select at least one technology for the project';
   } else {
@@ -24,34 +22,36 @@ if (isset($_POST['createProject'])) {
       $projectId = $res['projectId'];
       $_SESSION['success'][] = 'Project successfully added';
 
-      $files = $_FILES['project-image'];
-
-      $file_name = $files['name'];
-      $file_tmp = $files['tmp_name'];
-      $file_size = $files['size'];
-      $file_error = $files['error'];
-      $file_type = $files['type'];
-
-      $file_ext = explode('.', $file_name);
-      $file_actual_ext = strtolower(end($file_ext));
-
-      if (in_array($file_actual_ext, _ALLOWED_IMAGE_TYPES_)) {
-        if ($file_error === 0) {
-          if ($file_size < 1000000) {
-            $file_name_new = 'project-' . $projectId . '.' . $file_actual_ext;
-            $file_destination = '..' . _PATH_UPLOADS_PROJECTS_ . $file_name_new;
-
-            if (!move_uploaded_file($file_tmp, $file_destination)) {
-              $_SESSION['errors'][] = 'An error occurred while adding the project image';
+      if (!empty($_FILES['project-image']['name'])) {
+        $files = $_FILES['project-image'];
+  
+        $file_name = $files['name'];
+        $file_tmp = $files['tmp_name'];
+        $file_size = $files['size'];
+        $file_error = $files['error'];
+        $file_type = $files['type'];
+  
+        $file_ext = explode('.', $file_name);
+        $file_actual_ext = strtolower(end($file_ext));
+  
+        if (in_array($file_actual_ext, _ALLOWED_IMAGE_TYPES_)) {
+          if ($file_error === 0) {
+            if ($file_size < 1000000) {
+              $file_name_new = 'project-' . $projectId . '.' . $file_actual_ext;
+              $file_destination = '..' . _PATH_UPLOADS_PROJECTS_ . $file_name_new;
+  
+              if (!move_uploaded_file($file_tmp, $file_destination)) {
+                $_SESSION['errors'][] = 'An error occurred while adding the project image';
+              }
+            } else {
+              $_SESSION['errors'][] = 'The file is too big';
             }
           } else {
-            $_SESSION['errors'][] = 'The file is too big';
+            $_SESSION['errors'][] = 'An error occurred while uploading the file';
           }
         } else {
-          $_SESSION['errors'][] = 'An error occurred while uploading the file';
+          $_SESSION['errors'][] = 'You cannot upload files of this type';
         }
-      } else {
-        $_SESSION['errors'][] = 'You cannot upload files of this type';
       }
 
       header('Location: ' . $_SERVER['PHP_SELF']);
@@ -86,7 +86,7 @@ require_once 'templates/header.php';
         </label>
         <label for="project-image" class="flex flex-col gap-2">
           Image of the project
-          <input type="file" name="project-image" id="project-image" class="file:rounded-md file:bg-transparent file:border file:border-buttonColor-borderColor-normal file:py-2 file:px-3 file:text-textColors-primary file:hover:bg-buttonColor-background-normal file:transition-all cursor-pointer py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" accept="image/*" required>
+          <input type="file" name="project-image" id="project-image" class="file:rounded-md file:bg-transparent file:border file:border-buttonColor-borderColor-normal file:py-2 file:px-3 file:text-textColors-primary file:hover:bg-buttonColor-background-normal file:transition-all cursor-pointer py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" accept="image/*">
         </label>
         <label for="project-title" class="flex flex-col gap-2">
           Technologies used for the project

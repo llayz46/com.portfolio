@@ -93,7 +93,7 @@ require_once 'templates/header.php';
       <p class="text-base text-textColors-navPrimary font-medium">Customize your profile settings here, just for fun!</p>
     </div>
   </div>
-  <div class="pt-8 gap-10 mx-4 grid grid-cols-2 md:pb-12 pb-6">
+  <div class="pt-8 gap-10 mx-4 grid grid-cols-1 xl:grid-cols-2 md:pb-12 pb-6">
     <div class="p-6 border border-buttonColor-borderColor-normal bg-bodyBack rounded-xl z-20 w-full flex flex-col gap-2 h-fit">
       <h2 class="text-xl text-textColors-primary font-medium">Account Information</h2>
       <p class="text-base text-textColors-navPrimary font-medium">Edit your profile quickly</p>

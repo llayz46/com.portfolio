@@ -41,7 +41,7 @@ adminOnly();
           foreach ($adminMenu as $url => $item) { 
             if (!array_key_exists('exclude', $item)) { ?>
             <li class="<?php if($currentPage === $url) { echo 'bg-accentColor-10 border-r-4 border-accentColor-100'; } else { echo 'md:hover:bg-accentColor-10'; } ?>">
-              <a href="<?=$url?>" class="py-2 pl-8 flex items-center md:gap-[10px]">
+              <a href="<?php if($url === 'logout.php') { echo '../' . $url; } else { echo $url; } ?>" class="py-2 pl-8 flex items-center md:gap-[10px]">
                 <?php if($currentPage === $url) {
                   echo str_replace('color', '#EDEDED', $item['icon']);
                 } else {
@@ -50,7 +50,7 @@ adminOnly();
                 <p class="max-md:hidden text-base <?php if($currentPage === $url) { echo 'text-textColors-primary'; } else { echo 'text-textColors-navPrimary'; } ?> font-medium"><?=$item['menu_title']?></p>
               </a>
             </li>
-            <?php if ($item === array_values($adminMenu)[1]) { ?>
+            <?php if ($item === array_values($adminMenu)[2]) { ?>
               <div class="mx-6 md:mx-8 h-px bg-textColors-navPrimary my-6"></div>
             <?php } ?>
           <?php } } ?>
@@ -58,7 +58,9 @@ adminOnly();
       </nav>
     </div>
     <div class="flex md:gap-3 items-center p-6 md:p-8">
-      <img width="40" height="40" src="../assets/image/avatar-default.png" alt="" class="rounded-full">
+      <a href="settings.php">
+        <img width="40" height="40" src="../assets/image/avatar-default.png" alt="" class="rounded-full">
+      </a>
       <div class="max-md:hidden">
         <p class="text-base/5 text-textColors-primary font-medium">Hello <?=ucfirst($_SESSION['user']['name'])?>!</p>
         <p class="text-sm/tight text-textColors-navPrimary"><?=$_SESSION['user']['email']?></p>
