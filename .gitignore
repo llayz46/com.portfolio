@@ -4,5 +4,3 @@ node_modules
 tailwind.config.js
 postcss.config.js
 yarn.lock
-config.php
-pdo.php
