@@ -18,7 +18,7 @@ adminOnly();
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="bg-bodyBack w-screen flex">
+<body class="bg-bodyBack max-w-screen flex">
   <aside class="w-fit md:w-2/12 bg-headerBack min-h-screen flex flex-col justify-between min-w-fit">
     <div class="flex flex-col">
       <a href="../index.php" class="flex md:gap-3 max-md:mx-auto items-center p-6 md:p-8">

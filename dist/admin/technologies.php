@@ -99,7 +99,7 @@ require_once 'templates/header.php';
       <h2 class="text-xl text-textColors-primary font-medium">List of all technologies</h2>
       <ul class="mt-4 w-full">
         <?php foreach ($technologies as $key => $technology) { ?>
-          <li class="flex justify-between gap-6 items-center py-2 <?php if ($key !== array_key_last($technologies)) {
+          <li class="flex justify-between gap-6 items-center py-2 max-[500px]:flex-col max-[500px]:items-start <?php if ($key !== array_key_last($technologies)) {
                                                                     echo 'border-b border-buttonColor-borderColor-normal';
                                                                   } ?>">
             <div class="flex gap-2">
@@ -180,29 +180,6 @@ require_once 'templates/header.php';
           <?php unset($_SESSION['success']) ?>
         <?php } ?>
       </form>
-      <?php 
-      $query = $pdo->prepare('SELECT project_id FROM projects_technologies WHERE technologies_id = :id;');
-      $query->bindValue(':id', 3, PDO::PARAM_INT);
-      $query->execute();
-      $projects = $query->fetchAll(PDO::FETCH_ASSOC);
-      
-      // var_dump($projects);
-
-      foreach ($projects as $project) {
-        $query = $pdo->prepare('SELECT project_id, technologies_id FROM projects_technologies WHERE project_id = :id;');
-        $query->bindValue(':id', $project['project_id'], PDO::PARAM_INT);
-        $query->execute();
-        $projectTechnologie = $query->fetchAll(PDO::FETCH_ASSOC);
-
-        if (sizeof($projectTechnologie) < 2) {
-          $stmt = $pdo->prepare('SELECT * FROM projects WHERE id = :id');
-          $stmt->bindValue(':id', $project['project_id'], PDO::PARAM_INT);
-          $stmt->execute();
-          $projectData = $stmt->fetch(PDO::FETCH_ASSOC);
-          // var_dump($projectData);
-        }
-      }
-      ?>
     </div>
   </div>
 </section>

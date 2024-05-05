@@ -5,6 +5,8 @@ require_once __DIR__ . '/templates/header.php';
 require_once __DIR__ . '/lib/technologies.php';
 
 $projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
+
+$skillsDisplay = getAllSkills($pdo);
 ?>
 
 <section class="bg-headerBack">
@@ -138,9 +140,9 @@ $projects = getProjects($pdo, _HOME_LIMIT_PROJECTS_);
   <div class="group overflow-x-hidden w-full side-mask flex gap-14">
     <?php for($i = 0; $i < 3; $i++) { ?>
       <ul class="flex gap-14 items-center group-hover:[animation-play-state:paused] animate-marquee">
-        <?php foreach($techonologies as $tech) { ?>
+        <?php foreach($skillsDisplay as $skill) { ?>
           <li>
-            <?= $tech?>
+            <?=$skill['svg']?>
           </li>
         <?php } ?>
       </ul>

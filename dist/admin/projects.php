@@ -29,12 +29,12 @@ if ($totalPages > 1) {
 ?>
 
 <section class="px-8 md:px-12 pt-8 h-full">
-  <div class="flex justify-between pb-6 border-b border-textColors-navPrimary">
+  <div class="flex max-sm:flex-col justify-between pb-6 border-b border-textColors-navPrimary">
     <div class="flex flex-col gap-2">
       <h1 class="text-2xl text-textColors-primary font-semibold"><?=$adminMenu[$actualPage]['menu_title']?></h1>
       <p class="text-base text-textColors-navPrimary font-medium">Find here all of the projects</p>
     </div>
-    <a href="new_project.php" class="buttonPrimary mt-auto px-4 py-2 max-sm:mt-4 bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md flex items-center md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Add new project</a>
+    <a href="new_project.php" class="buttonPrimary mt-auto max-sm:mr-auto px-4 py-2 max-sm:mt-4 bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md flex items-center md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Add new project</a>
   </div>
   <div class="pt-8 gap-4 mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:pb-12 pb-6">
     <?php foreach ($projects as $project) {

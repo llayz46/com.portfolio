@@ -1,11 +1,11 @@
 <section class="w-full md:w-10/12 flex flex-col">
-  <header class="bg-gradient-to-r from-[#101010] from-0% via-headerBack via-5% to-headerBack to-100% py-3 pr-8 pl-6 flex justify-between items-center">
+  <header class="bg-gradient-to-r from-[#101010] from-0% via-headerBack via-5% to-headerBack to-100% py-3 pr-8 pl-6 w-full flex justify-between items-center">
     <div>
       <p class="text-xl text-textColors-primary font-semibold">Hello <?=ucfirst($_SESSION['user']['name'])?>!</p>
       <p class="text-base text-textColors-navPrimary">Welcome back to dashboard.</p>
     </div>
     <div class="flex items-center gap-6">
-      <div class="flex items-center gap-1">
+      <!-- <div class="flex items-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none">
           <g clip-path="url(#clip0_238_1263)">
             <path d="M0 0H18V12H0V0Z" fill="white" />
@@ -25,7 +25,7 @@
             <path d="M3 4.5L6 7.5L9 4.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
-      </div>
+      </div> -->
       <img width="40" height="40" src="../assets/image/avatar-default.png" alt="">
     </div>
   </header>
