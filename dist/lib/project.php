@@ -117,3 +117,23 @@ function deleteProject(PDO $pdo, INT $id): bool {
     return false;
   }
 }
+
+function modifyProject(PDO $pdo, INT $id, STRING $title, STRING $content)
+{
+  try {
+    $pdo->beginTransaction();
+
+    $stmt = $pdo->prepare('UPDATE projects SET title = :title, content = :content WHERE id = :id');
+    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+    $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $pdo->commit();
+
+    return ['success' => true, 'projectId' => $id];
+  } catch (PDOException $e) {
+    $pdo->rollBack();
+    return ['success' => false, 'error' => $e->getMessage()];
+  }
+}

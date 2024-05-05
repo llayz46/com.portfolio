@@ -68,4 +68,5 @@ $adminMenu = [
   </svg>'
   ],
   'new_project.php' => ['menu_title' => 'Add a new project', 'head_title' => 'Admin New Project - Portfolio', 'head_meta' => 'Add a new project to your portfolio.', 'exclude' => true],
+  'modify_project.php' => ['menu_title' => 'Modify a project', 'head_title' => 'Admin Modify Project - Portfolio', 'head_meta' => 'Modify a project on your portfolio.', 'exclude' => true],
 ];

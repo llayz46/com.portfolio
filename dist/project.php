@@ -75,12 +75,12 @@ if (!$error) { ?>
       </svg>
       back
     </a>
-    <div class="flex gap-4 w-full">
-      <div class="w-4/6 flex flex-col gap-4">
+    <div class="flex max-lg:flex-col gap-4 w-full">
+      <div class="lg:w-4/6 flex flex-col gap-4">
         <div class="p-6 border border-buttonColor-borderColor-normal rounded-lg h-fit">
           <img width="918" height="612" src="<?= getProjectImageById($imagePath) ?>" alt="" class="rounded max-w-[375] aspect-[3/2] object-cover object-top">
         </div>
-        <div class="flex gap-4">
+        <div class="flex gap-4 w-full flex-wrap">
           <a class="py-4 px-12 bg-accentColor-yellow rounded-lg flex items-center gap-2 text-base font-medium text-headerBack w-fit transition-colors duration-150 md:hover:bg-accentColor-yellow/80" href="">
             Let's view the live demo
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="fill-headerBack rotate-180">
@@ -104,7 +104,7 @@ if (!$error) { ?>
           </button>
         </div>
       </div>
-      <div class="flex flex-col gap-4 w-2/6">
+      <div class="flex flex-col gap-4 lg:w-2/6">
         <div class="p-6 bg-headerBack rounded-lg flex flex-col gap-1.5">
           <h2 class="text-xl text-textColors-primary font-semibold"><?= $project['title'] ?></h2>
           <p class="text-base text-[#b8b8b8]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium iure et, harum sit id placeat aliquid tempora reprehenderit mollitia debitis totam at quo fuga repudiandae, saepe eos. Numquam, sequi.</p>
@@ -125,6 +125,11 @@ if (!$error) { ?>
             <h3 class="text-xl text-textColors-primary font-semibold">Delete project</h3>
             <p class="text-base text-[#b8b8b8]">Click on this button to delete this project from the portfolio.</p>
             <a href="?project-delete=<?=$project['id']?>" onclick="return confirm('Are you sure you want to delete this project?')" class="buttonPrimary gap-2 px-8 py-2 mt-2 items-center bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md inline-block whitespace-nowrap w-fit md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Delete</a>
+          </div>
+          <div class="p-6 bg-headerBack rounded-lg flex flex-col gap-1.5">
+            <h3 class="text-xl text-textColors-primary font-semibold">Modify project</h3>
+            <p class="text-base text-[#b8b8b8]">Click on this button to modify this project.</p>
+            <a href="admin/modify_project.php?project=<?=$project['id']?>" class="buttonPrimary gap-2 px-8 py-2 mt-2 items-center bg-buttonColor-background-normal border border-buttonColor-borderColor-normal rounded-md inline-block whitespace-nowrap w-fit md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200">Modify</a>
           </div>
         <?php } ?>
       </div>

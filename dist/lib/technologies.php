@@ -9,7 +9,6 @@ function addTechnology(PDO $pdo, STRING $name): bool {
 function getOneTechnologyById(PDO $pdo, INT $id): array {
   $stmt = $pdo->prepare('SELECT * FROM technologies WHERE id = :id');
   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-  // return $stmt->execute();
   $stmt->execute();
   return $stmt->fetch(PDO::FETCH_ASSOC);
 }
@@ -75,4 +74,11 @@ function addNewSkill(PDO $pdo, STRING $name, STRING $svg): bool {
   $stmt->bindValue(':name', $name, PDO::PARAM_STR);
   $stmt->bindValue(':svg', $svg, PDO::PARAM_STR);
   return $stmt->execute();
+}
+
+function getTechnologyOfOneProjectById(PDO $pdo, INT $id): array {
+  $stmt = $pdo->prepare('SELECT technologies_id FROM projects_technologies WHERE project_id = :id');
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

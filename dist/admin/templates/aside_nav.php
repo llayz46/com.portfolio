@@ -14,7 +14,9 @@ adminOnly();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<?=$adminMenu[$currentPage]['head_meta']?>">
   <title><?=$adminMenu[$currentPage]['head_title']?></title>
+  <link rel="shortcut icon" href="../../assets/image/layz-logo.svg" type="image/x-icon">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
