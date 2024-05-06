@@ -20,7 +20,7 @@
       <div class="flex gap-3">
         <?php foreach ($skills as $skill) { ?>
           <div class="badgeSkill">
-            <img width="12" height="12" src="<?php if($adminCheck === 'admin') { echo '../'; } ?>assets/image/badge-<?=$skill['skill'] ?>.svg" alt="">
+            <img width="12" height="12" src="<?php if($adminCheck === 'admin') { echo '../'; } ?>assets/image/badge-<?=$skill['skill'] ?>.svg" alt="<?=$skill['skill'] ?>">
           </div>
         <?php } ?>
       </div>
