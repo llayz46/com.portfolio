@@ -61,7 +61,7 @@ adminOnly();
     </div>
     <div class="flex md:gap-3 items-center p-6 md:p-8">
       <a href="settings.php">
-        <img width="40" height="40" src="../assets/image/avatar-default.png" alt="" class="rounded-full md:hover:scale-105">
+        <img width="40" height="40" src="../assets/image/avatar-default.png" alt="" class="rounded-full md:hover:scale-105 transition-all">
       </a>
       <div class="max-md:hidden">
         <p class="text-base/5 text-textColors-primary font-medium">Hello <?=ucfirst($_SESSION['user']['name'])?>!</p>
