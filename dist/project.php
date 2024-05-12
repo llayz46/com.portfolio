@@ -55,6 +55,10 @@ if (isset($_GET['project-delete'])) {
         }
       }
 
+      if (file_exists(_PATH_UPLOADS_PROJECTS_ . 'project-' . $id)) {
+        rmdir(_PATH_UPLOADS_PROJECTS_ . 'project-' . $id);
+      }
+
       header('Location: projects.php');
       exit();
     } else {
@@ -81,7 +85,7 @@ if (!$error) { ?>
           <img width="918" height="612" src="<?= getProjectImageById($imagePath) ?>" alt="" class="rounded max-w-[375] aspect-[3/2] object-cover object-top">
         </div>
         <div class="flex gap-4 w-full flex-wrap">
-          <a class="py-4 px-12 bg-accentColor-yellow rounded-lg flex items-center gap-2 text-base font-medium text-headerBack w-fit transition-colors duration-150 md:hover:bg-accentColor-yellow/80" href="">
+          <a class="py-4 px-12 bg-accentColor-yellow rounded-lg flex items-center gap-2 text-base font-medium text-headerBack w-fit transition-colors duration-150 md:hover:bg-accentColor-yellow/80" href="<?php if ($project['url']) { echo 'https://'.$project['url']; } else { echo 'projects/project-' . $project['id']; } ?>">
             Let's view the live demo
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="fill-headerBack rotate-180">
               <path d="M14 7.45H3.32502L7.57502 3.125C7.80002 2.9 7.80002 2.55 7.57502 2.325C7.35002 2.1 7.00002 2.1 6.77502 2.325L1.60002 7.575C1.37502 7.8 1.37502 8.15 1.60002 8.375L6.77502 13.625C6.87502 13.725 7.02502 13.8 7.17502 13.8C7.32502 13.8 7.45002 13.75 7.57502 13.65C7.80002 13.425 7.80002 13.075 7.57502 12.85L3.35002 8.575H14C14.3 8.575 14.55 8.325 14.55 8.025C14.55 7.7 14.3 7.45 14 7.45Z" />

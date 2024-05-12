@@ -16,7 +16,12 @@ if (isset($_POST['createProject'])) {
   } else {
     $title = htmlspecialchars($_POST['project-title']);
     $content = htmlspecialchars($_POST['project-content']);
-    $res = addProject($pdo, $title, $content, $_POST['project-technologies']);
+
+    if (!empty($_POST['project-url'])) {
+      $res = addProject($pdo, $title, $content, $_POST['project-technologies'], $_POST['project-url']);
+    } else {
+      $res = addProject($pdo, $title, $content, $_POST['project-technologies']);
+    }
 
     if ($res['success']) {
       $projectId = $res['projectId'];
@@ -98,6 +103,10 @@ require_once 'templates/header.php';
               </div>
             <?php } ?>
           </div>
+        </label>
+        <label for="project-url" class="flex flex-col gap-2">
+          Url of the project
+          <input type="text" name="project-url" id="project-url" placeholder="Enter the project url" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500">
         </label>
         <input class="mt-5 md:mt-4 py-2 z-10 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Create project" name="createProject">
         <?php if (isset($_SESSION['errors'])) { ?>

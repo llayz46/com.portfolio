@@ -70,13 +70,22 @@ function getProjectImageById(string $image): string
   }
 }
 
-function addProject(PDO $pdo, $title, $content, $technologies)
+function addProject(PDO $pdo, STRING $title, STRING $content, ARRAY $technologies, STRING $url = null)
 {
   try {
     $pdo->beginTransaction();
 
-    $stmt = $pdo->prepare('INSERT INTO projects (title, content) VALUES (:title, :content)');
-    $stmt->execute(['title' => $title, 'content' => $content]);
+    if ($url) {
+      $stmt = $pdo->prepare('INSERT INTO projects (title, content, url) VALUES (:title, :content, :url)');
+    } else {
+      $stmt = $pdo->prepare('INSERT INTO projects (title, content) VALUES (:title, :content)');
+    }
+    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+    $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+    if ($url) {
+      $stmt->bindValue(':url', $url, PDO::PARAM_STR);
+    }
+    $stmt->execute();
     $projectId = $pdo->lastInsertId();
 
     $placeholders = rtrim(str_repeat('?,', count($technologies)), ',');
