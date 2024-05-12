@@ -107,7 +107,7 @@ if (!$error) { ?>
       <div class="flex flex-col gap-4 lg:w-2/6">
         <div class="p-6 bg-headerBack rounded-lg flex flex-col gap-1.5">
           <h2 class="text-xl text-textColors-primary font-semibold"><?= $project['title'] ?></h2>
-          <p class="text-base text-[#b8b8b8]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium iure et, harum sit id placeat aliquid tempora reprehenderit mollitia debitis totam at quo fuga repudiandae, saepe eos. Numquam, sequi.</p>
+          <p class="text-base text-[#b8b8b8]"><?=$project['content']?></p>
         </div>
         <div class="p-6 bg-headerBack rounded-lg flex flex-col gap-1.5 select-none">
           <p class="bg-white/10 rounded p-1.5 text-sm/none font-medium text-textColors-primary border border-white/15 mr-auto">Project technologies</p>

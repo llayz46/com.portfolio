@@ -20,37 +20,119 @@ if (isset($_POST['modifyProject'])) {
     $title = htmlspecialchars($_POST['project-title']);
     $content = htmlspecialchars($_POST['project-content']);
 
-    if ($title === $project['title'] && $content === $project['content']) {
+    if ($title === $project['title'] && $content === $project['content'] && empty($_FILES['project-image']['name']) && empty($_POST['project-technologies'])) {
       $_SESSION['errors'][] = 'You have not made any changes on the project name and content';
+      header('Location: modify_project.php?project=' . $projectId);
+      exit();
     } else {
-      if ($project['title'] !== $title && $project['content'] !== $content) {
+      if ($project['title'] !== $title && $project['content'] !== $content && empty($_FILES['project-image']['name'])) {
         $res = modifyProject($pdo, $projectId, $title, $content);
         if ($res['success']) {
           $_SESSION['success'][] = 'Project successfully modified';
-          header('Location: modify_project.php?project=' . $projectId);
-          exit();
         } else {
           $_SESSION['errors'][] = 'An error occurred while modifying the project';
         }
-      } else if ($title !== $project['title']) {
+      } else if ($title !== $project['title'] && empty($_FILES['project-image']['name'])) {
         $res = modifyProject($pdo, $projectId, $title, $project['content']);
         if ($res['success']) {
           $_SESSION['success'][] = 'Project successfully modified';
-          header('Location: modify_project.php?project=' . $projectId);
-          exit();
         } else {
           $_SESSION['errors'][] = 'An error occurred while modifying the project';
         }
-      } else if ($project['content'] !== $content) {
+      } else if ($project['content'] !== $content && empty($_FILES['project-image']['name'])) {
         $res = modifyProject($pdo, $projectId, $project['title'], $content);
         if ($res['success']) {
           $_SESSION['success'][] = 'Project successfully modified';
-          header('Location: modify_project.php?project=' . $projectId);
-          exit();
+        } else {
+          $_SESSION['errors'][] = 'An error occurred while modifying the project';
+        }
+      } else if (!empty($_FILES['project-image']['name']) && ($project['title'] === $title && $project['content'] === $content)) {
+        $image = $_FILES['project-image'];
+        $imagePath = '..' . _PATH_UPLOADS_PROJECTS_ . 'project-';
+
+        foreach (_ALLOWED_IMAGE_TYPES_ as $type) {
+          if (file_exists($imagePath . $projectId . '.' . $type)) {
+            unlink($imagePath . $projectId . '.' . $type);
+          }
+        }
+
+        $file_name = $image['name'];
+        $file_tmp = $image['tmp_name'];
+        $file_size = $image['size'];
+        $file_error = $image['error'];
+        $file_type = $image['type'];
+  
+        $file_ext = explode('.', $file_name);
+        $file_actual_ext = strtolower(end($file_ext));
+
+        if (in_array($file_actual_ext, _ALLOWED_IMAGE_TYPES_)) {
+          if ($file_error === 0) {
+            if ($file_size < 1000000) {
+              $file_name_new = 'project-' . $projectId . '.' . $file_actual_ext;
+              $file_destination = '..' . _PATH_UPLOADS_PROJECTS_ . $file_name_new;
+    
+              if (!move_uploaded_file($file_tmp, $file_destination)) {
+                $_SESSION['errors'][] = 'An error occurred while adding the project image';
+              } else {
+                $_SESSION['success'][] = 'Project image successfully modified';
+                header('Location: modify_project.php?project=' . $projectId);
+                exit();
+              }
+            } else {
+              $_SESSION['errors'][] = 'The file is too big';
+            }
+          } else {
+            $_SESSION['errors'][] = 'An error occurred while uploading the file';
+          }
+        } else {
+          $_SESSION['errors'][] = 'You cannot upload files of this type';
+        }
+      } else if (!empty($_FILES['project-image']['name']) && ($project['title'] !== $title && $project['content'] !== $content) || ($project['title'] !== $title || $project['content'] !== $content)) {
+        $image = $_FILES['project-image'];
+        $imagePath = '..' . _PATH_UPLOADS_PROJECTS_ . 'project-';
+
+        foreach (_ALLOWED_IMAGE_TYPES_ as $type) {
+          if (file_exists($imagePath . $projectId . '.' . $type)) {
+            unlink($imagePath . $projectId . '.' . $type);
+          }
+        }
+
+        $file_name = $image['name'];
+        $file_tmp = $image['tmp_name'];
+        $file_size = $image['size'];
+        $file_error = $image['error'];
+        $file_type = $image['type'];
+  
+        $file_ext = explode('.', $file_name);
+        $file_actual_ext = strtolower(end($file_ext));
+
+        if (in_array($file_actual_ext, _ALLOWED_IMAGE_TYPES_)) {
+          if ($file_error === 0) {
+            if ($file_size < 1000000) {
+              $file_name_new = 'project-' . $projectId . '.' . $file_actual_ext;
+              $file_destination = '..' . _PATH_UPLOADS_PROJECTS_ . $file_name_new;
+    
+              move_uploaded_file($file_tmp, $file_destination);
+            } else {
+              $_SESSION['errors'][] = 'The file is too big';
+            }
+          } else {
+            $_SESSION['errors'][] = 'An error occurred while uploading the file';
+          }
+        } else {
+          $_SESSION['errors'][] = 'You cannot upload files of this type';
+        }
+
+        $res = modifyProject($pdo, $projectId, $title, $content);
+        if ($res['success']) {
+          $_SESSION['success'][] = 'Project successfully modified';
         } else {
           $_SESSION['errors'][] = 'An error occurred while modifying the project';
         }
       }
+
+      header('Location: modify_project.php?project=' . $projectId);
+      exit();
     }
   }
 }
@@ -71,15 +153,26 @@ require_once 'templates/header.php';
       <form method="post" enctype="multipart/form-data" class="text-base text-textColors-contactPrimary flex flex-col gap-4">
         <label for="project-title" class="flex flex-col gap-2">
           Name of the project
-          <input type="text" name="project-title" id="project-title" value="<?=$project['title']?>" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
+          <input type="text" name="project-title" id="project-title" value="<?=htmlentities($project['title'])?>" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
         </label>
         <label for="project-content" class="flex flex-col gap-2">
           Description of the project
-          <textarea name="project-content" id="project-content" rows="3" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border resize-none border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required><?=$project['content']?></textarea>
+          <textarea name="project-content" id="project-content" rows="3" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border resize-none border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required><?=htmlentities($project['content'])?></textarea>
         </label>
         <label for="project-image" class="flex flex-col gap-2">
           Image of the project
           <input type="file" name="project-image" id="project-image" class="file:rounded-md file:bg-transparent file:border file:border-buttonColor-borderColor-normal file:py-2 file:px-3 file:text-textColors-primary file:hover:bg-accentColor-100 file:transition-all file:cursor-pointer cursor-pointer py-2 pl-3 rounded-md border border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" accept="image/*">
+        </label>
+        <label for="project-title" class="flex flex-col gap-2">
+          Technologies used for the project
+          <div class="flex flex-wrap gap-6">
+            <?php foreach ($technologies as $technologie) { ?>
+              <div class="flex items-center gap-2">
+                <input type="checkbox" name="project-technologies[]" id="project-technologies-<?= $technologie['name'] ?>" value="<?= $technologie['name'] ?>" class="h-4 w-4 rounded border border-buttonColor-borderColor-normal appearance-none cursor-pointer checked:bg-accentColor-50 peer forced-colors:appearance-none">
+                <p><?= ucfirst($technologie['name']) ?></p>
+              </div>
+            <?php } ?>
+          </div>
         </label>
         <input class="mt-5 md:mt-4 py-2 z-10 text-sm leading-6 font-medium text-textColors-secondary bg-buttonColor-background-normal rounded-md border border-buttonColor-borderColor-normal cursor-pointer md:hover:bg-buttonColor-background-hover md:hover:border-buttonColor-borderColor-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Modify project" name="modifyProject">
         <?php if (isset($_SESSION['errors'])) { ?>

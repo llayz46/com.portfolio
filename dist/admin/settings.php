@@ -129,11 +129,11 @@ require_once 'templates/header.php';
       <form method="post" class="flex flex-col gap-5">
         <label for="profile-name" class="flex flex-col gap-2 text-base text-textColors-contactPrimary font-medium">
           Profile Name
-          <input type="text" name="profile-name" id="profile-name" value="<?= ucfirst($_SESSION['user']['name']) ?>" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border font-normal border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
+          <input type="text" name="profile-name" id="profile-name" value="<?= htmlentities(ucfirst($_SESSION['user']['name'])) ?>" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border font-normal border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
         </label>
         <label for="profile-email" class="flex flex-col gap-2 text-base text-textColors-contactPrimary font-medium">
           Email Address
-          <input type="text" name="profile-email" id="profile-email" value="<?= $_SESSION['user']['email'] ?>" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border font-normal border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
+          <input type="text" name="profile-email" id="profile-email" value="<?= htmlentities($_SESSION['user']['email']) ?>" class="placeholder:text-textColors-contactSecondary py-2 pl-3 rounded-md border font-normal border-buttonColor-borderColor-normal bg-transparent focus-visible:outline outline-1 outline-transparent focus-visible:outline-accentColor-yellow/50 caret-accentColor-yellow transition-all duration-500" required>
         </label>
         <input class="mt-1 py-2 z-10 text-sm leading-6 font-medium text-textColors-primary bg-accentColor-100/90 rounded-md cursor-pointer md:hover:bg-accentColor-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accentColor-yellow/60 ring-offset-2 ring-offset-headerBack" type="submit" value="Update Now" name="profileUpdate">
       </form>
